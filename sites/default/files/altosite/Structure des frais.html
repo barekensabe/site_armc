@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMC - Structure des Frais | Marché des Capitaux du Burundi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" />
+    <link rel="shortcut icon" href="sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+    <style>
+        :root {
+            --primary: #006400;
+            --secondary: #004d00;
+            --accent: #32CD32;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --white: #ffffff;
+            --light-green: #e8f5e9;
+            --warning: #ff6b35;
+            --sidebar-green: #f0f9f0;
+            --banner-green-light: #1e7e34;
+            --menu-hover: #f0f7f0;
+            --menu-border: #d0e0d0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Layout Structure */
+        .page-wrapper {
+            display: flex;
+            flex: 1;
+            margin-top: 200px;
+            margin-bottom: auto;
+        }
+
+        /* Sidebar */
+        .quick-access-sidebar {
+            width: 260px;
+            background-color: var(--sidebar-green);
+            color: var(--dark);
+            padding: 20px 15px;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.05);
+            position: fixed;
+            left: 0;
+            top: 200px;
+            height: calc(100vh - 100px);
+            overflow-y: auto;
+            border-right: 1px solid rgba(0, 100, 0, 0.1);
+            border-top: 1px solid rgba(0, 100, 0, 0.1);
+            z-index: 98;
+        }
+
+        .quick-access-sidebar h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quick-links {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(0, 100, 0, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .quick-links a {
+            display: block;
+            color: var(--secondary);
+            text-decoration: none;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            background: rgba(0, 100, 0, 0.05);
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .quick-links a:hover {
+            background: rgba(0, 100, 0, 0.1);
+            padding-left: 15px;
+            color: var(--primary);
+        }
+
+        .quick-links a i {
+            margin-right: 8px;
+            color: var(--accent);
+            width: 18px;
+            text-align: center;
+        }
+
+        .quick-links a:first-child {
+            background-color: rgba(0, 100, 0, 0.15);
+            border-left: 3px solid var(--accent);
+            font-weight: 600;
+        }
+
+        .quick-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .quick-stat-item {
+            background: rgba(0, 100, 0, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            transition: var(--transition);
+            border-left: 3px solid var(--accent);
+        }
+
+        .quick-stat-item:hover {
+            background: rgba(0, 100, 0, 0.1);
+            transform: translateX(5px);
+        }
+
+        .quick-stat-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .quick-stat-label {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .sidebar-date {
+            margin-top: 20px;
+            padding: 12px;
+            background: rgba(0, 100, 0, 0.08);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            border-left: 3px solid var(--accent);
+        }
+
+        .sidebar-date span {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 0;
+            width: calc(100% - 260px);
+        }
+
+        .container {
+            width: 96%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .cont_article {
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .banner-fixed {
+            background-color: var(--banner-green-light);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: 700;
+            font-size: 1.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-bottom: 2px solid #c0d0c0;
+        }
+        .banner-fixed i {
+            color: #ffffff;
+            margin: 0 12px;
+        }
+        .banner-fixed .armc-highlight {
+            font-weight: 800;
+            text-transform: uppercase;
+            background-color: rgba(255,255,255,0.15);
+            padding: 3px 10px;
+            border-radius: 30px;
+            margin: 0 5px;
+            color: #ffffff;
+        }
+
+        .banner-marquee {
+            background-color: #f2f2f2;
+            padding: 6px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .marquee-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .marquee-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 30px;
+        }
+        .marquee-content {
+            display: inline-flex;
+            align-items: center;
+            gap: 40px;
+            white-space: nowrap;
+            animation: scrollMarquee 50s linear infinite;
+            color: #006400;
+            font-size: 0.9rem;
+        }
+        @keyframes scrollMarquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .marquee-item i {
+            color: #006400;
+            font-size: 0.9rem;
+        }
+        .marquee-control {
+            background: rgba(0,100,0,0.1);
+            border: none;
+            color: #006400;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+
+        .logo-wrapper {
+            position: absolute;
+            left: 30px;
+            top: 5px;
+            z-index: 1100;
+            transition: transform 0.3s;
+            background-color: transparent;
+        }
+        .logo-wrapper:hover {
+            transform: scale(1.12);
+        }
+        .logo-wrapper img {
+            height: 130px;
+            width: 130px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 5px solid #e0e0e0;
+            padding: 5px;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0, 40, 0, 0.25);
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 0;
+            background-color: #ffffff;
+            border-top: 1px solid var(--menu-border);
+            border-bottom: 1px solid var(--menu-border);
+            box-shadow: 0 2px 8px rgba(0,60,0,0.03);
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2px;
+            justify-content: center;
+            flex-wrap: nowrap;
+            margin: 0;
+            padding: 0 10px;
+        }
+        nav ul li {
+            position: relative;
+            white-space: nowrap;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #1e3a2e;
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 10px 10px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 24px;
+            background-color: transparent;
+            letter-spacing: 0.2px;
+        }
+        nav ul li a i {
+            color: #2e6b2e;
+            font-size: 1rem;
+            width: 1.2rem;
+            text-align: center;
+            transition: color 0.2s;
+        }
+        nav ul li a i.fa-chevron-down {
+            font-size: 0.7rem;
+            color: #6f8f6f;
+            width: auto;
+            margin-left: 2px;
+        }
+        nav ul li a:hover {
+            background-color: #e9f3e9;
+            color: #006400;
+            box-shadow: 0 2px 6px rgba(0,70,0,0.05);
+        }
+        nav ul li a:hover i {
+            color: #006400;
+        }
+        nav ul li a.active {
+            background-color: #e2efe2;
+            color: #004d00;
+            font-weight: 700;
+        }
+        nav ul li a.active i {
+            color: #004d00;
+        }
+
+        nav ul li a::after {
+            display: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #ffffff;
+            min-width: 250px;
+            box-shadow: 0 10px 25px rgba(0,30,0,0.12);
+            z-index: 1000;
+            border-radius: 16px;
+            top: 100%;
+            left: 0;
+            border: 1px solid #d8e8d8;
+            padding: 8px 4px;
+            margin-top: 0;
+            backdrop-filter: blur(2px);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: transparent;
+            z-index: 1001;
+        }
+        .dropdown-content a {
+            color: #1e3a2e;
+            padding: 12px 18px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            margin: 2px 4px;
+            background-color: transparent;
+            transition: background 0.15s;
+        }
+        .dropdown-content a i {
+            width: 20px;
+            color: #2e7d32;
+            font-size: 1rem;
+        }
+        .dropdown-content a:hover {
+            background-color: #eef7ee;
+            color: #004d00;
+            transform: translateX(3px);
+        }
+
+        /* Article Styles */
+        .article-section {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        .article-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .article-header {
+            padding: 40px 40px 20px;
+        }
+
+        .article-title {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .article-meta-item i {
+            color: var(--accent);
+        }
+
+        .article-featured-image {
+            width: 100%;
+            margin: 0 0 30px;
+            text-align: center;
+        }
+
+        .article-featured-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: var(--gray);
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .article-body {
+            padding: 0 40px 40px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-body h3 {
+            color: var(--secondary);
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .article-body .highlight {
+            background-color: var(--light-green);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent);
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        .article-body .warning-box {
+            background-color: #fff3e0;
+            border-left: 5px solid var(--warning);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .article-body li {
+            margin-bottom: 10px;
+        }
+
+        .fees-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .fees-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .fees-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fees-table tr:nth-child(even) {
+            background-color: var(--light-green);
+        }
+
+        .fees-table tr:hover {
+            background-color: #e1f5e1;
+        }
+
+        .fee-high {
+            background-color: #ffeaea !important;
+            border-left: 3px solid #ff4444;
+        }
+
+        .fee-medium {
+            background-color: #fff4e6 !important;
+            border-left: 3px solid #ff9800;
+        }
+
+        .fee-low {
+            background-color: #f0f8ff !important;
+            border-left: 3px solid #2196f3;
+        }
+
+        .article-footer {
+            padding: 25px 40px;
+            background-color: rgba(0, 100, 0, 0.03);
+            border-top: 1px solid rgba(0, 100, 0, 0.1);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: rgba(0, 100, 0, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .download-link {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 0;
+            transition: var(--transition);
+        }
+
+        .download-link:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Navigation entre articles */
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 100, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 100, 0, 0.1);
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0, 100, 0, 0.2);
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 100, 0, 0.3);
+        }
+
+        .nav-button i {
+            font-size: 1.1rem;
+        }
+
+        .nav-button.back-home {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
+        .nav-button.back-home:hover {
+            background-color: #28a428;
+        }
+
+        .publication-counter {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .publication-counter span {
+            background-color: var(--light-green);
+            padding: 8px 15px;
+            border-radius: 30px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 50px 0 0;
+            margin-top: auto;
+            width: 100%;
+            position: relative;
+            z-index: 99;
+        }
+
+        footer .container {
+            position: relative;
+            z-index: 100;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+            transform: translateX(3px);
+        }
+
+        .contact-list li {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-list i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-right: 10px;
+            min-width: 20px;
+            margin-top: 3px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .page-wrapper {
+                flex-direction: column;
+                margin-top: 160px;
+            }
+            .quick-access-sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                top: 0;
+                margin-bottom: 20px;
+                border-right: none;
+                border-top: none;
+                border-bottom: 1px solid rgba(0, 100, 0, 0.1);
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            header {
+                position: relative;
+            }
+            .page-wrapper {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .cont_article { width: 90%; }
+            .article-title { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .main-header { padding-left: 0; }
+            .logo-wrapper { position: relative; left: auto; top: auto; margin: 10px auto; }
+            .logo-wrapper img { height: 100px; width: 100px; }
+            nav ul { flex-wrap: wrap; }
+            
+            .article-header,
+            .article-body,
+            .article-footer {
+                padding: 25px 20px;
+            }
+            
+            .article-title {
+                font-size: 1.6rem;
+            }
+            
+            .article-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .publication-counter {
+                order: -1;
+                margin-bottom: 10px;
+            }
+            
+            .fees-table {
+                font-size: 0.9rem;
+            }
+            
+            .fees-table th,
+            .fees-table td {
+                padding: 8px 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner-fixed { font-size: 1rem; }
+            .banner-fixed i { margin: 0 5px; }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="banner-fixed">
+            <i class="fas fa-university"></i>
+            <span class="armc-highlight">ARMC Burundi</span>
+            Autorité de Régulation du Marché des Capitaux du Burundi
+            <i class="fas fa-university"></i>
+        </div>
+
+        <div class="banner-marquee">
+            <div class="marquee-wrapper">
+                <div class="marquee-container">
+                    <div class="marquee-content" id="marqueeContent">
+                        <div class="marquee-item"><i class="fas fa-phone"></i> +257 22 21 17 12</div>
+                        <div class="marquee-item"><i class="fas fa-envelope"></i> secretariatdirection@armc.bi</div>
+                        <div class="marquee-item"><i class="fas fa-map-marker-alt"></i> 51, Blvd du Japon, Bujumbura</div>
+                        <div class="marquee-item"><i class="fas fa-clock"></i> Lu-Ve: 07h30 - 17h30</div>
+                        <div class="marquee-item"><i class="fas fa-exclamation-circle"></i> DAO Équipements informatiques 2025-2026</div>
+                        <div class="marquee-item"><i class="fas fa-calendar-alt"></i> DAO Mobilier de bureau 2025-2026</div>
+                        <div class="marquee-item"><i class="fas fa-chart-line"></i> Statistiques mises à jour</div>
+                    </div>
+                </div>
+                <button class="marquee-control" id="marqueeControl" title="Pause/Play"><i class="fas fa-pause"></i></button>
+            </div>
+        </div>
+
+        <div class="logo-wrapper">
+            <img src="sites/default/files/communiques/logo.png" alt="ARMC Logo" onerror="this.src='https://via.placeholder.com/130x130/eeeeee/006400?text=ARMC'">
+        </div>
+
+        <div class="main-header">
+            <div class="nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                        <li class="dropdown">
+                            <a href="#">À propos <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="sites/default/files/communiques/Historique.html"><i class="fas fa-history"></i> Historique</a>
+                                <a href="#"><i class="fas fa-sitemap"></i> Organigramme</a>
+                                <a href="#"><i class="fas fa-users-cog"></i> Conseil d’Administration</a>
+                                <a href="#"><i class="fas fa-user-tie"></i> Comité de Direction</a>
+                                <a href="#"><i class="fas fa-bullseye"></i> Les missions de l'ARMC</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Cadre Légal <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="sites/default/files/communiques/Legal_ReglARMC.html"><i class="fas fa-gavel"></i> Lois et Règlements</a>
+                                <a href="sites/default/files/communiques/Intermediaire.html"><i class="fas fa-handshake"></i> Acteurs agrées</a>
+                                <a href="sites/default/files/altosite/Etapes_obtention_lic.html"><i class="fas fa-check-circle"></i> Liste de contrôle</a>
+                                <a href="#"><i class="fas fa-file-alt"></i> Formulaires d’octroi, agrément et autorisation</a>
+                                <a href="Structure_des_frais.html" class="active"><i class="fas fa-coins"></i> Structure des frais</a>
+                                <a href="#"><i class="fas fa-file-alt"></i> Circulaires</a>
+                                <a href="#"><i class="fas fa-file-alt"></i> Directives de l’EAC</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Actualités <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#"><i class="fas fa-calendar-check"></i> Événements</a>
+                                <a href="#"><i class="fas fa-bullhorn"></i> Communiqués</a>
+                                <a href="#"><i class="fas fa-file-invoice"></i> Appels d'offre</a>
+                                <a href="#"><i class="fas fa-newspaper"></i> Toutes nos publications</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Rapports <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#"><i class="fas fa-chart-bar"></i> Trimestriels</a>
+                                <a href="#"><i class="fas fa-chart-bar"></i> Semestriels</a>
+                                <a href="#"><i class="fas fa-chart-bar"></i> Annuels</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Education financière <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="https://www.youtube.com/@Armc_bdi_2040"><i class="fab fa-youtube"></i> Vidéos</a>
+                                <a href="#"><i class="fas fa-chalkboard"></i> Présentations</a>
+                                <a href="#"><i class="fas fa-book"></i> Glossaire</a>
+                                <a href="#"><i class="fas fa-chart-line"></i> Investir sur le marché</a>
+                                <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Supervision <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="Matrice_de_sanction.html"><i class="fas fa-gavel"></i> Matrice des sanctions</a>
+                                <a href="#"><i class="fas fa-clipboard-list"></i> Investigation</a>
+                                <a href="#"><i class="fas fa-clipboard-list"></i> Inspection</a>
+                                <a href="collecte_fond_FI.html"><i class="fas fa-hand-holding-usd"></i> Collecte des fonds FIC</a>
+                                <a href="#"><i class="fas fa-clipboard-list"></i> Gestion de plainte</a>
+                                <a href="#"><i class="fas fa-pen"></i> Déposer une plainte</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE WRAPPER -->
+    <div class="page-wrapper">
+        <!-- Sidebar -->
+        <div class="quick-access-sidebar">
+            <div class="quick-links">
+                <h3><i class="fas fa-link"></i> Accès Rapide</h3>
+                <a href="#article"><i class="fas fa-newspaper"></i> Structure des frais</a>
+                <a href="Matrice_de_sanction.html"><i class="fas fa-gavel"></i> Matrice des sanctions</a>
+                <a href="collecte_fond_FI.html"><i class="fas fa-hand-holding-usd"></i> Collecte des fonds FIC</a>
+                <a href="#"><i class="fas fa-chart-bar"></i> Statistiques</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Nous contacter</a>
+            </div>
+            
+            <h3><i class="fas fa-chart-line"></i> Données Rapides</h3>
+            <div class="quick-stats">
+                <div class="quick-stat-item">
+                    <div class="quick-stat-value"> .... </div>
+                    <div class="quick-stat-label">Investisseurs</div>
+                </div>
+                <div class="quick-stat-item">
+                    <div class="quick-stat-value"> .... </div>
+                    <div class="quick-stat-label">Courtiers</div>
+                </div>
+                <div class="quick-stat-item">
+                    <div class="quick-stat-value">...</div>
+                    <div class="quick-stat-label">Sociétés</div>
+                </div>
+                <div class="quick-stat-item">
+                    <div class="quick-stat-value">....</div>
+                    <div class="quick-stat-label">Émetteurs</div>
+                </div>
+                <div class="quick-stat-item">
+                    <div class="quick-stat-value">3.10%</div>
+                    <div class="quick-stat-label">Taux interbancaire</div>
+                </div>
+                <div class="quick-stat-item">
+                    <div class="quick-stat-value">10.00%</div>
+                    <div class="quick-stat-label">Taux Directeur</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-date">
+                <p>Mise à jour: <span id="sidebarDate"></span></p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="article-section" id="article">
+                <div class="container">
+                    <div class="article-container">
+                        <div class="article-header">
+                            <h1 class="article-title">Structure des Frais pour les Acteurs du Marché des Capitaux du Burundi</h1>
+                            
+                            <div class="article-meta">
+                                <div class="article-meta-item">
+                                    <i class="far fa-calendar"></i>
+                                    <span>30 Octobre 2025</span>
+                                </div>
+                                <div class="article-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bujumbura, Burundi</span>
+                                </div>
+                                <div class="article-meta-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>ARMC Communication</span>
+                                </div>
+                                <div class="article-meta-item">
+                                    <i class="fas fa-tag"></i>
+                                    <span>Circulaire N° 002/2025</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-featured-image">
+                                <img src="https://via.placeholder.com/800x400/006400/ffffff?text=ARMC+Structure+des+Frais+2025" alt="Structure des frais ARMC">
+                                <p class="image-caption">La nouvelle structure tarifaire pour les acteurs du marché des capitaux</p>
+                            </div>
+                        </div>
+                        
+                        <div class="article-body">
+                            <p><strong>BUJUMBURA, octobre 2025</strong> – L'Autorité de Régulation du Marché des Capitaux du Burundi (ARMC) a publié la <strong>Circulaire N° 002/2025</strong> portant structure des frais applicables aux acteurs du marché des capitaux. Cette nouvelle réglementation, entrée en vigueur le 30 octobre 2025, établit un cadre tarifaire transparent et uniforme pour l'ensemble des intervenants du marché financier burundais.</p>
+                            
+                            <a href="Structur_frais.pdf" class="download-link"><i class="fas fa-download"></i> Télécharger le document original (PDF)</a>
+                            
+                            <div class="warning-box">
+                                <h3>💡 Important pour les Acteurs du Marché</h3>
+                                <p>La redevance annuelle doit être payée 30 jours avant l'expiration de la licence. Les frais d'analyse des dossiers sont non remboursables, quel que soit le résultat de la demande.</p>
+                            </div>
+                            
+                            <h3>Sept Catégories de Frais Définies</h3>
+                            
+                            <p>La circulaire identifie sept types de frais principaux qui s'appliqueront à tous les acteurs agréés ou autorisés à exercer sur le marché des capitaux :</p>
+                            
+                            <ul>
+                                <li><strong>Frais d'évaluation du prospectus d'émission</strong></li>
+                                <li><strong>Frais d'analyse des dossiers (non remboursables)</strong></li>
+                                <li><strong>Frais d'agrément, d'autorisation et de modification d'agrément</strong></li>
+                                <li><strong>Frais de redevance annuelle (ou renouvellement)</strong></li>
+                                <li><strong>Frais de supervision</strong></li>
+                                <li><strong>Frais sur les transactions effectuées sur le marché</strong></li>
+                                <li><strong>Frais d'indemnisation des investisseurs</strong></li>
+                            </ul>
+                            
+                            <h3>Structure Tarifaire pour les Émetteurs</h3>
+                            
+                            <p>Les émetteurs de titres sur le marché des capitaux burundais seront soumis aux frais suivants :</p>
+                            
+                            <table class="fees-table">
+                                <thead>
+                                    <tr>
+                                        <th>Type de Frais</th>
+                                        <th>Nationaux (BIF)</th>
+                                        <th>Étrangers (USD)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fee-medium">
+                                        <td><strong>Évaluation du prospectus</strong><br>Jusqu'à 100 milliards BIF</td>
+                                        <td>0,05% (min. 5M BIF)</td>
+                                        <td>0,05% (min. 2 500 USD)</td>
+                                    </tr>
+                                    <tr class="fee-medium">
+                                        <td><strong>Évaluation du prospectus</strong><br>Plus de 100 milliards BIF</td>
+                                        <td>0,05% du montant</td>
+                                        <td>0,05% du montant</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3>Frais Applicables aux Intermédiaires du Marché</h3>
+                            
+                            <h4>Bourse des Valeurs Mobilières</h4>
+                            
+                            <table class="fees-table">
+                                <thead>
+                                    <tr>
+                                        <th>Type de Frais</th>
+                                        <th>Nationaux (BIF)</th>
+                                        <th>Étrangers (USD)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fee-medium">
+                                        <td>Analyse du dossier</td>
+                                        <td>0,05% (min. 2M BIF)</td>
+                                        <td>0,05% (min. 1 000 USD)</td>
+                                    </tr>
+                                    <tr class="fee-high">
+                                        <td>Octroi d'agrément</td>
+                                        <td>10 000 000</td>
+                                        <td>6 000</td>
+                                    </tr>
+                                    <tr class="fee-medium">
+                                        <td>Redevance annuelle</td>
+                                        <td>5 000 000</td>
+                                        <td>4 000</td>
+                                    </tr>
+                                    <tr class="fee-low">
+                                        <td>Modification d'agrément</td>
+                                        <td>1 000 000</td>
+                                        <td>1 000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="highlight">
+                                <h4>📊 Frais de Supervision</h4>
+                                <p>Tous les intermédiaires sont soumis à des frais de supervision calculés à <strong>0,5% du résultat net annuel</strong>, avec un minimum de 2 500 000 BIF pour les nationaux et 1 000 USD pour les étrangers.</p>
+                            </div>
+                            
+                            <h4>Comparatif des Frais d'Agrément par Catégorie</h4>
+                            
+                            <table class="fees-table">
+                                <thead>
+                                    <tr>
+                                        <th>Type d'Intermédiaire</th>
+                                        <th>Agrément Nationaux (BIF)</th>
+                                        <th>Agrément Étrangers (USD)</th>
+                                        <th>Redevance Annuelle (BIF)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fee-high">
+                                        <td><strong>Bourse des Valeurs</strong></td>
+                                        <td>10 000 000</td>
+                                        <td>6 000</td>
+                                        <td>5 000 000</td>
+                                    </tr>
+                                    <tr class="fee-high">
+                                        <td><strong>Banque d'Investissement</strong></td>
+                                        <td>10 000 000</td>
+                                        <td>6 000</td>
+                                        <td>5 000 000</td>
+                                    </tr>
+                                    <tr class="fee-medium">
+                                        <td><strong>Courtiers/Négociants</strong></td>
+                                        <td>5 000 000</td>
+                                        <td>5 000</td>
+                                        <td>2 500 000</td>
+                                    </tr>
+                                    <tr class="fee-medium">
+                                        <td><strong>Gestionnaires d'Investissement</strong></td>
+                                        <td>5 000 000</td>
+                                        <td>5 000</td>
+                                        <td>2 500 000</td>
+                                    </tr>
+                                    <tr class="fee-low">
+                                        <td><strong>Conseillers en Investissement</strong></td>
+                                        <td>3 000 000</td>
+                                        <td>3 000</td>
+                                        <td>1 500 000</td>
+                                    </tr>
+                                    <tr class="fee-low">
+                                        <td><strong>Agences de Notation</strong></td>
+                                        <td>3 000 000</td>
+                                        <td>3 000</td>
+                                        <td>1 500 000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3>Frais sur les Transactions et Indemnisation</h3>
+                            
+                            <ul>
+                                <li><strong>Frais sur les transactions :</strong> Actions et Obligations : 0,05% pour vendeur et acheteur</li>
+                                <li><strong>Fonds d'indemnisation :</strong> Actions et Obligations : 0,02% pour vendeur et acheteur</li>
+                            </ul>
+                            
+                            <h3>Modalités de Paiement et Délais</h3>
+                            
+                            <p>Conformément à l'article 4 de la circulaire :</p>
+                            
+                            <ul>
+                                <li>La <strong>redevance annuelle</strong> doit être payée <strong>30 jours avant l'expiration de la licence</strong></li>
+                                <li>Tous les frais sont payables par <strong>versement sur les comptes bancaires de l'ARMC</strong></li>
+                                <li>Les <strong>frais d'analyse des dossiers sont non remboursables</strong>, indépendamment du résultat de la demande</li>
+                            </ul>
+                            
+                            <h3>Impact et Perspectives</h3>
+                            
+                            <p>Cette nouvelle structure tarifaire représente une étape importante dans la professionnalisation du marché des capitaux burundais. En établissant des frais clairs et prévisibles, l'ARMC vise à :</p>
+                            
+                            <ul>
+                                <li>Assurer la pérennité financière de l'autorité de régulation</li>
+                                <li>Créer un environnement transparent pour tous les acteurs</li>
+                                <li>Encourager le développement d'un marché des capitaux robuste</li>
+                                <li>Protéger les investisseurs grâce au fonds d'indemnisation</li>
+                            </ul>
+                            
+                            <div class="highlight">
+                                <h4>📋 Documents de Référence</h4>
+                                <p>La circulaire s'appuie sur le cadre légal existant, notamment la Loi n° 1/05 du 27 février 2019 et la Loi n° 1/08 du 28 octobre 2020, ainsi que sur les différents règlements de l'ARMC adoptés en 2024.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="article-footer">
+                            <div class="tags">
+                                <span class="tag">Structure des frais</span>
+                                <span class="tag">Tarification</span>
+                                <span class="tag">Agrément</span>
+                                <span class="tag">Redevance</span>
+                                <span class="tag">Marché des capitaux</span>
+                                <span class="tag">ARMC</span>
+                                <span class="tag">Circulaire 002/2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation entre articles -->
+                    <div class="article-navigation">
+                        <a href="collecte_fond_FI.html" class="nav-button" id="prevArticle">
+                            <i class="fas fa-arrow-left"></i> Article précédent
+                        </a>
+                        
+                        <div class="publication-counter">
+                            <span>2/3</span>
+                            <i class="fas fa-book-open"></i> Publications réglementaires
+                        </div>
+                        
+                        <a href="Matrice_de_sanction.html" class="nav-button" id="nextArticle">
+                            Article suivant <i class="fas fa-arrow-right"></i>
+                        </a>
+                        
+                        <a href="index.html" class="nav-button back-home" id="backToHome">
+                            <i class="fas fa-home"></i> Retour à l'accueil
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>À propos de l'ARMC</h3>
+                    <ul>
+                        <li><p>L'Autorité de Régulation du Marché des Capitaux du Burundi est l'organisme de régulation responsable de la supervision et du développement des marchés de capitaux au Burundi.</p></li>
+                        <li> 
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a> 
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="#">Ministère des Finances</a></li>
+                        <li><a href="#">Banque de la République du Burundi</a></li>
+                        <li><a href="#">Autorité de Régulation des Marchés Publics</a></li>
+                        <li><a href="#">ARCT</a></li>
+                        <li><a href="#">SETIC</a></li>
+                        <li><a href="#">FMI</a></li>
+                        <li><a href="#">Banque Mondiale</a></li>
+                        <li><a href="#">Portail du Gouvernement</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="Structure_des_frais.html">Structure des frais</a></li>
+                        <li><a href="Matrice_de_sanction.html">Matrice des sanctions</a></li>
+                        <li><a href="collecte_fond_FI.html">Collecte des fonds FIC</a></li>
+                        <li><a href="#">Formulaires & Demandes</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Plan du site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contactez-nous</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>51, Blvd du Japon, Immeuble MINFIN, Bujumbura</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+257 22 21 17 12</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>secretariatdirection@armc.bi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lu-Ve: 07h30 - 17h30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Autorité de Régulation du Marché des Capitaux du Burundi. Tous droits réservés. | Circulaire N° 002/2025 portant structure des frais</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fonction pour afficher la date actuelle
+            function updateCurrentDate() {
+                const currentDate = new Date();
+                const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+                const formattedDate = currentDate.toLocaleDateString('fr-FR', options);
+                const sidebarDateElement = document.getElementById('sidebarDate');
+                
+                if (sidebarDateElement) {
+                    sidebarDateElement.innerHTML = formattedDate;
+                }
+            }
+            
+            // Contrôle de la bannière défilante
+            const marqueeContent = document.getElementById('marqueeContent');
+            const marqueeControl = document.getElementById('marqueeControl');
+            if (marqueeControl) {
+                const controlIcon = marqueeControl.querySelector('i');
+                let isPaused = false;
+                
+                marqueeControl.addEventListener('click', function() {
+                    if (isPaused) {
+                        marqueeContent.style.animationPlayState = 'running';
+                        controlIcon.className = 'fas fa-pause';
+                        marqueeControl.title = 'Pause';
+                    } else {
+                        marqueeContent.style.animationPlayState = 'paused';
+                        controlIcon.className = 'fas fa-play';
+                        marqueeControl.title = 'Play';
+                    }
+                    isPaused = !isPaused;
+                });
+            }
+            
+            updateCurrentDate();
+        });
+    </script>
+</body>
+</html>

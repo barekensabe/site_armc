@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Historique de l'Autorité de Régulation du Marché des Capitaux </title>
+	  <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+    <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+
+    <style>			
+        :root {
+			 .dropbtn {
+				  background-color: #009242;
+				  color: white;
+				  padding: 10px;
+				  width: auto-fit;
+				  border-radius: 3px;
+				  font-size: 18px;
+				  font-weight:600;
+				  border: none;
+				    }
+			  
+			.search-btn {
+				background: none;
+				border: none;
+				font-size: 1.2rem;
+				color:var(--transition);;
+				cursor: pointer;
+				margin-left: 5px;
+				transition: var(--transition);
+			}		  
+		
+            --primary: #006400;       /* Dark Green */
+            --secondary: #004d00;      /* Deep Forest Green */
+            --accent: #32CD32;         /* Lime Green */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --white: #ffffff;
+            --light-green: #e8f5e9;
+     }
+<!------   												----------------------->
+		.dropdown {
+		  position: relative;
+		  display: inline-block;
+	
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f1f1f1;
+		  min-width: 150px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+
+		.dropdown-content a {
+		  color: #2E2C30;
+		  font-weight:400;
+		  padding: 5px 5px;
+		  text-decoration: none;
+		  display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #D1E9E0;}
+		.dropdown:hover .dropdown-content {display: block;}
+		.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+<!-----  _______					_______	---->
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 96%;
+            max-width: auto-fit;
+			font-family:.body;
+			font-size:17;
+            margin: auto;
+            padding: 0px 0px;
+        }
+   .cont_article {
+            width: 80%;
+            max-width: auto-fit;
+			font-family:inherit;
+			font-size:17;
+            margin: 0 auto;
+            padding: 0 0px;
+        }
+
+
+           /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 2px 0;
+            font-size: 1.3 rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+        }
+        .social-icons a {
+            color: var(--white);
+            margin-left: 15px;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: left;
+        }
+        .logo img {
+            height: 120px;
+            margin-right: 0px;
+			margin-left: 0px;
+		
+        }
+
+        .logo-text {
+            text-transform: uppercase;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
+       }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        nav ul {
+			font-size: 22px;
+			display: flex;   
+		    list-style: none;
+		}
+
+        nav ul li {
+            margin-left: 0px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 1000;
+       		padding: 10px 1px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+		nav ul li a:hover,
+			nav ul li a.active {
+			color: var(--primary);
+		}
+
+		nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+       .search-btn:hover {
+            color: var(--primary);
+        }
+       
+        .article-header {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5px 0;
+            margin-bottom: 5px;
+        }
+        
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .article-content {
+            padding: 0 20px;
+        }
+        
+        .article-content h2 {
+            color: var(--secondary);
+            margin-top: 40px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+        
+        .article-content h3 {
+            color: var(--primary);
+            margin-top: 30px;
+        }
+        
+        .highlight-box {
+            background-color: var(--light-green);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .mission-vision {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-green);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .values-list {
+            columns: 2;
+            column-gap: 30px;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .member-card {
+            background-color: var(--light-green);
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .values-list {
+                columns: 1;
+            }
+        }		
+
+     
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 10px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-bottom: auto;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 6px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            padding-left: 10px;
+        }
+
+        .contact-list li {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .contact-list i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-right: 5px;
+            min-width: 25px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 1.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+   </style>
+   
+   
+
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="contact-info">			
+				<span><i class="fas fa-phone"></i> +257 22 27 77 00 </span>
+                <span><i class="fas fa-envelope"></i> secretariatdirection@armc.bi</span>
+                <span><i class="fas fa-map-marker-alt"></i> Bujumbura, Burundi</span>	
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+				</div>
+           </div>
+        </div>
+        
+		<div class="container">
+            <div class="main-header">
+                <div class="logo">
+					<img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\LOGOARMC.jpg" alt="CMA Logo">  
+				</div>			
+					<nav>
+						<ul>
+							<li><a href="#" class="active">Home</a></li>
+						</ul>
+					</nav>	
+							
+				<div class="dropdown">
+				  <button class="dropbtn">A propos </button>
+				  <div class="dropdown-content">
+					<a href="#">Historique </a>
+					<a href="#">Loi et Reglements regissant l'ARMC </a>
+					<a href="#">Organigramme de l'ARMC </a>
+				  </div>
+				</div>
+				<div class="dropdown">
+				  <button class="dropbtn">Licences</button>
+				  <div class="dropdown-content">
+					<a href="#">Type de Licence </a>
+					<a href="#">Etapes d'obtention d'une licence</a>
+					<a href="#">Verifiez votre licence </a>
+					<a href="#">Tous les formulaires </a>
+				  </div>
+				</div>
+				  <div class="dropdown">
+				  <button class="dropbtn">Acteurs</button>
+				  <div class="dropdown-content">
+					<a href="#">Bourse</a>
+					<a href="#">Intermediaires </a>
+					<a href="#">Courtiers </a>
+				  </div>
+				</div>	
+				  <div class="dropdown">
+				  <button class="dropbtn">Regulations</button>
+				  <div class="dropdown-content">
+					<a href="#">Réglementations </a>
+					<a href="#">Décisions </a>
+					<a href="#">Instruments financiers </a>
+				  </div>
+				</div>				
+				
+			<div class="dropdown">
+				  <button class="dropbtn">Publications</button>
+				  <div class="dropdown-content">
+					<a href="#">Communiques</a>
+					<a href="#"> Evenements</a>
+					<a href="#">Rapports</a>
+				  </div>
+				</div>			
+				
+				<div class="dropdown">
+				  <button class="dropbtn">Edufinance</button>
+  				  <div class="dropdown-content">
+					<a href="#">Comprendre le marche financier </a>
+					<a href="#">Nos videos </a>
+					<a href="#">Telecharger </a>
+				  </div>
+				</div>				
+				
+				<div class="dropdown">
+				  <button class="dropbtn">Contact</button>
+					  <div class="dropdown-content">
+						<a href="#"> S'inscrire </a>
+						<a href="#">Soumettre une plainte </a>
+						<a href="https://tausi.afriregister.com:2083/">Mail</a>
+					</div>
+				</div>	
+				
+				<div class="dropdown">
+					<button class="search-btn"><i class="fas fa-search"></i></button>
+				  </div>
+				</div>
+						
+            </div>
+        </div>
+    </header>
+
+    <div class="article-header">
+        <div class="cont_article">
+            <h1>Genèse du Marché des Capitaux du Burundi</h1>
+            <p>L'historique du développement du marché financier burundais et de l'ARMC</p>
+        </div>
+    </div>
+
+    <div class="cont_article">
+        <!-- Paste the entire article content here -->
+        <p>Depuis la signature du Traité établissant la Communauté de l'Afrique de l'Est (EAC) en 2007, la République du Burundi s'est engagée dans un processus de réformes visant à moderniser son secteur financier et à renforcer son environnement des affaires. Dans ce cadre, des initiatives ont été entreprises pour le développement du marché des capitaux burundais, en accord avec les objectifs de l'EAC en matière d'intégration financière régionale.</p>
+        
+        <h2>Historique du Développement</h2>
+        
+        <p>En 2009, le ministère des Finances a mis en place un Comité National chargé d'élaborer et de mettre en œuvre un Plan de Développement du Marché Financier du Burundi.</p>
+        
+        <!-- Continue with the rest of your article content -->
+        <!-- ... -->
+        
+        <div class="highlight-box">
+            <h3>2016-2020: Mise en œuvre par la BRB</h3>
+            <p>À partir de 2016, la Banque de la République du Burundi (BRB) a été mandatée pour poursuivre la mise en œuvre du marché des capitaux. Afin de bénéficier d'une expertise technique, la Banque Centrale du Malawi a envoyé deux spécialistes du secteur pour appuyer l'opérationnalisation du marché. Grâce à cette assistance, deux unités spécialisées ont été créées au sein de la BRB :</p>
+            <ul>
+                <li>Une unité chargée de l'opérationnalisation de la Bourse des Valeurs Mobilières.</li>
+                <li>Une unité responsable de la régulation et de la supervision du marché des capitaux.</li>
+            </ul>
+        </div>
+        
+              <p>En 2009, le ministère des Finances a mis en place un Comité National chargé d'élaborer et de mettre en œuvre un Plan de Développement du Marché Financier du Burundi.</p>
+        
+        <p>La Banque de la République du Burundi (BRB), avec le soutien financier de la Banque Mondiale via le projet PAGE-PSD, a recruté en 2011 le cabinet HORUS DEVELOPMENT FINANCE pour élaborer un Plan de Développement du Marché Financier. Ce cabinet a analysé l'organisation du secteur financier burundais, évalué la faisabilité de la création d'un marché boursier et proposé un plan d'action pour sa mise en œuvre. Ce plan a été adopté par le Conseil des ministres les 20 et 21 juin 2012.</p>
+        
+        <p>Avec l'appui du Secrétariat Général de la CEA, ce Comité a sollicité, en 2015, les services du cabinet international Cadogan Financial Ltd afin de mettre en place le cadre légal et réglementaire du marché des capitaux. Ces travaux ont abouti en 2016 à la finalisation des bases juridiques nécessaires à la création de ce marché.</p>
+        
+        <div class="highlight-box">
+            <h3>2016-2020: Mise en œuvre par la BRB</h3>
+            <p>À partir de 2016, la Banque de la République du Burundi (BRB) a été mandatée pour poursuivre la mise en œuvre du marché des capitaux. Afin de bénéficier d'une expertise technique, la Banque Centrale du Malawi a envoyé deux spécialistes du secteur pour appuyer l'opérationnalisation du marché. Grâce à cette assistance, deux unités spécialisées ont été créées au sein de la BRB :</p>
+            <ul>
+                <li>Une unité chargée de l'opérationnalisation de la Bourse des Valeurs Mobilières.</li>
+                <li>Une unité responsable de la régulation et de la supervision du marché des capitaux.</li>
+            </ul>
+        </div>
+        
+        <p>De 2017 à 2020, avec l'appui de la Communauté de l'Afrique de l'Est via le projet FSDRP (Financial Sector Development and Regionalisation Project), des consultations nationales ont été menées par la BRB sur le cadre légal et réglementaire. En parallèle, des ateliers de formation ont été organisés par des experts régionaux afin d'appuyer la mise en place du marché des capitaux burundais. Ces efforts ont permis à la BRB de rédiger et finaliser plusieurs projets de lois qui ont ensuite été introduits dans le circuit de promulgation :</p>
+        
+        <ul>
+            <li>Loi n°1/05 du 27 février 2019, régissant le marché des capitaux du Burundi.</li>
+            <li>Loi n°1/08 du 29 octobre 2020, établissant l'Autorité de Régulation du Marché des Capitaux du Burundi (ARMC).</li>
+        </ul>
+        
+        <p>De plus, plusieurs projets de textes d'application de ces lois ont été élaborés notamment des règlements spécifiques encadrant le fonctionnement du marché des capitaux.</p>
+        
+        <h2>Opérationnalisation de l'ARMC</h2>
+        
+        <p>En 2021, le Conseil d'Administration de l'ARMC a été nommé par Décret n°100/98 du 20 août 2021 et a immédiatement engagé le processus d'opérationnalisation de l'Autorité.</p>
+        
+        <p>Cela s'est traduit par :</p>
+        <ul>
+            <li>La validation des textes réglementaires encadrant le marché des capitaux.</li>
+            <li>Le lancement du processus de recrutement du Directeur Général de l'ARMC, finalisé en août 2022.</li>
+        </ul>
+        
+        <p>Le 11 octobre 2023, le premier Directeur Général de l'ARMC a été officiellement nommé par Décret présidentiel n°100/210, marquant ainsi une étape clé dans l'instauration d'un marché des capitaux fonctionnel et régulé au Burundi.</p>
+        
+        <p>Ces réformes témoignent de l'engagement du Burundi à favoriser l'intégration financière régionale et à offrir un cadre propice au développement des investissements financiers.</p>
+        
+        <div class="mission-vision">
+            <div class="card">
+                <h3>Mission de l'ARMC</h3>
+                <p>« Réglementer et développer, au Burundi, Un Marché des Capitaux ordonné, équitable, transparent et efficient »</p>
+            </div>
+            
+            <div class="card">
+                <h3>Vision de l'ARMC</h3>
+                <p>« Être un régulateur innovant d'un marché robuste et compétitif à l'échelle régionale et mondiale. »</p>
+            </div>
+        </div>
+        
+        <h3>Valeurs de l'ARMC</h3>
+        <ul class="values-list">
+            <li>Justice économique</li>
+            <li>Intégrité</li>
+            <li>Equité</li>
+            <li>Transparence</li>
+            <li>Confiance</li>
+        </ul>
+        
+        <h3>Objectifs assignés à l'ARMC</h3>
+        <ul>
+            <li>Protéger les investisseurs</li>
+            <li>Garantir l'équité, l'efficacité et la transparence du marché des capitaux</li>
+            <li>Réduire le risque systémique</li>
+        </ul>
+        
+        <div class="members-section">
+            <h2>Les Membres du Conseil d'Administration de l'ARMC</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-name">Monsieur Charles NDIZEYE</div>
+                    <div class="member-position">Président</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Madame Pélagie NYANDWI</div>
+                    <div class="member-position">Vice-Président</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Monsieur Arsène MUGENZI</div>
+                    <div class="member-position">Secrétaire</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Monsieur Frédéric MANIRAMBONA</div>
+                    <div class="member-position">Membre</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Dr. Frédéric NIMUBONA</div>
+                    <div class="member-position">Membre</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Maître Ida Djuma</div>
+                    <div class="member-position">Membre</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Monsieur Boaz NIMPE</div>
+                    <div class="member-position">Membre</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="members-section">
+            <h2>Les membres de la Direction Générale de l'ARMC</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-name">Dr. Arsène MUGENZI</div>
+                    <div class="member-position">Directeur Général</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Monsieur Abdon de Dieu NTWARI</div>
+                    <div class="member-position">Directeur Administratif et Financier</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	  
+	  
+	  
+	  
+	  
+    </div>
+	
+	<div> _ </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container1">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About CMA</h3>
+                    <p>The Capital Market Authority of Burundi is the regulatory body responsible for overseeing and developing the capital markets in Burundi.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+           <div class="footer-col">
+                    <h3> Liens utiles </h3>
+					 <ul>
+                        <li><a href="#">Ministère des Finances</a></li>
+                        <li><a href="#">Banque de la République du Burundi </a></li>
+                        <li><a href="#">Autorité de Régulation des Marchés Publics </a></li>
+                        <li><a href="#">ARCT</a></li>
+                        <li><a href="#">SETIC</a></li>
+                        <li><a href="#">FMI</a></li>
+						<li><a href="#">Banque Mondiale</a></li>
+						<li><a href="#">Portail du Gouvernement</a></li>  
+					 </ul>						
+                </div>
+		   </ul>				
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Market Data</a></li>
+                        <li><a href="#">Forms & Applications</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Glossary</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. de l'Industrie No. 25, Bujumbura, Burundi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+257 22 27 77 77</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>secretariatdirection@armc.bi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lu-Ve: 07h:30 - 17h:30 </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 Capital Market Authority of Burundi. All Rights Reserved. | Data sourced from Bank of the Republic of Burundi (BRB), INSBU</p>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>

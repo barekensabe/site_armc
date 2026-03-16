@@ -1,0 +1,7 @@
+/* .btn-img { 	padding:0 !important; 	border: 0 !important; 	background: none !important; } button.active { 	background-color:#EEE !important; } .btn:focus { 	border:0 !important; } .view-list-of-combinations #edit-num1-wrapper, .view-list-of-combinations #edit-num2-wrapper, .view-list-of-combinations #edit-num3-wrapper, .view-list-of-combinations #edit-num4-wrapper, .view-list-of-combinations #edit-num5-wrapper, .view-list-of-combinations #edit-num6-wrapper  { 	display:none; } .view-list-of-combinations span.ball.inline {     display: inline-block;     width: 30px;     text-align: center;     line-height: 30px;     background-color: #C7001E;     color: white;     margin-right: 5px;     border-radius: 50%; } .view-list-of-combinations span.ball.inline.highlighted {     background-color: #1E8401; } #exchange-hp-options { 	display:none !important; } */
+@media screen and (min-width: 980px) {
+	#dealth_rate_hp {
+		position:relative;
+		min-width:242px;
+	}
+}

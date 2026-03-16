@@ -1,0 +1,68 @@
+/* Ritasha - Virtual museum for security features of bank notes */
+/*.secFeatures{
+	position: relative;
+	top: 150px;
+	left: 20px;
+}
+ .secFeatures img{
+	-webkit-animation: fadeIn 3s infinite; 
+    animation: fadeIn 3s infinite;
+} */
+.securityFeatures h3{
+	margin-top: 0px;
+}
+.securityFeatures ul.special-feature li{
+	list-style: none;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+/*.securityFeatures ul.special-feature li:last-child{
+	padding-bottom: 0px;
+}*/
+.firstDisp, .banknote{
+	float: left;
+	padding: 0 35px 20px 0;
+}
+.view-virtual-museum .view-content{
+	clear: both;
+}
+.noteTransition{
+	-webkit-animation: fadeIn 3s;
+    animation: fadeIn 3s;
+}
+.secDesc{
+	clear: both;
+}
+.view-virtual-museum .secDesc .description{
+	float: right;
+}
+.view-virtual-museum .secDesc .feature_img{
+	width: 80px;
+	float: left;
+}
+
+.vco-storyjs ol, .vco-storyjs ul 
+{
+	list-style:disc !important;
+	color: black;
+}
+img#firstImgFront, img#firstImgBack {
+    width: 100%;
+}
+.securityFeatures li {
+    display: block;
+    float: left;
+    padding: 6px;
+    border: 1px #677e8c solid;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+ul.special-feature {
+    display: block;
+    width: 89%;
+}
+.turnNote img {
+    border: 3px solid;
+    width: 72px;
+    margin-left: 3%;
+}

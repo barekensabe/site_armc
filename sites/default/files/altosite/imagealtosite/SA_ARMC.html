@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> ARMC | Autorité de Régulation du Marché des Capitaux - Capital Market Authority of Burundi</title>
+	  <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+    <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+
+    <style>			
+        :root {
+			 .dropbtn {
+				  background-color: #009242;
+				  color: white;
+				  padding: 10px;
+				  width: auto-fit;
+				  border-radius: 3px;
+				  font-size: 18px;
+				  font-weight:600;
+				  border: none;
+				    }
+			  
+			.search-btn {
+				background: none;
+				border: none;
+				font-size: 1.2rem;
+				color:var(--transition);;
+				cursor: pointer;
+				margin-left: 5px;
+				transition: var(--transition);
+			}
+
+            --primary: #006400;       /* Dark Green */
+            --secondary: #004d00;      /* Deep Forest Green */
+            --accent: #32CD32;         /* Lime Green */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --white: #ffffff;
+            --light-green: #e8f5e9;
+		     
+     }
+<!------   												----------------------->
+		.dropdown {
+		  position: relative;
+		  display: inline-block;
+	
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f1f1f1;
+		  min-width: 150px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+
+		.dropdown-content a {
+		  color: #2E2C30;
+		  font-weight:400;
+		  padding: 5px 5px;
+		  text-decoration: none;
+		  display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #D1E9E0;}
+		.dropdown:hover .dropdown-content {display: block;}
+		.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+<!-----  _______					_______	---->
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 94%;
+            max-width: auto-fit;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+           /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 2px 0;
+            font-size: 1.3 rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+        }
+        .social-icons a {
+            color: var(--white);
+            margin-left: 15px;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: left;
+        }
+        .logo img {
+            height: 120px;
+            margin-right: 0px;
+			margin-left: 0px;
+		
+        }
+
+        .logo-text {
+            text-transform: uppercase;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
+       }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        nav ul {
+			font-size: 22px;
+			display: flex;   
+		    list-style: none;
+		}
+
+        nav ul li {
+            margin-left: 0px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 1000;
+       		padding: 7px 1px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+		nav ul li a:hover,
+			nav ul li a.active {
+			color: var(--primary);
+		}
+
+		nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+       .search-btn:hover {
+            color: var(--primary);
+        }     
+
+        /* Sections */
+        section {
+            padding: 5px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+		
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 10px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-bottom: auto;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 6px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            padding-left: 10px;
+        }
+
+        .contact-list li {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .contact-list i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-right: 5px;
+            min-width: 25px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 1.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+    </style>
+	
+<style>
+    /* Add this CSS to your existing styles */
+    .intermediaries {
+        padding: 40px 0;
+        background-color: var(--light-green);
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+        margin: 30px 0;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    
+    .intermediaries-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+    }
+    
+    .intermediaries-table th,
+    .intermediaries-table td {
+        padding: 15px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    
+    .intermediaries-table th {
+        background-color: var(--primary);
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+    
+    .intermediaries-table tr:nth-child(even) {
+        background-color: rgba(255,255,255,0.7);
+    }
+    
+    .intermediaries-table tr:nth-child(odd) {
+        background-color: white;
+    }
+    
+    .intermediaries-table tr:hover {
+        background-color: rgba(50,205,50,0.1);
+    }
+    
+    @media (max-width: 768px) {
+        .intermediaries-table th,
+        .intermediaries-table td {
+            padding: 10px 8px;
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="contact-info">			
+				<span><i class="fas fa-phone"></i> +257 22 27 77 00 </span>
+                <span><i class="fas fa-envelope"></i> secretariatdirection@armc.bi</span>
+                <span><i class="fas fa-map-marker-alt"></i> Bujumbura, Burundi</span>	
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+				</div>
+           </div>
+        </div>
+        
+		<div class="container">
+            <div class="main-header">
+                <div class="logo">
+					<img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\LOGOARMC.jpg" alt="CMA Logo">  
+				</div>			
+					<nav>
+						<ul>
+							<li><a href="#" class="active">Home</a></li>
+						</ul>
+					</nav>	
+							
+				<div class="dropdown">
+				  <button class="dropbtn">A propos </button>
+				  <div class="dropdown-content">
+					<a href="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\Historique ARMC.html">Historique </a>
+					<a href="#">Loi et Reglements regissant l'ARMC </a>
+					<a href="#">Organigramme de l'ARMC </a>
+				  </div>
+				</div>
+				<div class="dropdown">
+				  <button class="dropbtn">Licences</button>
+				  <div class="dropdown-content">
+					<a href="#">Type de Licence </a>
+					<a href="#">Etapes d'obtention d'une licence</a>
+					<a href="#">Verifiez votre licence </a>
+					<a href="#">Tous les formulaires </a>
+				  </div>
+				</div>
+				  <div class="dropdown">
+				  <button class="dropbtn">Acteurs</button>
+				  <div class="dropdown-content">
+					<a href="#">Bourse</a>
+					<a href="#">Intermediaires </a>
+					<a href="#">Courtiers </a>
+				  </div>
+				</div>	
+				  <div class="dropdown">
+				  <button class="dropbtn">Regulations</button>
+				  <div class="dropdown-content">
+					<a href="#">Réglementations </a>
+					<a href="#">Décisions </a>
+					<a href="#">Instruments financiers </a>
+				  </div>
+				</div>				
+				
+			<div class="dropdown">
+				  <button class="dropbtn">Publications</button>
+				  <div class="dropdown-content">
+					<a href="#">Communiques</a>
+					<a href="#"> Evenements</a>
+					<a href="#">Rapports</a>
+				  </div>
+				</div>			
+				
+				<div class="dropdown">
+				  <button class="dropbtn">Edufinance</button>
+  				  <div class="dropdown-content">
+					<a href="#">Comprendre le marche financier </a>
+					<a href="#">Nos videos </a>
+					<a href="#">Telecharger </a>
+				  </div>
+				</div>				
+				
+				<div class="dropdown">
+				  <button class="dropbtn">Contact</button>
+					  <div class="dropdown-content">
+						<a href="#"> S'inscrire </a>
+						<a href="#">Soumettre une plainte </a>
+						<a href="https://tausi.afriregister.com:2083/">Mail</a>
+					</div>
+				</div>	
+				
+				<div class="dropdown">
+					<button class="search-btn"><i class="fas fa-search"></i></button>
+				  </div>
+				</div>
+						
+            </div>
+        </div>
+    </header>
+<!-----------------------------------------------TABLEAU------------------------------------>
+	
+	<!-- Add this section where you want the table to appear in your site -->
+<section class="intermediaries">
+    <div class="container">
+        <div class="section-title">
+            <h2>Liste des Intermédiaires Agréés par l'ARMC</h2>
+            <p>Les acteurs agréés pour opérer sur le marché des capitaux du Burundi</p>
+        </div>
+        
+        <div class="table-responsive">
+            <table class="intermediaries-table">
+                <thead>
+                    <tr>
+                        <th>Type d'entité</th>
+                        <th>Nom de l'Entité</th>
+                        <th>Origine</th>
+                        <th>Contact</th>
+                        <th>Agrément Accordé</th>
+                        <th>Période (Échéance)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Personne Morale</td>
+                        <td>BOURSE DU BURUNDI (BSE)</td>
+                        <td>BURUNDI</td>
+                        <td>71188181</td>
+                        <td>Bourse des Valeurs Mobilières<br>Agrément Définitif (1 année) renouvelable</td>
+                        <td>Du 10-02-2025 au 9-02-2026</td>
+                    </tr>
+                    <tr>
+                        <td>Personne Morale</td>
+                        <td>ORBIT INVESTMENT BANK</td>
+                        <td>BURUNDI</td>
+                        <td>79158745</td>
+                        <td>Banque d'investissement<br>Agrément définitif (1année) Renouvelable</td>
+                        <td>Du 18-02-2025 au 17-02-2026</td>
+                    </tr>
+                    <tr>
+                        <td>Personne Morale</td>
+                        <td>BANCOBU. SM</td>
+                        <td>BURUNDI</td>
+                        <td>22206500</td>
+                        <td>Registraire<br>Agrément temporaire de six mois</td>
+                        <td>Du 08-01-2025 au 07-06-2025</td>
+                    </tr>
+                    <tr>
+                        <td>Personne Morale</td>
+                        <td>AFRICAN DREAM ASSETS s.a</td>
+                        <td>BURUNDI</td>
+                        <td>68814704</td>
+                        <td>Gestionnaire de Fonds de One Investment Fund<br>Agrément temporaire de 3 mois</td>
+                        <td>Du 18-12-2024 au 17-03-2025<br>(la demande d'agrément définitive en cours de traitement)</td>
+                    </tr>
+                    <tr>
+                        <td>Personne Morale</td>
+                        <td>BANCOBU. SM</td>
+                        <td>BURUNDI</td>
+                        <td>71575777</td>
+                        <td>Dépositaire<br>Agrément temporaire de six mois</td>
+                        <td>Du 09-12-2024 au 08-07-2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+  <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About CMA</h3>
+                    <p>The Capital Market Authority of Burundi is the regulatory body responsible for overseeing and developing the capital markets in Burundi.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+           <div class="footer-col">
+                    <h3> Liens utiles </h3>
+					 <ul>
+                        <li><a href="#">Ministère des Finances</a></li>
+                        <li><a href="#">Banque de la République du Burundi </a></li>
+                        <li><a href="#">Autorité de Régulation des Marchés Publics </a></li>
+                        <li><a href="#">ARCT</a></li>
+                        <li><a href="#">SETIC</a></li>
+                        <li><a href="#">FMI</a></li>
+						<li><a href="#">Banque Mondiale</a></li>
+						<li><a href="#">Portail du Gouvernement</a></li>  
+					 </ul>						
+                </div>
+		   </ul>				
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Market Data</a></li>
+                        <li><a href="#">Forms & Applications</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Glossary</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. de l'Industrie No. 25, Bujumbura, Burundi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+257 22 27 77 77</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>secretariatdirection@armc.bi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lu-Ve: 07h:30 - 17h:30 </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 Capital Market Authority of Burundi. All Rights Reserved. | Data sourced from Bank of the Republic of Burundi (BRB), INSBU</p>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>

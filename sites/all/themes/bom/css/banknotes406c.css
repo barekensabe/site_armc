@@ -1,0 +1,234 @@
+img.imagemaxsize {
+    width: 100%;
+}
+
+/*RS 25 NOTE*/
+
+.flip-note-25 {
+    display: block;
+    /* z-index: -30; */
+    margin-top: 50%;
+}
+.watermarkhidetext25,.watermarkhideimage25,
+.seethruhideimage25,.seethruhidetext25,
+.securityhideimage25,.securityhidetext25,
+.latenthideimage25,.latenthidetext25,
+.microhideimage25,.microhidetext25,
+.uvhideimage25,.uvhidetext25,
+.metalinkhideimage100,.metalinkhidetext100,
+.silverhideimage500,.silverhidetext500,
+.hologramhideimage2000,.hologramhidetext2000,
+.iribandhideimage100,.iribandhidetext100,
+.inkhideimage2000,.inkhidetext2000{
+    display: none;
+}
+.bttnfotoWatermark25,.bttnfotoSeethru25,.bttnfotoSecurity25,.bttnfotoLatent25,.bttnfotoMicro25,.bttnfotoUv25,.bttnfotoMetalink100,.bttnfotoIriband100,.bttnfotoSilver500,.bttnfotoSilver200,.bttnfotoHologram2000,.bttnfotoInk2000{
+    background: url(../../../../default/files/SF_OFF.png) no-repeat;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+.bttnfotoWatermark25Toggle,.bttnfotoSeethru25Toggle,.bttnfotoSecurity25Toggle,.bttnfotoLatent25Toggle,.bttnfotoMicro25Toggle,.bttnfotoUv25Toggle,.bttnfotoMetalink100Toggle,.bttnfotoIriband100Toggle,.bttnfotoSilver500Toggle,.bttnfotoHologram2000Toggle,.bttnfotoInk2000Toggle{
+    background: url(../../../../default/files/SF_ON.png) no-repeat;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.bttnfotoWatermark25 {
+    position: absolute;
+    margin-top: -24%;
+    margin-left: 88%;
+}
+.bttnfotoSeethru25 {
+    position: absolute;
+    margin-top: -9%;
+    margin-left: 90%;
+}
+.bttnfotoSecurity25 {
+    position: absolute;
+    margin-top: -28%;
+    margin-left: 54.5%;
+}
+.bttnfotoLatent25 {
+    position: absolute;
+    margin-top: -8%;
+    margin-left: 60%;
+}
+.bttnfotoMicro25 {
+    position: absolute;
+    margin-top: -48%;
+    margin-left: 30%;
+}
+.bttnfotoUv25 {
+    position: absolute;
+    margin-top: -28%;
+    margin-left: 72%;
+}
+
+.bttnfotoInk2000 {
+    position: absolute;
+    margin-top: -22%;
+    margin-left: 25%;
+}
+
+.bttnfotoMetalink100 {
+    position: absolute;
+    margin-top: -45%;
+    margin-left: 80%;
+}
+.bttnfotoIriband100 {
+    position: absolute;
+    margin-top: -25%;
+    margin-left: 50%;
+}
+
+.bttnfotoSilver500 {
+    position: absolute;
+    margin-top: -38%;
+    margin-left: 75%;
+}
+
+.bttnfotoHologram2000 {
+    position: absolute;
+    margin-top: -41%;
+    margin-left: 73%;
+}
+
+
+
+
+.desk-screen {
+	 margin-bottom:10px;
+	}
+	
+.col-sef {
+	 background:#90aec8;
+	 border-radius:0;
+	 color:#fff;
+	}
+.col-sef:hover{
+	 background:#1d4964;
+	 border-radius:0;
+	 color:#b3c2c9;
+	}
+.col-sef:active{
+     background:#1d4964;
+     border-radius:0;
+     color:#b3c2c9;
+    }
+.flip-note-25 {
+	 padding: 5px 0;
+	}
+.flip-note-25 button,
+.alldisplay25 button {
+	 background:#90aec8;
+	 color:#fff;
+	 border:0;
+	 padding:5px inherit;
+	}
+.flip-note-25 button:hover,
+.alldisplay25 button:hover,
+.flip-note-25 button:active,
+.alldisplay25 button:active {
+	 background:#1d4964;
+	}
+.alldisplay25 {
+    clear: left;
+    padding-top: 10px;
+}
+
+.alldisplay25 button {
+	 margin-bottom:5px;
+	}
+
+.alldisplay25 {
+	 clear:left;
+	}
+.displayinfo img {
+	 padding:5px 0 10px 0;
+	}
+
+#main25 .rs25,
+#main50 .rs50,
+#main100 .rs100,
+#main200 .rs200,
+#main500 .rs500,
+#main1000 .rs1000,
+#main2000 .rs2000 {
+	 background:#1d4964;
+	 border-radius:0;
+	 color:#b3c2c9;
+	}
+.alldisplay25  button.active{
+    background:#1d4964;
+     border-radius:0;
+     color:#b3c2c9;
+}
+.flip-note-25 button.active{
+    background:#1d4964;
+     border-radius:0;
+     color:#b3c2c9;
+}
+	
+@media (min-width: 980px) {
+   .col-sef {
+	 width:13.6%;
+    }
+	.flip-note-25 button {
+		 width: 49.6%;
+    }
+	.alldisplay25 button {
+	 width: 16%;
+	 height:50px;
+	}
+	.alldisplay25 button.micro25 {
+		 float:left;
+		}
+	.alldisplay25 button.iriband100 {
+		position: absolute;
+		margin-left: 4px;
+	}
+	.alldisplay25 button.watermark25 {
+    margin-left: 3px;
+    }	
+
+}
+
+@media (max-width: 900px) {
+   .col-sef {
+	 width:100%;
+	 text-align:left;
+	 margin-bottom:1px;
+    }
+	.flip-note-25 button,
+	.alldisplay25 button {
+	 width: 100%;
+	 margin-bottom:1px;
+    }
+}
+
+
+.desk-screen .btn {
+    display: inline-block;
+    padding: 6px 0px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+}

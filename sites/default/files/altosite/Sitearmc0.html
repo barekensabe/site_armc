@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">   
+<!-- Add jQuery (if needed) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Add slider library -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- Add your custom JS -->
+<script src="js/main.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> ARMC | Autorité de Régulation du Marché des Capitaux - Capital Market Authority of Burundi</title>
+	  <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+    <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+
+    <style>			
+        :root {
+			
+
+            --primary: #006400;       /* Dark Green */
+            --secondary: #004d00;      /* Deep Forest Green */
+            --accent: #32CD32;         /* Lime Green */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --white: #ffffff;
+            --light-green: #e8f5e9;
+		     
+     }
+
+ .dropbtn {
+				  background-color: #009242;
+				  color: white;
+				  padding: 10px;
+				  width: auto-fit;
+				  border-radius: 3px;
+				  font-size: 18px;
+				  font-weight:600;
+				  border: none;
+				    }
+			  
+			.search-btn {
+				background: none;
+				border: none;
+				font-size: 1.2rem;
+				color:var(--transition);;
+				cursor: pointer;
+				margin-left: 5px;
+				transition: var(--transition);
+			}
+
+
+
+.dropdown {
+		  position: relative;
+		  display: inline-block;
+	
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f1f1f1;
+		  min-width: 300px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+
+		.dropdown-content a {
+		  color: #2E2C30;
+		  font-weight:400;
+		  padding: 5px 5px;
+		  text-decoration: none;
+		  display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #D1E9E0;}
+		.dropdown:hover .dropdown-content {display: block;}
+		.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+<!-----  _______					_______	---->
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+         .container {
+            width: 94%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2px 10px;
+        }
+
+           /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 2px 0;
+            font-size: 1.3 rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+        }
+        .social-icons a {
+            color: var(--white);
+            margin-left: 15px;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: left;
+        }
+        .logo img {
+            height: 120px;
+            margin-right: 0px;
+			margin-left: 0px;
+		
+        }
+
+        .logo-text {
+            text-transform: uppercase;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
+       }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        nav ul {
+			font-size: 22px;
+			display: flex;   
+		    list-style: none;
+		}
+
+        nav ul li {
+            margin-left: 2 px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 1000;
+       		padding: 5px 1px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+		nav ul li a:hover,
+			nav ul li a.active {
+			color: var(--primary);
+		}
+
+		nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+       .search-btn:hover {
+            color: var(--primary);
+        }
+<!----------------------->
+    /* Slideshow container */
+
+/* Slider Styles */
+        .hero {
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            max-width: auto-fit;
+            margin: 0 auto;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+            width: 75%;
+            height: 75%;
+        }
+
+        .mySlides img {
+            width: 75%;
+            height: 75%;
+            object-fit: cover;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Slide content styling */
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 77, 0, 0.7), rgba(0, 77, 0, 0.9));
+            color: white;
+            width: 90%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .slide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .slide-content p {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: var(--primary);
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #269926;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                max-width: 90%;
+                height: 400px;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .slideshow-container {
+                height: 350px;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+
+<!-------------------end hero------------------------------------------>
+        /* Sections */
+        section {
+            padding: 10px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+		
+
+        /* Mission Section */
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .mission-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+			color: green;
+        }
+
+        .mission-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .mission-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Publications Section */
+        .publications {
+            background-color: var(--light-green);
+        }
+
+        .pub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .pub-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .pub-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pub-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .pub-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .pub-card:hover .pub-image img {
+            transform: scale(1.1);
+        }
+
+        .pub-content {
+            padding: 25px;
+        }
+
+        .pub-content .date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .pub-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .pub-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .read-more i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(rgba(0, 77, 0, 0.9), rgba(0, 77, 0, 0.9)), 
+                        url('https://images.unsplash.com/1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+        }
+
+       .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+
+        .stat-item .number {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .stat-item .label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stats-source {
+            margin-top: 50px;
+            font-style: italic;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-content .tag {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .news-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .news-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--light-green);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-photo {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .team-photo img {
+            width: 300px;
+            height:auto-fit;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover .team-photo img {
+            transform: scale(0.96);
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .team-info h3 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .team-info .position {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 10px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-bottom: auto;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 6px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            padding-left: 10px;
+        }
+
+        .contact-list li {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .contact-list i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-right: 5px;
+            min-width: 25px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 1.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="contact-info">			
+				<span><i class="fas fa-phone"></i> +257 22 27 77 00 </span>
+                <span><i class="fas fa-envelope"></i> secretariatdirection@armc.bi</span>
+                <span><i class="fas fa-map-marker-alt"></i> Bujumbura, Burundi</span>	
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+				</div>
+           </div>
+        </div>
+        
+		<div class="container">
+            <div class="main-header">
+                <div class="logo">
+				    <img src="sites/default/files/imagealtosite/logoarmc.png" alt="CMA Logo">   
+				</div>			
+					<nav>
+						<ul>
+							<li><a href="#" class="active">Home</a></li>
+						</ul>
+					</nav>	
+							
+				<div class="dropdown">
+				  <button class="dropbtn">A propos </button>
+				  <div class="dropdown-content">
+					<a href="sites/default/files/imagealtosite/Historiqu.html">Historique </a>
+					 
+					<a href="#">Loi et Reglements regissant l'ARMC </a>
+					<a href="#">Organigramme de l'ARMC </a>
+				  </div>
+				</div>
+				<div class="dropdown">
+				  <button class="dropbtn">Licences</button>
+				  <div class="dropdown-content">
+					<a href="#">Type de Licence </a>
+					<a href="#">Etapes d'obtention d'une licence</a>
+					<a href="sites/default/files/altosite/imagealtosite/SA_ARMC.html"> Verifiez votre licence </a>
+					<a href="#">Tous les formulaires </a>
+				  </div>
+				</div>
+				  <div class="dropdown">
+				  <button class="dropbtn">Acteurs</button>
+				  <div class="dropdown-content">
+					<a href="#">Bourse</a>
+					<a href="#">Intermediaires </a>
+					<a href="#">Courtiers </a>
+				  </div>
+				</div>	
+				  <div class="dropdown">
+				  <button class="dropbtn">Regulations</button>
+				  <div class="dropdown-content">
+					<a href="#">Réglementations </a>
+					<a href="#">Décisions </a>
+					<a href="#">Instruments financiers </a>
+				  </div>
+				</div>				
+				
+			<div class="dropdown">
+				  <button class="dropbtn">Publications</button>
+				  <div class="dropdown-content">
+					<a href="#">Communiques</a>
+					<a href="#"> Evenements</a>
+					<a href="#">Rapports</a>
+				  </div>
+				</div>			
+				
+				<div class="dropdown">
+				  <button class="dropbtn">Edufinance</button>
+  				  <div class="dropdown-content">
+					<a href="#">Comprendre le marche financier </a>
+					<a href="#">Nos videos </a>
+					<a href="#">Telecharger </a>
+				  </div>
+				</div>				
+				
+				<div class="dropdown">
+				  <button class="dropbtn">Contact</button>
+					  <div class="dropdown-content">
+						<a href="#"> S'inscrire </a>
+						<a href="#">Soumettre une plainte </a>
+						<a href="https://tausi.afriregister.com:2083/">Mail</a>
+					</div>
+				</div>	
+				
+				<div class="dropdown">
+					<button class="search-btn"><i class="fas fa-search"></i></button>
+				  </div>
+				</div>
+						
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section ---- Replace your existing hero section with this code -->
+    <section class="hero">
+        <div class="container">
+			 <!-- Slide 0 -->
+			 <div class="mySlides fade">		
+				<img src="sites/default/files/IMG_altsite/WelcomeARMC.png" style="width:75%">
+				   <div class="slide-content">	            
+					<h2>Autorité de Régulation du Marché des Capitaux </h2>
+					<p> Assurer la transparence, l'équité et l'efficacité des marchés financiers du Burundi pour favoriser la croissance économique et la protection des investisseurs.</p>
+						<a href="#" class="btn"> Données du Marché </a>
+						<a href="#" class="btn"> Dernières Publications</a>
+				   </div>
+	        	</div>
+
+				<!-- Slide 1 -->
+					<div class="mySlides fade">
+						<img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\4.png" style="width:75%">
+						<div class=" slide-content">
+							<h2>Signature d'un accord de financement</h2>
+							<p>L'ARMC et la Présidente du Conseil d'Administration de la Bourse</p>
+							<a href="#" class="btn">Lire l'article</a>
+						</div>
+					</div>
+
+				<!-- Slide 2 -->
+					<div class="mySlides fade">
+						<img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\4.png" style="width:75%">
+						<div class="slide-content">
+							<h2>Signature d'un accord de financement</h2>
+							<p>L'ARMC et la Présidente du Conseil d'Administration de la Bourse</p>
+							<a href="#" class="btn">Lire l'article</a>
+						</div>
+					</div>
+
+					<!-- Slide 3 -->
+					<div class="mySlides fade">
+						<img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\6 (1).png" style="width:75%">
+						<div class="slide-content">
+							<h2>Atelier de sensibilisation</h2>
+							<p>Fonctionnement du Marché des Capitaux - 6-7 Aout 2024</p>
+							<a href="#" class="btn">Voir les détails</a>
+						</div>
+					</div>
+
+					<!-- Slide 4 -->
+					<div class="mySlides fade">
+						<img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\2.png" style="width:75%">
+						<div class="slide-content">
+							<h2>Rencontre des régulateurs de l'EAC</h2>
+							<p>L'ARMC du Kenya accueille ses homologues de la région</p>
+							<a href="#" class="btn">Découvrir</a>
+						</div>
+					</div>
+
+					<!-- Next and previous buttons -->
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				</div>
+				<br>
+				
+				<!-- The dots/circles -->
+				<div style="text-align:center">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span>
+				</div>
+		</div>		  
+	</section>
+	<!-- Mission Section -->
+    <section class="armc">
+        <div class="container">
+                  			
+            <div class="mission-cards">
+                    <h2> Autorité de Régulation <br>du Marché des Capitaux  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h2>
+            </div>
+		
+        </div>
+    </section>
+		  
+	</section>
+	<!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="section-title">
+           <!-- <h2>Our Core Missions</h2> -->
+				<h2> Les Objectifs Principaux de Notre Mission </h2>
+            </div>
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Protection des investisseurs </h3>
+					<p> Implementer une regulation et mettre en place des mesures qui protegent les interets des investisseurs sur le Marche des Capitaux du Burundi</p>
+				</div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Développement du Marché</h3>
+                    <p>Favoriser la croissance et le développement du marché Financier efficace, transparent et équitable au Burundi..</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+					<h3>Surveillance Réglementaire </h3>
+                    <p> Superviser les acteurs du marché pour garantir le respect des lois, des réglementations et des normes éthiques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<script>
+			// Insert it where you want - for example before the stats section
+            const statsSection = document.querySelector('.stats');
+            if(statsSection) {
+                statsSection.insertBefore(dateElement, statsSection.firstChild);
+            }
+            
+            // Sticky navigation on scroll
+            let lastScroll = 0;
+            const header = document.querySelector('header');
+            const stickyNav = document.getElementById('stickyNav');
+            const headerHeight = header ? header.offsetHeight : 0;
+            
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset;
+                
+                // Show/hide sticky nav
+                if (currentScroll > headerHeight) {
+                    if (currentScroll > lastScroll) {
+                        // Scrolling down
+                        stickyNav.classList.remove('visible');
+                    } else {
+                        // Scrolling up
+                        stickyNav.classList.add('visible');
+                    }
+                } else {
+                    stickyNav.classList.remove('visible');
+                }
+		</script>
+
+    <!-- Publications Section -->
+    <section class="publications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Evénéments </h2>
+            </div>
+            <div class="pub-grid">
+                <div class="pub-card">
+                    <div class="pub-image"> 
+                        <img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\Atelier.png" alt="Annual Report">
+                    </div>
+                    <div class="pub-content">
+                        <span class="date">Juin 15, 2025</span>
+                        <h3> Rapport annuel du marché 2024</h3>
+						<p> Analyse complète de la performance, des tendances et de l'évolution réglementaire des marchés financiers du Burundi en 2022. </p>
+                        <a href="#" class="read-more"> Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="pub-card">
+                    <div class="pub-image">
+                        <img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\intermediaire.png" alt="Investor Guide">
+                    </div>
+                    <div class="pub-content">
+                        <span class="date">Mai 30, 2023</span>
+                        <h3> Guide de protection des investisseurs </h3>
+                        <p> Informations essentielles pour les investisseurs sur leurs droits, leurs protections et la manière de prendre des décisions d'investissement éclairées.</p>	
+						<a href="#" class="read-more"> Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>	
+                <div class="pub-card">
+                    <div class="pub-image">
+                        <img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\Updateregulat.jpg" alt="Regulatory Update">
+                    </div>
+                    <div class="pub-content">
+                        <span class="date">April 22, 2025</span>
+                        <h3>Actualisation réglementaire </h3>
+                        <p>Résumé des récentes modifications réglementaires, des mesures d'application et de l'évolution du marché au premier trimestre 2023.</p>
+
+<a href="#" class="read-more"> Lire plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+
+    <!-- Stats Section -->
+    	        <div class="section-title">
+                <h2>Données statistiques </h2>
+            </div>
+	<section class="stats">
+
+        <div class="container">
+		
+		<script type="text/javascript" src="script.js"></script>
+
+               
+                                Aujourd'hui, le 23-06-2025
+
+            <div class="stats-grid">
+			    <div class="stat-item">
+                    <div class="number">24</div>
+                    <div class="label"> Investisseurs </div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">15</div>
+                    <div class="label">Courtiers </div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">8</div>
+                    <div class="label"> Societes </div>
+                </div>
+                <div class="stat-item">
+                    <div class="number"> 2,5 </div>
+                    <div class="label"> Emetteurs </div>
+                </div>
+                
+				<div class="stat-item">
+                    <div class="number">2910.2304 </div>
+                    <div class="label"> Achat:USD/BIF </div>
+                </div>
+				<div class="stat-item">
+                    <div class="number">2957.1696 </div> 	
+                    <div class="label"> Vente:USD/BIF </div>
+                </div>
+							
+				<div class="stat-item">
+                    <div class="number">24</div>
+                    <div class="label"> Taux </div>
+                </div>
+            </div>
+             <div>_________________________________________________________</div>
+            <div class="stats-grid">
+			    <div class="stat-item">
+                    <div class="number"> 3.10% </div>
+                    <div class="label"> Taux interbancaire </div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">15</div>
+                    <div class="label">Courtiers </div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">12.00%</div>
+                    <div class="label"> Taux Directeur </div>
+                </div>
+                <div class="stat-item">
+                    <div class="number"> 2,5Mlrds BIF </div>
+                    <div class="label"> Capitalisation boursiere </div>
+                </div>
+                
+				<div class="stat-item">	
+                    <div class="number"> 3310.5326</div>
+                    <div class="label"> Achat:€/BIF </div>
+                </div>
+				<div class="stat-item">
+                    <div class="number">3363.9283</div>
+                    <div class="label"> Vente:€/BIF </div>
+                </div>
+								
+				<div class="stat-item">
+                    <div class="number">0,6 </div>
+                   <div class="label"> IDH, BDI </br> </div>
+                </div>
+            </div>
+
+			<div class="stats-source">
+                 Quelques Données du Marché
+            </div>
+        </div>
+    </section>
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Equipe leader de l'ARMC </h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="C:\Users\DIDICOV~PC\Desktop\DOC_ARMC\SITE ARMC\IMG\DGARMC.png" alt="Director">
+             		</div>
+                    <div class="team-info">
+                        <h3>Dr Arsène MUGENZI </h3>
+                        <div class="position">Directeur Général</div>
+                        <p> Spécialiste des Marchés Financiers, grâce à son expérience nationale et internationale, l'ARMC bénéficie de son leadership depuis sa création en 2023 </p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1551836022-8b4bbd20254a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Deputy">
+                    </div>
+                    <div class="team-info">
+                        <h3>Abdon de Dieu NTWARI </h3>
+                        <div class="position"> DAF </div>
+                        <p> Son expérience bancaire dans la Comptabilité a été mis au service de l'ARMC depuis 2024 </p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1551836022-8b4bbd20254a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Head">
+                    </div>
+                    <div class="team-info">
+                        <h3> Gildas GASORE </h3>
+                        <div class="position"> Directeur RD </div>
+                        <p> Expert en Marché Financier. Il est diplômé de l'Université Dauphine de Paris, dans sa spécialité des marchés des capitaux.<p/>					
+                   </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1551836022-8b4bbd20254a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Head">
+                    </div>
+                    <div class="team-info">
+                        <h3>  Aline Ndayisenga </h3>
+                        <div class="position">Chargée d'Octroi des Licences </div>
+							<p> Spécialiste du droit des affaires,elle est a participée à la rédaction de la majorité des règlements de régulation de l'ARMC</p>
+              		   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About CMA</h3>
+                    <p>The Capital Market Authority of Burundi is the regulatory body responsible for overseeing and developing the capital markets in Burundi.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+           <div class="footer-col">
+                    <h3> Liens utiles </h3>
+					 <ul>
+                        <li><a href="#">Ministère des Finances</a></li>
+                        <li><a href="#">Banque de la République du Burundi </a></li>
+                        <li><a href="#">Autorité de Régulation des Marchés Publics </a></li>
+                        <li><a href="#">ARCT</a></li>
+                        <li><a href="#">SETIC</a></li>
+                        <li><a href="#">FMI</a></li>
+						<li><a href="#">Banque Mondiale</a></li>
+						<li><a href="#">Portail du Gouvernement</a></li>  
+					 </ul>						
+                </div>
+		   </ul>				
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Market Data</a></li>
+                        <li><a href="#">Forms & Applications</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Glossary</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. de l'Industrie No. 25, Bujumbura, Burundi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+257 22 27 77 77</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>secretariatdirection@armc.bi</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lu-Ve: 07h:30 - 17h:30 </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 Capital Market Authority of Burundi. All Rights Reserved. | Data sourced from Bank of the Republic of Burundi (BRB), INSBU</p>
+            </div>
+        </div>
+    </footer>
+  </body>
+   <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slideIndex++;
+            
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }    
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            
+            // Change image every 10 seconds
+            setTimeout(showSlides, 10000);
+        }
+
+        // Manual controls
+        function plusSlides(n) {
+            slideIndex += n;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            plusSlides(0);
+        }
+    </script>
+  
+  
+  
+</html>

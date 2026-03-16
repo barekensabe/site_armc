@@ -1,0 +1,4531 @@
+/**
+ * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
+ * remove this comment and start adding your styles to this file.
+ */
+ 
+ 
+ 
+.currencies img, .allcurrencies img {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.turnNote , .special-feature li{
+cursor:pointer;
+}
+
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333/*#677e8c*/;
+    background:#fff url("../../../../default/files/images/BOM-background.jpg") top center repeat-y;
+}	
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.region-content p,
+.region-content p span,
+.region-content .node div span {
+    font-size: 14px !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+h1.page-header {
+	 font-size:22px;
+	 color: #183b71;
+	 /*text-transform:capitalize;
+    text-transform: lowercase;*/
+	 margin-bottom: 10px;
+	}
+/*h1.page-header:first-letter {
+    text-transform: uppercase;
+}*/
+
+/* IMAGE SIZES */
+img, object, embed, video, audio, flv {
+  max-width: 100%;
+  height:auto;
+}
+
+.bomleft, .bomright {
+	 /*margin-top:-20px;*/
+	}
+
+/*NAVIGATION*/
+
+.bomnavigation {
+	 margin:20px 0 10px 0;
+	}
+.bomnavigation > .row	{
+	 background: #002b44;
+	 margin-left:0;
+	 margin-right:0;
+	}
+.region-bomnavi {
+	 background: green;
+	 padding: 5px 0;
+	}
+@media (max-width: 980px) {
+	.region-bomnavi {
+    padding: 0;
+    }
+}
+
+.sf-menu.sf-style-coffee {
+  float: left;
+  margin-bottom: 0 /*1em*/;
+  padding: 0;
+}
+.sf-menu.sf-style-coffee.sf-navbar {
+  width: 100%;
+}
+.sf-menu.sf-style-coffee ul {
+  padding-left: 0;
+}
+.sf-menu.sf-style-coffee a,
+.sf-menu.sf-style-coffee span.nolink {
+  border-right: 1px solid #677e8c;
+  border-left:0;
+  border-top:0;
+  border-bottom:0;
+  color: #b3c2c9;
+  font-weight: normal;
+  padding: 0.75em 1.5em;
+  text-transform:uppercase;
+  text-decoration:none;
+  font-size:12px;
+}
+
+.sf-menu.sf-style-coffee .last a {
+  border-right: 0px solid #677e8c;
+ }
+
+.sf-menu.sf-style-coffee ul ul {
+	 margin-left: 8px;
+	}
+
+.sf-menu.sf-style-coffee li li a {
+  border-right: 0;
+  border-left:0;
+  border-top:0;
+  border-bottom:1px solid #677e8c;
+}
+.sf-menu.sf-style-coffee li li li a {
+  border-right: 0;
+  border-left:0;
+  border-top:0;
+  border-bottom:1px solid #677e8c;
+}
+
+.sf-menu.sf-style-coffee a.sf-with-ul,
+.sf-menu.sf-style-coffee span.nolink.sf-with-ul {
+  padding-right: 1.25em/*2.25em*/;
+}
+ul#superfish-1 > li > a > .sf-sub-indicator {
+	 display:none;
+	}
+
+.sf-menu.sf-style-coffee.rtl a.sf-with-ul,
+.sf-menu.sf-style-coffee.rtl span.nolink.sf-with-ul {
+  padding-left: 2.25em;
+  padding-right: 1em;
+}
+.sf-menu.sf-style-coffee.sf-navbar a,
+.sf-menu.sf-style-coffee.sf-navbar span.nolink {
+  border: 0;
+}
+.sf-menu.sf-style-coffee span.sf-description {
+  color: #f1dec6;
+  display: block;
+  font-size: 0.833em;
+  line-height: 1.5;
+  margin: 5px 0 0 5px;
+  padding: 0;
+}
+.sf-menu.sf-style-coffee.rtl span.sf-description {
+  margin: 5px 5px 0 0;
+}
+.sf-menu.sf-style-coffee li,
+.sf-menu.sf-style-coffee.sf-navbar {
+  background: blue;
+}
+.sf-menu.sf-style-coffee li li {
+  background: blue;
+}
+.sf-menu.sf-style-coffee li li li {
+  background: blue;
+}
+.sf-menu.sf-style-coffee li:hover,
+.sf-menu.sf-style-coffee li.sfHover,
+.sf-menu.sf-style-coffee a:focus,
+.sf-menu.sf-style-coffee a:hover,
+.sf-menu.sf-style-coffee a:active,
+.sf-menu.sf-style-coffee span.nolink:hover,
+.sf-menu.sf-style-coffee.sf-navbar li li {
+  background: blue;
+  color: #b3c2c9;
+}
+.sf-menu.sf-style-coffee.sf-navbar li ul {
+  background-color: blue;
+}
+.sf-menu.sf-style-coffee.sf-navbar li ul li ul {
+  background-color: transparent;
+}
+div.sf-accordion-toggle.sf-style-coffee a {
+  background: #002b44 url(../../../../default/files/images/mobile-menu.png) top right no-repeat;
+  border: 0px solid #677e8c;
+  color: #fff;
+  padding: 0 0 0 1em;
+  font-weight:bold;
+  text-transform:uppercase;
+  text-decoration:none;
+  float:right;
+  text-indent:-9999px;
+}
+div.sf-accordion-toggle.sf-style-coffee a.sf-expanded,
+.sf-menu.sf-style-coffee.sf-accordion li.sf-expanded {
+  background-color: #002b44;
+}
+div.sf-accordion-toggle.sf-style-coffee a.sf-expanded,
+.sf-menu.sf-style-coffee.sf-accordion li.sf-expanded > a,
+.sf-menu.sf-style-coffee.sf-accordion li.sf-expanded > span.nolink {
+  font-weight: bold;
+}
+.sf-menu.sf-style-coffee.sf-accordion li a.sf-accordion-button {
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 499;
+}
+.sf-menu.sf-style-coffee.sf-accordion li li a,
+.sf-menu.sf-style-coffee.sf-accordion li li span.nolink {
+  padding-left: 2em;
+}
+.sf-menu.sf-style-coffee.sf-accordion li li li a,
+.sf-menu.sf-style-coffee.sf-accordion li li li span.nolink {
+  padding-left: 3em;
+}
+.sf-menu.sf-style-coffee.sf-accordion li li li li a,
+.sf-menu.sf-style-coffee.sf-accordion li li li li span.nolink {
+  padding-left: 4em;
+}
+.sf-menu.sf-style-coffee.sf-accordion li li li li a,
+.sf-menu.sf-style-coffee.sf-accordion li li li li span.nolink {
+  padding-left: 5em;
+}
+.sf-menu.sf-style-coffee.rtl.sf-accordion li li a,
+.sf-menu.sf-style-coffee.rtl.sf-accordion li li span.nolink {
+  padding-left: auto;
+  padding-right: 2em;
+}
+.sf-menu.sf-style-coffee.rtl.sf-accordion li li li a,
+.sf-menu.sf-style-coffee.rtl.sf-accordion li li li span.nolink {
+  padding-left: auto;
+  padding-right: 3em;
+}
+.sf-menu.sf-style-coffee.rtl.sf-accordion li li li li a,
+.sf-menu.sf-style-coffee.rtl.sf-accordion li li li li span.nolink {
+  padding-left: auto;
+  padding-right: 4em;
+}
+.sf-menu.sf-style-coffee.rtl.sf-accordion li li li li li a,
+.sf-menu.sf-style-coffee.rtl.sf-accordion li li li li li span.nolink {
+  padding-left: auto;
+  padding-right: 5em;
+}
+.sf-menu.sf-style-coffee ul.sf-megamenu li.sf-megamenu-wrapper ol,
+.sf-menu.sf-style-coffee ul.sf-megamenu li.sf-megamenu-wrapper ol li {
+  margin: 0;
+  padding: 0;
+}
+.sf-menu.sf-style-coffee ul.sf-megamenu li.sf-megamenu-wrapper a.menuparent,
+.sf-menu.sf-style-coffee ul.sf-megamenu li.sf-megamenu-wrapper span.nolink.menuparent {
+  font-weight: bold;
+}
+.sf-menu.sf-style-coffee ul.sf-megamenu li.sf-megamenu-wrapper ol li.sf-megamenu-column {
+  display: inline;
+  float: left;
+}
+.sf-menu.sf-style-coffee.rtl ul.sf-megamenu li.sf-megamenu-wrapper ol li.sf-megamenu-column {
+  float: right;
+}
+
+	/*Superfish Menu Center*/
+	#block-superfish-1 > ul {
+	  text-align: center;
+	  padding: 0;
+	  width: 100%;
+	 }
+	#block-superfish-1 .sf-menu li {
+		float: none;
+		position: relative;
+		z-index: 498;
+		display: inline-block;
+		text-align:left;
+	}
+	/*Superfish Menu Center Ends*/	
+
+/*ul#superfish-1 ul ul ul {
+	 border:5px solid red;
+	 position:absolute !important;
+	}*/
+
+
+#block-superfish-1 .sf-menu li {
+}
+
+#block-superfish-1 .sf-menu li .sf-hidden li {
+}
+
+#block-superfish-1 .sf-menu li .sf-hidden li .sf-hidden li {
+}
+
+#block-superfish-1 .sf-menu li .sf-hidden li .sf-hidden li .sf-hidden li {
+}
+
+#block-superfish-1 .sf-menu li .sf-hidden li .sf-hidden li .sf-hidden li .sf-hidden li {
+}
+
+#block-superfish-1 ul ul ul ul {
+		/*top: 0 !important;
+		 right: 240% !important;*/
+	 	}
+
+#block-superfish-1 ul ul ul ul ul {
+	}
+
+
+
+/*NAVIGATION ENDS*/
+
+
+
+blockquote {
+  background: #FFFFFF;
+  border-left: 0px solid #ccc;
+  margin: 0;
+  font-size:14px;
+  font-weight:bold;
+  padding: 0/*0.5em*/ 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  text-align:center;
+}
+blockquote:before {
+  color: #677e8c;
+  /*content: open-quote;
+    font-size: 4em;
+    content:url('/sites/default/files/images/quote-open.png');*/
+  line-height: 0.1em;
+  margin-right: 0.10em;
+  vertical-align: -0.5em;
+}
+blockquote:after {
+  color: #677e8c;
+  /*content: close-quote;
+    font-size: 4em;
+    content:url('/sites/default/files/images/quote-close.png');*/
+  line-height: 0.1em;
+  margin-left: 0.10em;
+  vertical-align: -0.5em;
+}
+blockquote p {
+  display: inline;
+}
+
+#block-menu-menu-top-menu > ul.menu.nav > li {
+	 float:left;
+	}
+#block-menu-menu-top-menu > .nav > li > a {
+	/*text-decoration:none;*/
+	color: #677e8c;
+	font-size:12px;
+	text-transform:uppercase;
+}
+#block-menu-menu-top-menu > .nav > li > a:hover {
+	background:none;
+}
+
+@media (min-width: 1000px) {
+	#block-menu-menu-top-menu > .nav > li > a {
+		padding: 30px 20px 0 20px;
+	}	
+
+	.view-id-test_taxo.view-display-id-page table th:last-child {
+	 width:18%;
+	}
+	
+	.view-id-test_taxo.view-display-id-page table td {
+	 width:12%;
+	}
+}
+
+#ctools-jump-menu .form-control {
+    display: block;
+    width: 100%;
+    height: 25px;
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #fff; 
+	background: green url(../../../../default/files/images/quick-link.png) top right no-repeat;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+
+#block-currency-converter-bom-currency-conversion .form-control {
+    display: block;
+    width: 60%;
+    height: 25px;
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #fff;
+	background: #b3c8d9 url(../../../../default/files/images/quick-link.png) top right no-repeat;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	float:right;
+}
+
+#block-currency-converter-bom-currency-conversion .form-item-amount .form-control {
+	background: #b3c8d9;
+	 float:right;
+	 width:60%;
+}
+
+#block-currency-converter-bom-currency-conversion #currency-result {
+	background: #b3c8d9;
+	 float:right;
+	 width:60%;
+    color: #fff;
+    border: 0;
+	height:25px;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#block-currency-converter-bom-currency-conversion .btn-default {
+    color: #fff;
+    background-color: #002b44;
+    border: 0;
+	height:25px;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+#block-currency-converter-bom-currency-conversion .btn {
+    padding: 0px 12px;
+  }
+
+#currency-converter-bom-form label,
+#currency-converter-bom-form #edit-result-label {
+	 float:left;
+	 width:35%;
+	 height:25px;
+	 font-weight:normal;
+	 color:#fff;
+	 text-align:center;
+	 padding-top:2px;
+	}
+#currency-converter-bom-form .form-item {
+	 margin-bottom:10px;
+	 height:25px;
+	}
+
+#currency-converter-bom-form .form-item-amount label,
+#currency-converter-bom-form #edit-result-label {
+	 background: #b9cbd9;
+	}
+
+#block-currency-converter-bom-currency-conversion .form-item-amount .form-control,
+#currency-converter-bom-form .form-item-convert-from label,
+#currency-converter-bom-form .form-item-convert-to label,
+#currency-converter-bom-form #currency-result {
+	 background: #90aec8;
+	}
+
+#block-currency-converter-bom-currency-conversion .form-item-convert-from .form-control,
+#block-currency-converter-bom-currency-conversion .form-item-convert-to .form-control	{
+    background: #b8cbda url(../../../../default/files/images/quick-link3.png) top right no-repeat;
+	}	
+#currency-converter-bom-form #edit-result-label,
+#currency-converter-bom-form #currency-result {
+	 margin-bottom:0;
+	}
+
+
+	  
+#ctools-jump-menu select,
+#block-currency-converter-bom-currency-conversion select {
+	 -webkit-appearance: none;
+	 cursor:pointer;
+	}
+
+#search-block-form .form-control,
+#search-form .form-control {
+    display: block;
+    width: 100%;
+    height: 25px;
+	margin-top:10px;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #677e8c;
+	background: #fff;
+    border: 1px solid #edf2f6;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#search-block-form .btn,
+#search-form .btn {
+    display: inline-block;
+    padding: 0px 0px;
+	margin-top:10px;
+	width:26px;
+	height:25px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: url(../../../../default/files/images/search-go.png) no-repeat;
+    border: 0px solid transparent;
+    border-radius: 0px;
+}
+.glyphicon-search {
+	 display:none;
+	}
+#block-search-form {
+	 margin-bottom:-10px;
+	}
+
+
+.flexslider {
+    margin: 0px 0 0px;
+    background: #fff;
+    border: 0px solid #fff;
+    position: relative;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 0px 0px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0px 0px rgba(0,0,0,.2);
+    -o-box-shadow: 0 0px 0px rgba(0,0,0,.2);
+    box-shadow: 0 0px 0px rgba(0,0,0,.2);
+    zoom: 1;
+}
+#flexslider-1 .views-field-field-slideshow-image {
+	 /*margin-top:-30px;*/
+	}
+#flexslider-1 .views-field-title {
+     position: relative;
+	 text-align: right;
+     margin-right: 20px;
+	 margin-top:15px;
+	}
+#flexslider-1 .views-field-title a {
+	 text-decoration:none;
+	 font-size:16px;
+	 font-weight:bold;
+	 color:#fff;
+    }
+.flex-control-nav {
+    position: relative;
+    text-align: right;
+    z-index: +1;
+    top: -20px;
+	}
+.flex-control-paging li a {
+	 text-indent: -9999px;
+	 text-align:left;
+    }
+
+
+.flex-direction-nav a {
+    display: block;
+    width: 40px;
+    height: 50px;
+    margin: -20px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    color: rgba(255,255,255,0.8);
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.flex-control-paging li a {background: #EDF2F6; background: rgba(237,242,246,0.5);}
+.flex-control-paging li a:hover { background: #A6B5C1; background: rgba(166,181,193,1.0); }
+.flex-control-paging li a.flex-active { background: #fff; background: rgba(255,255,255,1.0); cursor: default; }
+
+
+
+
+#block-views-latest-news-block {
+	 background:#f0f0f2;
+	 padding:10px 10px 0 10px;
+	 border-top:0px solid #a4bdd1;
+	 border-bottom:2px solid #87a6c2;
+	}
+#block-views-latest-news-block .view-id-latest_news	{
+	 background:#f0f0f2;
+	 padding:10px 0;
+	 /*height:330px;
+	 overflow-y: scroll;
+     overflow-x: hidden;*/
+	}
+#block-views-latest-news-block .view-id-latest_news .view-content {
+	 height: 260px /*200px 290px*/;
+	 overflow-y: scroll;
+     overflow-x: hidden;
+	 width:100%;
+	}	
+#block-views-latest-news-block .view-id-latest_news .view-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+#block-views-latest-news-block .view-id-latest_news .view-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(95,124,140,0.3); 
+    border-radius: 0px;
+}
+
+#block-views-latest-news-block .view-id-latest_news .view-content::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0 6px rgba(95,124,140,0.9); 
+}
+	
+#block-views-latest-news-block h2.block-title {
+	 font-size:18px;
+	 color:#002b44;
+	 text-transform:uppercase;
+	 display:none;
+	}
+#block-views-latest-news-block .view-id-latest_news	.view-header .archives_link {
+	 visibility:hidden;
+	 display:none;
+	}
+#block-views-latest-news-block .view-id-latest_news .view-content {
+	 display: inline-block;
+	}		
+#block-currency-converter-bom-currency-conversion {
+	 background:#9FE2BF;
+	     padding: 10px 15px 0px;/* padding:15px 10px;*/
+	}
+#block-views-exchange-rates-block-1,
+#block-views-test-taxo-block-1,
+#block-quicktabs-exchange-rates,
+#block-block-24,
+#block-quicktabs-rodrigues-office	{
+	 background:#9FE2BF;
+	 padding:15px 10px 0px 10px;
+	 /*border-bottom:2px solid #8aaac3;*/
+	}
+#block-quicktabs-rodrigues-office	{
+	 border-bottom:2px solid #8aaac3;
+	}
+#block-views-exchange-rates-block-1 .table-striped > tbody > tr:nth-of-type(odd),
+#block-views-test-taxo-block-1 .table-striped > tbody > tr:nth-of-type(odd),
+#block-quicktabs-exchange-rates .table-striped > tbody > tr:nth-of-type(odd) {
+	 background-color: transparent;
+	}
+#block-views-exchange-rates-block-1 .table,
+#block-views-test-taxo-block-1 .table,
+#block-quicktabs-exchange-rates .table {
+    margin-bottom: 0px;
+}
+#quicktabs-tabpage-exchange_rates-0 .view-footer {
+    margin-top: -10px;
+}
+#block-views-exchange-rates-block-1 .table > thead > tr > th,
+#block-views-test-taxo-block-1 .table > thead > tr > th,
+#block-quicktabs-exchange-rates .table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 0px solid #ddd;
+}
+#block-views-exchange-rates-block-1 .table > tbody > tr > td,
+#block-views-test-taxo-block-1 .table > tbody > tr > td,
+#block-quicktabs-exchange-rates .table > tbody > tr > td,
+#block-views-minted-gold-bar-block .table > tbody > tr > td {
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #c2d0db;
+}
+#block-views-exchange-rates-block-1 .table > tbody > tr.views-row-first > td,
+#block-views-test-taxo-block-1 .table > tbody > tr.views-row-first > td,
+#block-quicktabs-exchange-rates .table > tbody > tr.views-row-first > td {
+    border-top: 0px solid #ddd;
+}
+#block-views-exchange-rates-block-1 .view-id-exchange_rates .view-footer a,
+#block-views-test-taxo-block-1 .view-id-test_taxo .view-footer a,
+#block-quicktabs-exchange-rates .view-id-test_taxo .view-footer a,
+#block-quicktabs-exchange-rates .view-id-dealth_rates .view-footer a {
+	 float:right;
+	 text-decoration:none;
+	}
+#block-views-exchange-rates-block-1 .view-id-exchange_rates,
+#block-views-test-taxo-block-1 .view-id-test_taxo,
+#block-quicktabs-exchange-rates .view-id-test_taxo,
+#block-quicktabs-exchange-rates .view-id-dealth_rates {
+	 margin-left:1px;
+	}
+
+#block-act-charts-graphs-hp-exchange-rates textarea {
+	 display:none;
+	}
+#block-act-charts-graphs-hp-exchange-rates	{
+	 background:#fcfcfa;
+	 padding:10px 10px 0px 10px;
+	 border-bottom:2px solid #8aaac3;
+	}
+
+#block-views-repo-rate-block,
+/*#block-commerce-cart-cart*/
+#block-dc-ajax-add-cart-ajax-shopping-cart-teaser,
+#block-views-minted-gold-bar-block {
+	 background:#edf2f6;
+	 padding:15px 10px 0px;  /*padding:15px 10px;*/
+	 border-bottom:2px solid #183b71;
+	}
+#block-views-minted-gold-bar-block {
+	 border-bottom:0px solid #183b71;
+	}	
+#block-dc-ajax-add-cart-ajax-shopping-cart {
+	 display:none;
+	}
+	
+#block-views-repo-rate-block p,
+#block-views-yield-on-91-day-gmtb-block p,
+/*#block-commerce-cart-cart td,*/
+#block-dc-ajax-add-cart-ajax-shopping-cart-teaser,
+#block-views-repo-rate-block .view-content,
+#block-views-yield-on-91-day-gmtb-block .view-content,
+#quicktabs-rodrigues_office .view-content,
+#block-views-repo-rate-block .view-footer,
+#block-views-exchange-rates-block-1 .view-id-exchange_rates,
+#block-quicktabs-exchange-rates .view-id-test_taxo,
+#block-quicktabs-exchange-rates .view-id-dealth_rates,
+#block-views-test-taxo-block-1 .view-id-test_taxo,
+#block-currency-converter-bom-currency-conversion #currency-converter-bom-form,
+#block-views-minted-gold-bar-block p,
+#block-views-minted-gold-bar-block table,
+#block-views-minted-gold-bar-block .view-footer {
+	 font-size:12px;
+	}
+#block-views-repo-rate-block .view-content,
+#block-views-repo-rate-block .view-footer {
+	 padding:5px 0;
+	}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 0px solid #ddd;
+}
+
+#currency-converter-bom-form #currency-result {
+	 text-align: center;
+     padding-top: 5px;
+	}
+
+	
+#block-currency-converter-bom-currency-conversion h2.block-title,
+#block-views-exchange-rates-block-1 h2.block-title,
+#block-views-test-taxo-block-1 h2.block-title,
+#block-views-repo-rate-block h2.block-title,
+#block-block-24 h2.block-title,
+#block-block-16 h2.block-title,
+#block-quicktabs-exchange-rates h2.block-title,
+/*#block-commerce-cart-cart h2.block-title*/
+#block-dc-ajax-add-cart-ajax-shopping-cart-teaser h2.block-title,
+#block-quicktabs-rodrigues-office h2.block-title,
+#block-views-minted-gold-bar-block h2.block-title  {
+	 font-size:15px;
+	 color:white;
+	 margin-top:0;
+	 margin-bottom:8px;
+	 font-weight:bold;
+	 text-transform:uppercase;
+	}		
+#block-views-exchange-rates-block-1 h2.block-title,
+#block-quicktabs-exchange-rates h2.block-title,
+#block-views-test-taxo-block-1 h2.block-title {
+	 margin-bottom:0;
+    }
+#block-views-latest-news-block .LN_Title {
+	 line-height:15px;
+	 margin-bottom: 10px;
+	}
+#block-views-latest-news-block .LN_Title a {
+	 color:#5f7c8c;
+	 font-size:12px;
+	 text-decoration:underline;
+	 padding-bottom:10px;
+	}	
+.view-display-id-page_1 .LN_Title {
+	 padding-bottom:5px;
+	}
+.view-display-id-page_1 .views-field-body {
+	 /*margin-bottom:20px;*/
+	}	
+.view-display-id-page_1 .LN_Title a {
+	 color:#183b71;
+	 font-weight:bold;
+	 text-decoration:underline;
+	}	
+#block-views-latest-news-block .view-header {
+	 margin-bottom:10px;
+	 margin-top:-10px;
+	}
+#block-views-latest-news-block .LatestNews_link {
+	 float:left;
+	 font-size:15px;
+	 font-weight:bold;
+	 color:black;
+	 text-transform:uppercase;
+	}
+#block-views-latest-news-block .archives_link {
+	 text-align:right;
+	 text-transform:uppercase;
+	 margin-top:5px;
+	}	
+#block-views-latest-news-block .archives_link a {
+	 color:black;
+	 text-decoration:underline;
+	}	
+ #block-views-upcoming-events-block,
+ /*#block-block-10,*/
+ #block-menu-block-3,
+ #block-block-11,
+ #block-block-13 {
+	 background:green;
+	 border-bottom:2px solid red;
+	 padding-top:15px;
+	 padding-bottom:15px;
+	}
+
+#block-block-8,
+#block-block-9,
+#block-block-12,
+#block-block-14 {
+	 background:#fbfcfe;
+	 border-bottom:1px solid red;
+	 padding-top:15px;
+	 padding-bottom:15px;
+	}
+#block-block-13,
+#block-block-14 {
+	 border-bottom:0px solid red;
+	}
+#block-views-upcoming-events-block h2.block-title,
+#block-block-21 h2.block-title,
+#block-block-8 h2.block-title,
+#block-block-9 h2.block-title,
+/*#block-block-10 h2.block-title,*/
+#block-menu-block-3 h2.block-title,
+#block-block-11 h2.block-title,
+#block-block-12 h2.block-title,
+#block-block-13 h2.block-title,
+#block-block-14 h2.block-title,
+#block-block-20 h2.block-title,
+#block-act-charts-graphs-inflation h2.block-title {
+	 font-size: 16px;
+	 font-weight:bold;
+	 text-transform:uppercase;
+	 color:white;
+	 margin-top:0;
+	}
+/*#block-views-upcoming-events-block .view-content a,*/
+#block-block-8 a,
+#block-block-9 a,
+/*#block-block-10 a,*/
+#block-menu-block-3 a,
+#block-block-11 a,
+#block-block-12 a,
+#block-block-13 a {
+	 color:#5f7c8c;
+	 text-decoration:none;
+	 line-height:24px;
+	}
+	
+#block-block-14 a {
+	 color:#5f7c8c;
+	 text-decoration:none;
+	 line-height:24px;
+	}
+#block-block-14 img {
+	 float: left;
+     margin-right: 20px;
+	}	
+#block-views-upcoming-events-block .view-content a:hover,,
+#block-block-21 a:hover,
+#block-block-8 a:hover,
+#block-block-9 a:hover,
+/*#block-block-10 a,*/
+#block-menu-block-3 a:hover,
+#block-block-11 a:hover,
+#block-block-12 a:hover,
+#block-block-13 a:hover,
+#block-block-14 a:hover,
+#block-menu-menu-top-menu a:hover {
+	 text-decoration:underline;
+	}
+		
+#block-block-8 p,
+#block-block-9 p,
+/*#block-block-10 p,*/
+#block-menu-block-3 p,
+#block-block-11 p,
+#block-block-12 p,
+#block-block-13 p,
+#block-block-14 p {
+	 margin:0;
+	}	
+/*#block-views-upcoming-events-block span.date-display-single {
+	 margin-right:10px;
+   }*/
+.bomleft .block,
+.bomright .block {
+	 padding:10px;
+	}
+
+.bomleft a,
+.bomright a {
+	 text-decoration:none;
+	}
+   	
+.footer {
+	 background:#062a42;
+	 border-top: 0px solid #E5E5E5;
+	 padding-top: 10px;
+     padding-bottom: 10px;
+     margin-top: 30px;
+    color: #fff;
+	}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer h2.block-title {
+	 font-size:14px;
+	 text-transform:uppercase;
+	 color:#fff;
+	 margin-top:0;
+    }
+.footer .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 0;
+	text-decoration:none;
+	color:#fff;
+	font-size:12px;
+   }
+.footer .nav > li > a:hover,
+.footer a:hover {
+	background:none;
+	text-decoration:underline;
+   }
+
+#block-block-4 .bom-map {
+	 float:left;
+	 line-height:22px;
+	}
+#block-block-4 iframe {
+	 float:right;
+	}
+	
+#block-block-4 .bom-map1 {
+	 background:url("../../../../default/files/images/address.png") top left no-repeat;
+	 padding-left:20px;
+	}	
+#block-block-4 .bom-map2 {
+	 background:url("../../../../default/files/images/mail.png") top left no-repeat;
+	 padding-left:20px;
+	}	
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-radius: 0px;
+	margin-bottom:10px;
+}
+
+.ui-state-defaultx, .ui-widget-content .ui-state-defaultx, .ui-widget-header .ui-state-defaultx {
+    border: 0px solid #0B0B61;
+    background: #0B0B61;
+	font-weight: 400;
+    color: #555;
+}
+
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 0px solid #90aec8;
+    background: #edf2f6 url(images/ui-bg_glass_75_e6e6e6_1x400.html) 50% 50% repeat-x;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8aa9c5+0,fbfcfe+100 */
+	background: #8aa9c5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #8aa9c5 0%, #fbfcfe 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #8aa9c5 0%,#fbfcfe 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #8aa9c5 0%,#fbfcfe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8aa9c5', endColorstr='#fbfcfe',GradientType=0 ); /* IE6-9 */	
+    font-weight: 400;
+    color: #555;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+.ui-accordion .ui-accordion-header {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin-top: 2px;
+    padding: 10px/*.2em .5em .2em .7em*/;
+    min-height: 0;
+	background:#002b44;
+	color: #fff
+	
+}
+
+.ui-accordion .ui-accordion-icons {
+    padding-left: 2.2em;
+}
+
+.ui-helper-reset {
+    font-size: 14px;
+}
+
+.view-id-vacancies .ui-accordion .views-field-field-deadline > span,
+.view-id-vacancies .ui-accordion .views-field-field-contact-person > span { 
+    float:left;
+	padding-right:5px;
+	font-weight:bold;
+   }
+.view-id-vacancies .ui-accordion .views-field-created .views-label-created,
+.view-id-vacancies .ui-accordion .views-field-field-qualifications .views-label-field-qualifications,
+.view-id-vacancies .ui-accordion .views-field-body .views-label-body {
+	font-weight:bold;
+	}
+.view-id-vacancies .ui-accordion .views-field-body,
+.view-id-vacancies .ui-accordion .views-field-field-contact-person {
+	 margin-top:20px;
+	}
+.view-id-vacancies .ui-accordion .views-field-nothing span {
+	 background:#90aec8;
+	 color:#fff;
+	 padding:5px;
+	}
+
+.view-id-vacancies .ui-accordion .views-field-nothing span a {
+	 color:#fff;
+	 text-decoration:none;
+	}
+.ui-widget-content {
+    border: 0px solid #aaa;
+    background: #fff url(images/ui-bg_flat_75_ffffff_40x100.html) 50% 50% repeat-x;
+    color: #222;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 0px;
+}
+
+
+/*Footer Menu*/
+
+#block-menu-menu-useful-links ul.menu{
+-webkit-columns: 2 150px;
+-moz-columns: 2 150px;
+columns: 2 150px;
+}
+
+
+@media (min-width: 768px) {
+	
+	#block-menu-block-1.col-sm-2 {
+		width: 17.66666667%;
+	}
+	#block-menu-menu-useful-links.col-sm-5 {
+		width: 40.66666667%;
+	}
+	.view-id-vacancies .ui-accordion .views-field-nothing span {
+		 float:right;
+		 /*margin-top:-50px;*/
+		}
+	#act-charts-graphs-form .container-inline-date {
+		 float:left;
+		}
+	
+	#act-charts-graphs-form .container-inline-date {
+		clear: none;
+	}
+	
+	#act-charts-graphs-form #edit-submit--2 {
+		 margin-left:10px;
+		}
+
+}
+
+#block-block-5 {
+	 margin:10px 0 0 0;
+	 text-align:center;
+	}
+#block-block-6 {
+	 margin:10px 0 0 0;
+	 text-align:right;
+	}
+#block-block-7 {
+	 margin:10px 0 0 0;
+	}
+
+#block-block-4 p,
+#block-block-4 a {
+	color:#fff;
+	font-size:12px;
+	text-decoration:none;
+	}
+#block-block-4 a:hover {
+	 text-decoration:underline;
+	}	
+.sitemap {
+	 padding-left:10px;
+	 padding-right:10px;
+	}
+.sitemap a {
+	 text-decoration:none;
+	 color:#fff;
+    }
+.sitemap a:hover {
+	 text-decoration:underline;
+	 color:#fff;
+    }
+
+#webform-client-form-157037 .form-item-submitted-date-you-were-contacted-year,
+#webform-client-form-157037 .form-item-submitted-date-you-were-contacted-month,
+#webform-client-form-157037 .form-item-submitted-date-you-were-contacted-day {
+	 float:left;
+	 padding-right:10px;
+	}
+#webform-client-form-157037 .webform-component--amount {
+	 clear:left;
+	}
+#webform-client-form-157037 .hasDatepicker {
+	 padding-top: 10px;
+	}
+
+#webform-client-form-157037 .webform-container-inline.webform-component-textarea .form-textarea-wrapper {
+    display: block;
+}
+
+#storyjs-timeline .media { /*display:none;*/}
+
+
+@media only screen 
+and (min-width : 990px) {
+
+    #webform-client-form-157037 .webform-datepicker { /*float:right;*/}
+
+	#webform-client-form-43032 label,
+    #email-alerts-node-form label {
+		 float:left;
+		 width:20%;
+		}
+    #email-alerts-node-form #edit-field-subscribe-to-und label {
+		 float:none;
+		 width:100%;
+		}
+    #email-alerts-node-form #edit-field-subscribe-to-und input {
+		 width:100%;
+        margin-left: 100px;
+		}
+    #email-alerts-node-form #edit-field-subscribe-to-und {
+         margin-left: 18%;
+         position:absolute;
+		}
+    
+    
+	#webform-client-form-156696 label,
+	#webform-client-form-156698 label {
+		 float:left;
+		 width:35%;
+		 padding-right:10px;
+		 text-align:left;
+		}
+	  #webform-client-form-156698 .form-item-captcha-response label {
+		   width:37%;
+		  }
+	#webform-client-form-156696 .webform-component--what-kind-of-products-services-does-your-company-offer,
+	#webform-client-form-156696 .webform-component--email,
+	#webform-client-form-156696 #edit-submitted-business-type {
+		 clear:left;
+		}
+			
+	#webform-client-form-43032 input,
+    #email-alerts-node-form input,
+	#webform-client-form-43032 textarea,
+    #email-alerts-node-form textarea,
+	#webform-client-form-156696 input,
+	#webform-client-form-156696 textarea,
+	#webform-client-form-156696 #edit-submitted-country ,
+	#webform-client-form-156698 input {
+		 width:50%;
+		}							
+
+    #webform-client-form-156696 #edit-submitted-business-type label,
+	#webform-client-form-156696 #edit-submitted-business-type input {
+		 width:auto;
+		}
+    #webform-client-form-156696 .webform-component--what-kind-of-products-services-does-your-company-offer {
+		 margin-top:40px;
+		}
+	
+     #webform-client-form-43032 .btn,
+	 #webform-client-form-156696 .btn,
+	 #webform-client-form-156698 .btn,
+     #email-alerts-node-form .btn {
+		  float:right;
+	    }
+     #webform-client-form-43032 .form-actions,
+     #email-alerts-node-form .form-actions {
+		  width:70%;
+	    }
+	 #webform-client-form-156696 .form-actions {
+		  width:85%;
+	    }
+	 #webform-client-form-156698 .form-actions {
+		  width:87%;
+		  margin-top:20px;
+	    }
+	  	
+      #block-block-16 .address1 {
+		   width:50%;
+		   float:left;
+		  }
+	   #block-block-16 .address-map {
+		    float:right;
+			width:50%;
+		   }
+
+
+	#job-application-entityform-edit-form label,
+	#webform-client-form-157037 label {
+		 float:left;
+		 width:40%;
+		 clear:left;
+		}
+	#job-application-entityform-edit-form input.form-text,
+	#job-application-entityform-edit-form textarea  {
+		 width:60%;
+		}							
+	#webform-client-form-157037 input.form-text,
+	#webform-client-form-157037 textarea  {
+		 width:55%;
+		}							
+	     
+	     
+    #job-application-entityform-edit-form .radio {
+		 float:left;
+		 padding:0 10px 0 0;
+		 margin-top:5px;
+		}
+    #job-application-entityform-edit-form #edit-field-undergraduate-degree .radio,
+	#job-application-entityform-edit-form #edit-field-postgraduate-degree .radio {
+		 float:left;
+		 padding:0 0px 0 0;
+		 margin-top:5px;
+		 width:70px;
+		}
+		
+	#job-application-entityform-edit-form #edit-field-certify-und {
+		float: left;
+		margin-bottom: 10px;
+	   }
+		
+		
+		
+     #job-application-entityform-edit-form #edit-field-subject-investigation .form-item > label,
+	 #job-application-entityform-edit-form #edit-field-nature-of-investigation .form-item > label,
+	 #job-application-entityform-edit-form #edit-field-prosecuted .form-item > label,
+	 #job-application-entityform-edit-form #edit-field-nature-of-prosecution .form-item > label,
+	 #job-application-entityform-edit-form #edit-field-financial-commitment .form-item > label,
+	 #job-application-entityform-edit-form #edit-field-if-yes-financial .form-item > label,
+	 #job-application-entityform-edit-form #edit-field-what-makes-you-believe-tha .form-item > label,
+	 #job-application-entityform-edit-form #edit-field-project-event .form-item > label {
+		  width:100%;
+		  clear:both;
+		  float:none;
+		 }
+		 
+	  #job-application-entityform-edit-form #edit-field-subject-investigation-und,
+	  #job-application-entityform-edit-form #edit-field-nature-of-investigation,
+	  #job-application-entityform-edit-form #edit-field-prosecuted,
+	  #job-application-entityform-edit-form #edit-field-nature-of-prosecution,
+	  #job-application-entityform-edit-form #edit-field-financial-commitment,
+	  #job-application-entityform-edit-form #edit-field-if-yes-financial,
+	  #job-application-entityform-edit-form #edit-field-what-makes-you-believe-tha,
+	  #job-application-entityform-edit-form #edit-field-project-event,
+	  #job-application-entityform-edit-form #edit-field-surname {
+		   clear:left;
+		  }
+       #job-application-entityform-edit-form #edit-field-nature-of-investigation textarea,
+	   #job-application-entityform-edit-form #edit-field-nature-of-prosecution textarea,
+	   #job-application-entityform-edit-form #edit-field-if-yes-financial textarea,
+	   #job-application-entityform-edit-form #edit-field-what-makes-you-believe-tha textarea,
+	   #job-application-entityform-edit-form #edit-field-project-event textarea {
+		   clear:left;
+		   width:100%;
+		  }	
+		  
+       .collapsible,
+	   #edit-field-employment-history {
+		    width:100%;
+			margin-top:50px;
+		   }
+		#job-application-entityform-edit-form .collapsible label,
+		#job-application-entityform-edit-form #edit-field-employment-history label { 
+		    width:32%;
+		   }
+		
+		#job-application-entityform-edit-form .collapsible input.form-text,
+		#job-application-entityform-edit-form #edit-field-employment-history input.form-text {
+		    width:68%;
+		   }
+	    #job-application-entityform-edit-form .collapsible #edit-field-name-of-uni-postgrad .form-item > label,
+	    #job-application-entityform-edit-form #edit-field-name-of-uni-professional .form-item > label,
+		#job-application-entityform-edit-form #field-name-of-university-examini-add-more-wrapper label,
+		#job-application-entityform-edit-form #edit-field-uni-diploma label,
+		#job-application-entityform-edit-form #edit-field-name-of-uni-undergrad label,
+		#job-application-entityform-edit-form #edit-field-undergraduate-degree-und-0-field-university-undergraduate label,
+		#job-application-entityform-edit-form #field-postgraduate-degree-und-0-field-name-university-postgrad-add-more-wrapper label {
+		  width:100%;
+		  clear:both;
+		  float:none;
+		 }
+	   #job-application-entityform-edit-form #edit-field-name-of-uni-postgrad input,
+	   #job-application-entityform-edit-form #edit-field-name-of-uni-professional input,
+	   #job-application-entityform-edit-form #field-name-of-university-examini-add-more-wrapper input,
+	   #job-application-entityform-edit-form #edit-field-uni-diploma input,
+	   #job-application-entityform-edit-form #edit-field-name-of-uni-undergrad input,
+	   #job-application-entityform-edit-form #edit-field-undergraduate-degree-und-0-field-university-undergraduate input,
+	   #job-application-entityform-edit-form #field-postgraduate-degree-und-0-field-name-university-postgrad-add-more-wrapper input {
+		   clear:left;
+		   width:100%;
+		  }	
+
+		.panel-body {
+			padding: 15px 0;
+		}
+		.panel-body .table > tbody > tr > td,
+		.table-responsive .table > tbody > tr > td {
+			padding: 5px 3px;
+		}
+
+    #job-application-entityform-edit-form #edit-field-date-of-birth,
+	#job-application-entityform-edit-form #edit-field-date-of-result,
+	#job-application-entityform-edit-form #edit-field-date-of-result-diploma,
+	#job-application-entityform-edit-form #edit-field-date-of-result-undergrad,
+	#job-application-entityform-edit-form #edit-field-date-of-result-postgrad,
+	#job-application-entityform-edit-form #edit-field-date-of-result-professiona,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to {
+		 clear:left;
+		 /*width:75%;*/
+		}
+    #job-application-entityform-edit-form #edit-field-date-of-birth legend.panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result legend.panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result-diploma legend.panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result-undergrad legend.panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result-postgrad legend.panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result-professiona legend.panel-heading,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from legend.panel-heading,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to legend.panel-heading,
+	#job-application-entityform-edit-form #field-undergraduate-degree-und-0-field-result-undergraduate-add-more-wrapper legend.panel-heading,
+	#job-application-entityform-edit-form #field-postgraduate-degree-und-0-field-date-result-postgraduate-add-more-wrapper legend.panel-heading {
+		 float:left;
+		 width:40%;
+		}
+    #job-application-entityform-edit-form #edit-field-date-of-birth .panel-body {
+		 width: 60%;
+         float: right;
+         margin-top: -60px;
+		}
+	#job-application-entityform-edit-form #edit-field-date-of-birth .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result-professiona .panel,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .panel,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .panel {
+		margin-bottom: -30px;
+	}
+	
+	#job-application-entityform-edit-form #edit-field-date-of-result .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result-professiona .panel-body,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .panel-body,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .panel-body {
+		 width: 68%;
+         float: right;
+         margin-top: -60px;
+		}
+	#job-application-entityform-edit-form #edit-field-undergraduate-degree-und-0-field-result-undergraduate .panel-body,
+	#job-application-entityform-edit-form #edit-field-postgraduate-degree-und-0-field-date-result-postgraduate .panel-body     {
+		 width: 60%;
+         float: right;
+         margin-top: -60px;
+		}
+
+	#block-block-4 iframe {
+		 margin-top:-25px;
+		}
+
+}	
+
+#job-application-entityform-edit-form #edit-field-date-of-result .panel-body label,
+#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel-body label,
+#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel-body label,
+#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel-body label,
+#job-application-entityform-edit-form #edit-field-date-of-result-professiona label,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from label,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to label,
+#job-application-entityform-edit-form #edit-field-undergraduate-degree-und-0-field-result-undergraduate-und-0-value label,
+#job-application-entityform-edit-form #edit-field-postgraduate-degree-und-0-field-date-result-postgraduate-und-0-value label {
+	 display:none;
+	}
+
+#job-application-entityform-edit-form #edit-field-date-of-birth .panel,
+#job-application-entityform-edit-form #edit-field-date-of-result .panel,
+#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel,
+#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel,
+#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel,
+#job-application-entityform-edit-form #edit-field-date-of-result-professiona .panel,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .panel,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .panel {
+	background-color: #fff;
+	border: 0px solid transparent;
+	border-radius: 0px;
+	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, .05);
+	box-shadow: 0 0px 0px rgba(0, 0, 0, .05);
+  }
+	
+#job-application-entityform-edit-form #edit-field-date-of-birth .panel-heading,
+#job-application-entityform-edit-form #edit-field-date-of-result .panel-heading,
+#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel-heading,
+#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel-heading,
+#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel-heading,
+#job-application-entityform-edit-form #edit-field-date-of-result-professiona .panel-heading,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .panel-heading,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .panel-heading,
+#job-application-entityform-edit-form #edit-field-undergraduate-degree-und-0-field-result-undergraduate .panel-heading,
+#job-application-entityform-edit-form #edit-field-postgraduate-degree-und-0-field-date-result-postgraduate .panel-heading {
+		background-color: transparent;
+		border-color: transparent;
+		padding-left:0;
+	}
+#job-application-entityform-edit-form #edit-field-date-of-birth .panel-title,
+#job-application-entityform-edit-form #edit-field-date-of-result .panel-title,
+#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel-title,
+#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel-title,
+#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel-title,
+#job-application-entityform-edit-form #edit-field-date-of-result-professiona .panel-title,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .panel-title,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .panel-title,
+#job-application-entityform-edit-form #edit-field-undergraduate-degree-und-0-field-result-undergraduate .panel-title,
+#job-application-entityform-edit-form #edit-field-postgraduate-degree-und-0-field-date-result-postgraduate .panel-title {
+		color: #677e8c;
+		font-size:14px;
+		font-weight:normal;
+	}
+
+
+
+#job-application-entityform-edit-form #edit-field-date-of-birth fieldset.date-combo .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-date-of-result fieldset.date-combo .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-date-of-result-diploma .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-date-of-result-professiona .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-undergraduate-degree-und-0-field-result-undergraduate .container-inline-date .date-padding,
+#job-application-entityform-edit-form #edit-field-postgraduate-degree-und-0-field-date-result-postgraduate .container-inline-date .date-padding {
+	padding: 10px 0;
+}
+
+
+#job-application-entityform-edit-form #field-secondary-ordinary-level-values th,
+#job-application-entityform-edit-form #field-examination-values th,
+#job-application-entityform-edit-form #field-examination-sec-advan-values th,
+#job-application-entityform-edit-form #field-examination-sec-advan-2-values th {
+	 display:none;
+	}
+
+#job-application-entityform-edit-form #field-employment-history-values th {
+	 background: #90aec8;
+	 font-size:20px;
+	 color:#FFFFFF;
+	 padding: 5px 15px;
+	}
+#job-application-entityform-edit-form #field-employment-history-values th label {
+	 width:100%;
+	 font-weight:normal;
+	}
+
+#job-application-entityform-edit-form #edit-field-date-of-birth-und-0-value .form-item {
+  padding-right:10px;
+ } 
+
+.panel-default {
+    border-color: #183b71;
+}
+/*.panel-default a {
+    font-size:20px;
+}*/
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-default > .panel-heading,
+#job-application-entityform-edit-form table .field-label {
+    color: #fff;
+    background-color: #90aec8;
+    border-color: #90aec8;
+}
+#job-application-entityform-edit-form .table > thead > tr > th {
+	 padding:10px 10px 5px 10px;
+	 font-size:16px;
+	 border:0;
+	}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: transparent;
+}
+
+
+
+
+#job-application-entityform-edit-form #edit-field-secondary-ordinary,
+#job-application-entityform-edit-form #edit-field-secondary-advanced-level,
+#job-application-entityform-edit-form #edit-field-other-secondary-qualificat {
+	 margin-top:50px;
+	}
+#job-application-entityform-edit-form #edit-field-secondary-ordinary p,
+#job-application-entityform-edit-form #edit-field-secondary-advanced-level p,
+#job-application-entityform-edit-form #edit-field-other-secondary-qualificat p {
+	 font-size:20px;
+	}
+
+#job-application-entityform-edit-form .btn-info {
+    color: #fff;
+    background-color: #90aec8;
+    border-color: #90aec8;
+	float:right;
+}
+
+#job-application-entityform-edit-form .btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+	float:right;
+}
+
+.webform-component-textarea .grippie,
+#job-application-entityform-edit-form .grippie {
+    display: none;
+}	
+
+#webform-client-form-43032 .form-control,
+#email-alerts-node-form .form-control,
+#webform-client-form-157037 .form-control,
+#webform-client-form-157037 select,
+#job-application-entityform-edit-form .form-control,
+#webform-client-form-156696 .form-control,
+#webform-client-form-156698 .form-control {
+    display: block;
+    height: 25px;
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #000;
+	background: #b3c8d9;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#webform-client-form-43032 textarea.form-control,
+#email-alerts-node-form textarea.form-control,
+#job-application-entityform-edit-form textarea.form-control,
+#webform-client-form-156696 textarea.form-control,
+#webform-client-form-157037 textarea.form-control {
+    height: auto;
+}
+
+#webform-client-form-43032 .btn-primary,
+#email-alerts-node-form .btn-default,
+#job-application-entityform-edit-form .btn-primary,
+.view-id-store .btn,
+#views-form-commerce-cart-form-default .btn,
+#webform-client-form-156696 .btn-primary,
+#webform-client-form-156698 .btn-primary,
+#edit-submit--2 {
+    color: #fff;
+    background-color: #90aec8;
+    border-color: #90aec8;
+}
+#webform-client-form-43032 .btn,
+#email-alerts-node-form .btn,
+#job-application-entityform-edit-form .btn,
+.view-id-store .btn,
+#views-form-commerce-cart-form-default .btn,
+#webform-client-form-156696 .btn,
+#webform-client-form-156698 .btn,
+#edit-submit--2.btn,
+#webform-client-form-157037 .btn {
+    display: inline-block;
+    height: 25px;
+    padding: 2px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 0px solid transparent;
+    border-radius: 0px;
+}
+
+#block-block-16 {
+	 margin-top:20px;
+	}
+
+.view-id-gold_coins .table-responsive table thead,
+.table-governors table thead,
+.view-id-repo_rate.view-display-id-page_1 table thead,
+.view-id-industrial_gold .table-responsive table thead,
+.view-id-test_taxo .table-responsive table thead,
+.view-id-dealth_rates .table-responsive table thead,
+.view-id-bank_rate .table-responsive table thead,
+.view-id-indicative_exchange_rate table thead,
+.view-id-plibor table thead,
+.view-id-commemorative_coins .table-responsive table thead {
+	 background:#90aec8;
+	 color:#fff;
+	}	
+#block-views-test-taxo-block-1 .view-id-test_taxo .table-responsive table thead {
+	 background:transparent;
+	 color:#677e8c;
+	}
+.view-id-test_taxo > .view-header {
+	 padding-bottom:10px;
+	}
+	
+.view-id-photo_gallery .views-column,
+.view-id-bom_image_gallery_photo .views-column {
+	 margin:10px 0;
+	 /*text-align:center;*/
+	}
+.view-id-photo_gallery .views-column .views-field-title,
+.view-id-bom_image_gallery_photo .views-field-title {
+	 font-weight:bold;
+	}
+.view-id-photo_gallery .views-column .views-field-field-bom-gallery-images img {
+	 margin-top:10px;
+	 border:5px solid #edf2f6;
+	}
+.view-id-photo_gallery .views-column .views-field-field-bom-gallery-images img:hover {
+	 border:5px solid #062a42;
+	 filter: grayscale(100%);
+	 -webkit-filter: grayscale(100%);
+	}
+	
+.view-id-bom_image_gallery_photo .views-field-field-image-gallery img {
+	 margin-top:10px;
+	 border:5px solid #edf2f6;
+	 -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+	 -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+	 box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+	 -webkit-transition: all 0.5s ease-out;
+	 -moz-transition: all 0.5s ease;
+	 -o-transition: all 0.5s ease;	 
+	}
+.view-id-bom_image_gallery_photo .views-field-field-image-gallery img:hover {
+	 border:5px solid #062a42;
+	 filter: grayscale(100%);
+	 -webkit-filter: grayscale(100%);
+	 -webkit-transform: rotate(-7deg);
+	 -moz-transform: rotate(-7deg);
+	 -o-transform: rotate(-7deg);
+	}
+		
+.view-id-bom_image_gallery_photo .views-field-name {
+	 padding-top:10px;
+	 font-weight:bold;
+	}
+.view-id-dealth_rates th {
+	 text-align:center;
+	}
+.view-id-dealth_rates .table-amount-dealt th {
+	 text-align:left;
+	}
+
+#block-block-11 .col-sm-6 {
+	 padding:0;
+	}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    /*color: #677e8c;*/ /*commented for covid19 page*/
+	color: #fff;
+    text-decoration: none;
+	font-weight:bold;
+}
+.view-id-gold_bar .views-field-field-image-obverse,
+.view-id-gold_bar .views-field-field-image-reverse,
+.ui-accordion .views-field-field-image-obverse,
+.ui-accordion .views-field-field-image-reverse {
+	 float:left;
+	 padding:10px 20px 10px 0;
+	 width:50%;
+	 text-align:center;
+	}
+.view-id-gold_bar .views-field-field-image-obverse img,
+.view-id-gold_bar .views-field-field-image-reverse img,
+.ui-accordion .views-field-field-image-obverse img,
+.ui-accordion .views-field-field-image-reverse img {
+	 padding-top:10px;
+	 margin: 0 auto;
+	}
+.view-id-gold_bar .views-field-field-image-obverse .views-label,
+.view-id-gold_bar .views-field-field-image-reverse .views-label,
+.ui-accordion .views-field-field-image-obverse .views-label,
+.ui-accordion .views-field-field-image-reverse .views-label {
+    color: #677e8c;
+	font-weight:bold;
+	}
+.view-id-gold_bar .views-field-body,
+.ui-accordion .views-field-body {
+	 clear:left;
+	 padding-top:10px;
+	}	
+.view-id-gold_bar .views-field-title {
+	 font-size:20px;
+	 padding:10px 0;
+	}
+.view-id-gold_bar .views-field-field-dimensions,
+.ui-accordion .views-field-field-diameter {
+	 padding-top:20px;
+	}	
+
+	
+#views-exposed-form-gold-bar-page {
+	 padding-top:20px;
+	}
+#views-exposed-form-gold-bar-page label {
+	 font-size:16px;
+	}
+	
+.view-id-vacancies .send-cv {
+	 margin-top:20px;
+	 padding:10px;
+     background-color: #edf2f6;
+     border-color: #2e6da4;	
+	 border-radius: 4px;
+	 width:150px;
+	 text-align:center;
+	 font-weight:bold;
+	}
+
+
+.btn-info {
+    color: #fff;
+    background-color: #90aec8;
+    border-color: #ddd;
+}
+
+.btn-info:hover {
+    color: #337ab7;
+    background-color: #edf2f6;
+    border-color: #ddd;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #90aec8;
+    border-color: #ddd;
+}
+.btn-primary:hover {
+    color: #337ab7;
+    background-color: #edf2f6;
+    border-color: #ddd;
+}
+
+/*#block-menu-menu-career-block-menu,
+#block-menu-menu-about-the-bank,*/
+.region-sidebar-first.well {
+	 background: #fbfcfe;
+	 padding:5px 0;
+	}
+/*#block-menu-menu-career-block-menu h2.block-title,
+#block-menu-menu-about-the-bank h2.block-title,*/
+.region-sidebar-first h2.block-title {
+	 padding-left:10px;
+	 padding-bottom:5px;
+	 font-size: 16px;
+	 font-weight:bold;
+	 color: #183b71;
+	 text-transform: uppercase;
+	 border-bottom:1px solid #b3c8d9;
+	}
+/*#block-menu-menu-career-block-menu li,
+#block-menu-menu-about-the-bank li,*/
+.region-sidebar-first li {
+	 border-bottom:1px solid #b3c8d9;
+	}	
+/*#block-menu-menu-career-block-menu .nav > li > a,
+#block-menu-menu-about-the-bank .nav > li > a,*/
+.region-sidebar-first .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+	text-decoration:none;
+	font-size:12px;
+	color:#183b71;
+}
+/*#block-menu-menu-career-block-menu .nav > li > a:hover,
+#block-menu-menu-about-the-bank .nav > li > a:hover,*/
+.region-sidebar-first .nav > li > a:hover {
+    background: transparent;
+}
+
+.well {
+    min-height: 20px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    background-color: #fbfcfe;
+    border: 0px solid #e3e3e3;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .0);
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, .0);
+}
+
+#views-exposed-form-ecommerce-page .form-item-field-category-value > label,
+#views-exposed-form-ecommerce-page-1 .form-item-field-category-value > label {
+	 display:none;
+	}
+#views-exposed-form-ecommerce-page #edit-field-category-value-wrapper > label,
+#views-exposed-form-ecommerce-page-1 #edit-field-category-value-wrapper > label {
+	 padding-top:5px;
+	}	
+#views-exposed-form-ecommerce-page #edit-field-category-value-wrapper > .views-widget,
+#views-exposed-form-ecommerce-page-1 #edit-field-category-value-wrapper > .views-widget  {
+	float: right;
+	padding-left: 10px;
+}	
+	
+#views-exposed-form-ecommerce-page .views-exposed-form .views-exposed-widget .btn,
+#views-exposed-form-ecommerce-page-1 .views-exposed-form .views-exposed-widget .btn {
+    margin-top: 0;
+}
+#views-exposed-form-ecommerce-page .views-exposed-form .views-exposed-widget .form-submit,
+#views-exposed-form-ecommerce-page-1 .views-exposed-form .views-exposed-widget .form-submit {
+    margin-top: 0;
+}
+#views-exposed-form-ecommerce-page .views-exposed-form,
+#views-exposed-form-ecommerce-page-1 .views-exposed-form {
+	 padding:10px 0;
+	}
+
+.view-id-ecommerce .views-field-field-image-reverse {
+	 display:none;
+	}	
+.view-id-ecommerce .views-row {
+	 clear:both;
+	}	
+.view-id-ecommerce .views-row .views-column {
+	 padding:20px 10px;
+	}	
+.view-id-ecommerce .views-row .views-column .views-field-title {
+	 padding:10px 0;
+	 font-weight:bold;
+	 height:80px;
+	}
+.view-id-ecommerce .views-row .views-column .views-field-nothing {
+	 padding-top:10px;
+	}
+.view-id-ecommerce .views-row .views-column .views-field-nothing .field-content {
+	 padding:5px 10px;
+	 font-weight:bold;
+	 background: #90aec8;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	text-align:center;
+	}
+.view-id-ecommerce .views-row .views-column .views-field-nothing .field-content:hover {
+	 background: #edf2f6;
+	}
+.view-id-ecommerce .views-row .views-column .views-field-nothing .field-content a {
+	 text-decoration:none;
+	 color:#fff;
+	}
+.view-id-ecommerce .views-row .views-column .views-field-nothing .field-content a:hover {
+	 color:#90aec8;
+	}
+/*.view-id-ecommerce .views-field-field-image-reverse img,
+.view-id-ecommerce .views-field-field-image-obverse img {
+	 margin:0 auto;
+	}*/
+
+.node-ecommerce-products .field-name-field-image-obverse,
+.node-ecommerce-products .field-name-field-image-reverse {
+	 float:left;
+	 text-align:center;
+	 width:50%;
+	}
+.node-ecommerce-products .field-name-field-image-obverse img,
+.node-ecommerce-products .field-name-field-image-reverse img {
+	 margin:0 auto;
+	 padding:10px 5px 0 5px;
+	}
+.node-ecommerce-products .field-name-field-ref {
+	 padding-top:20px;
+	 clear:left;
+	}	
+.node-ecommerce-products .field-name-body {
+	 padding-bottom:20px;
+	}
+.node-ecommerce-products {
+	 padding-bottom:20px;
+	}	
+
+.view-id-store .views-field-field-store-products-img-rev {
+	 display:none;
+	}
+.views-row {
+	 clear:both;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+	}
+.view-id-store .views-field-field-store-products-img-rev,
+.view-id-store .views-field-field-store-products-img-obv {
+	 height:180px;
+	}
+.view-id-store .views-row {
+	 padding:20px 0 10px 0;
+	}
+.view-id-store .view-content {
+    text-align: left;
+}
+.view-id-store .views-field-title	{
+	 padding-top:10px;
+	 height:115px;
+	}
+#views-exposed-form-store-page .form-item-field-store-products-category-value > label {
+	display:none;
+	}
+
+.ui-accordion-content {
+	 font-size:12px;
+	}
+
+#act-charts-graphs-form .form-item-from-date-date > label,
+#act-charts-graphs-form .form-item-to-date-date > label {
+	 display:none;
+	}
+
+#act-charts-graphs-form .form-type-date-popup > label {
+	 float:left;
+	 padding-top:5px;
+	 padding-right:10px;
+	}
+#act-charts-graphs-form {
+	 margin: 20px 0 30px 0;
+	}
+
+.view-id-board_of_directors .views-row {
+	 clear:both;
+	}
+.view-id-board_of_directors .views-column  {
+	 padding-top:20px;
+	}
+.view-id-board_of_directors .views-column .views-field-title {
+	 padding:5px 10px;
+	 font-weight:bold;
+	 font-size:16px;
+	 background: #fbfcfe;
+	 max-width:380px;
+	}	
+.view-id-board_of_directors .views-column .views-field-field-directors-name {
+	 padding:5px 10px;
+	 max-width:380px;
+	}
+
+#block-act-charts-graphs-exchange-rates-history,
+#block-act-charts-graphs-full-dealth-rate {
+	 border-top:1px solid #183b71;
+	}
+#block-act-charts-graphs-exchange-rates-history h2.block-title,
+#block-act-charts-graphs-full-dealth-rate h2.block-title,
+#block-act-charts-graphs-full-gmtb h2.block-title,
+#block-act-charts-graphs-bank-rate h2.block-title,
+#block-act-charts-graphs-plibor h2.block-title {
+	 font-size:18px;
+	 color:#183b71;
+	 text-transform:uppercase;
+	}	
+
+#block-act-charts-graphs-exchange-rates-history #act-charts-graphs-form,
+#block-act-charts-graphs-full-dealth-rate #act-charts-graphs-form,
+#block-act-charts-graphs-full-gmtb #act-charts-graphs-form,
+#block-act-charts-graphs-bank-rate #act-charts-graphs-form,
+#block-act-charts-graphs-plibor #act-charts-graphs-form {
+    margin-top: 0;
+}
+
+#act-charts-graphs-form #edit-submit--2 {
+    background-color: #90aec8;
+    border-color: #ddd;
+    color: #fff;
+}
+#act-charts-graphs-form #edit-submit--2:hover {
+    background-color: #edf2f6;
+    border-color: #ddd;
+    color: #337ab7;
+}
+
+
+#exchange_hp {
+	 padding-top:20px;
+	}
+.pdfimage {
+	 float:left;
+	 padding-top:4px;
+	}	
+.pdftext {
+	 padding-left:40px;
+	}
+.view-id-clone_of_reports .views-field-nid {
+	 padding-left:40px;
+	}
+.view-clone-of-reports .views-row {
+	 padding-bottom:20px;
+	 display: table;
+     table-layout: fixed;
+     width: 100%;
+	}
+.report-title {
+	 /*font-weight:bold;*/
+	 font-size:18px;
+	}
+.report-title a {
+    color:#677e8c;
+	}
+
+.report-date,
+.report-file-size {
+	 font-size:12px;
+	}
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #edf2f6/*#fbfcfe*/;
+    border-radius: 0px;
+    /* text-transform: capitalize; */
+}
+	
+.view-more {
+    float: right;
+    padding-bottom: 10px;
+}
+
+#block-views-upcoming-events-block .view-more {
+	 padding-bottom:0;
+	}
+	
+.view-id-test_taxo table,
+.view-id-dealth_rates table {
+	 margin-bottom:0;
+	}
+ul.quicktabs-tabs.quicktabs-style-arrows a {
+	padding: 2px 0px 4px;
+	font-size:11px;
+	}
+
+#quicktabs-rodrigues_office ul.quicktabs-tabs.quicktabs-style-arrows li:last-child {
+	 float:right;
+	}
+	
+@media only screen and (max-width: 800px) {
+
+    #job-application-entityform-edit-form #edit-field-date-of-birth .panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result .panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel-heading,
+	#job-application-entityform-edit-form #edit-field-date-of-result-professiona .panel-heading,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .panel-heading,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .panel-heading {
+		margin-bottom: -10px;
+		}
+
+	#job-application-entityform-edit-form #edit-field-date-of-birth .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel,
+	#job-application-entityform-edit-form #edit-field-date-of-result-professiona .panel,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .panel,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .panel {
+		margin-bottom: -20px;
+	}
+	#job-application-entityform-edit-form #edit-field-date-of-birth .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result-diploma .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result-undergrad .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result-postgrad .panel-body,
+	#job-application-entityform-edit-form #edit-field-date-of-result-professiona .panel-body,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-from .panel-body,
+	#job-application-entityform-edit-form #edit-field-employment-history-und-0-field-date-to .panel-body,
+	#job-application-entityform-edit-form #edit-field-undergraduate-degree-und-0-field-result-undergraduate-und-0-value .panel-body {
+		padding: 0px;
+	}
+
+/* view-id-financial_institutions */  
+  
+    /* Force table to not be like tables anymore */
+	.view-id-financial_institutions table, 
+	.view-id-financial_institutions thead, 
+	.view-id-financial_institutions tbody, 
+	.view-id-financial_institutions th, 
+	.view-id-financial_institutions td, 
+	.view-id-financial_institutions tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.view-id-financial_institutions thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.view-id-financial_institutions tr { border: 1px solid #ccc; }
+ 
+	.view-id-financial_institutions td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	.view-id-financial_institutions td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px;
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+  
+	/*
+	Label the data
+	*/
+	.view-id-financial_institutions td:before { content: attr(data-title); }
+
+
+    /* Label the data for table one */
+	.view-id-financial_institutions td:nth-of-type(1):before { content: "Institution:";}
+	.view-id-financial_institutions td:nth-of-type(2):before { content: "Address:"; }	
+	.view-id-financial_institutions td:nth-of-type(3):before { content: "Telephone:"; }	
+	.view-id-financial_institutions td:nth-of-type(4):before { content: "Fax:"; }	
+	
+	.view-id-financial_institutions .table-responsive > .table > tbody > tr > td {
+		white-space: nowrap;
+		padding-left: 100px;
+	}	
+	
+
+/*view-id-exchange_rates*/
+
+    /* Force table to not be like tables anymore */
+	.view-id-exchange_rates table, 
+	.view-id-exchange_rates thead, 
+	.view-id-exchange_rates tbody, 
+	.view-id-exchange_rates th, 
+	.view-id-exchange_rates td, 
+	.view-id-exchange_rates tr,
+	.view-id-test_taxo table, 
+	.view-id-test_taxo thead, 
+	.view-id-test_taxo tbody, 
+	.view-id-test_taxo th, 
+	.view-id-test_taxo td, 
+	.view-id-test_taxo tr	 { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.view-id-exchange_rates thead tr,
+	.view-id-test_taxo thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.view-id-exchange_rates tr,
+	.view-id-test_taxo tr { border: 1px solid #ccc; }
+ 
+	.view-id-exchange_rates td,
+	.view-id-test_taxo td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	.view-id-exchange_rates td:before,
+	.view-id-test_taxo td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px;
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+  
+	/*
+	Label the data
+	*/
+	.view-id-exchange_rates td:before,
+	.view-id-test_taxo td:before { content: attr(data-title); }
+
+
+    /* Label the data for table one */
+	.view-id-exchange_rates td:nth-of-type(1):before { content: "Country:";}
+	.view-id-exchange_rates td:nth-of-type(2):before { content: "Currency:"; }	
+	.view-id-exchange_rates td:nth-of-type(3):before { content: "Buy TT:"; }	
+	.view-id-exchange_rates td:nth-of-type(4):before { content: "Buy DD:"; }	
+	.view-id-exchange_rates td:nth-of-type(5):before { content: "Buy Notes:"; }	
+	.view-id-exchange_rates td:nth-of-type(6):before { content: "Sale TT/DD:"; }	
+	.view-id-exchange_rates td:nth-of-type(7):before { content: "Sale Notes:"; }	
+
+	.view-id-test_taxo.view-display-id-page td:nth-of-type(1):before { content: "Country:";}
+	.view-id-test_taxo.view-display-id-page td:nth-of-type(2):before { content: "Currency:"; }	
+	.view-id-test_taxo.view-display-id-page td:nth-of-type(3):before { content: "Buy TT:"; }	
+	.view-id-test_taxo.view-display-id-page td:nth-of-type(4):before { content: "Buy DD:"; }	
+	.view-id-test_taxo.view-display-id-page td:nth-of-type(5):before { content: "Buy Notes:"; }	
+	.view-id-test_taxo.view-display-id-page td:nth-of-type(6):before { content: "Sale TT/DD:"; }	
+	.view-id-test_taxo.view-display-id-page td:nth-of-type(7):before { content: "Sale Notes:"; }	
+
+	.view-id-test_taxo.view-display-id-block_1 td:nth-of-type(1):before { content: "Currency:";}
+	.view-id-test_taxo.view-display-id-block_1 td:nth-of-type(2):before { content: "Buy:"; }	
+	.view-id-test_taxo.view-display-id-block_1 td:nth-of-type(3):before { content: "Sell:"; }	
+	
+	.view-id-exchange_rates .table-responsive > .table > tbody > tr > td,
+	.view-id-test_taxo .table-responsive > .table > tbody > tr > td {
+		white-space: nowrap;
+		padding-left: 100px;
+	}	    
+	
+	
+
+/* view-id-dealth_rates */  
+  
+    /* Force table to not be like tables anymore */
+	.view-id-dealth_rates table, 
+	.view-id-dealth_rates thead, 
+	.view-id-dealth_rates tbody, 
+	.view-id-dealth_rates th, 
+	.view-id-dealth_rates td, 
+	.view-id-dealth_rates tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.view-id-dealth_rates thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.view-id-dealth_rates tr { border: 1px solid #ccc; }
+ 
+	.view-id-dealth_rates td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	.view-id-dealth_rates td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px;
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+  
+	/*
+	Label the data
+	*/
+	.view-id-dealth_rates td:before { content: attr(data-title); }
+
+
+    /* Label the data for table one */
+	.view-id-dealth_rates td:nth-of-type(1):before { content: "";}
+	.view-id-dealth_rates td:nth-of-type(2):before { content: "Amount:"; }	
+	.view-id-dealth_rates td:nth-of-type(3):before { content: "Currency:"; }	
+	.view-id-dealth_rates td:nth-of-type(4):before { content: "Buying:"; }	
+	.view-id-dealth_rates td:nth-of-type(5):before { content: "Selling:"; }	
+	
+	.view-id-dealth_rates .table-responsive > .table > tbody > tr > td {
+		white-space: nowrap;
+		padding-left: 100px;
+	}	
+		
+	.view-id-dealth_rates tbody tr:first-child {
+		 display:none;
+		}
+		
+}	
+
+
+
+label {
+	 font-weight:normal;
+	}
+	
+#block-currency-converter-bom-currency-conversion form {
+	display:none;
+}
+
+/* Ritasha */
+.arrowCur {
+    width: 0;
+    height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid #183b71;
+    float: right;
+    -moz-transition: -moz-transform .3s;
+    -webkit-transition: -webkit-transform .3s;
+    -o-transition: -o-transform .3s;
+    transition: transform .3s;
+	margin-top: 5px;
+}
+.toggle {
+    -moz-transform: rotate(180deg);
+     -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+#block-currency-converter-bom-currency-conversion h2{
+	cursor: pointer;
+}
+
+/*Kris*/
+#marquee-scroller {
+    color: #062a42/*#b3c8d9*/;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+/*Kris*/
+
+.bomscroll .container {
+    /*background: #062a42;*/
+	margin-bottom:10px;
+	}
+
+/*USER ACCOUNT*/
+@media only screen 
+and (min-width : 990px) {
+	
+	#user-login label {
+		 width:100px;
+		 float:left;
+		}
+	#user-login input,
+	#user-pass input,
+	#user-register-form input {
+		 width:50%;
+		}
+	
+	#user-login #edit-submit {
+		 margin-left:100px;
+		}
+		
+	#user-pass label {
+		 width:200px;
+		 float:left;
+		}
+	#user-register-form label {
+		 width:150px;
+		 float:left;
+		}
+			
+	#user-pass #edit-submit {
+		 margin-left:200px;
+		}
+	#user-register-form #edit-submit {
+		 margin-left:150px;
+		}
+		
+	#user-register-form div {
+		 clear:left;
+		}
+    #user-register-form #edit-field-type div {
+		 clear:none;
+		}	
+    #user-register-form #edit-field-type label {
+		 width:auto;
+		 float:none;
+		}
+	#user-register-form #edit-field-type #edit-field-type-und .form-item {
+		 float:left;
+		 margin-left:10px;
+	}
+	#user-register-form #edit-field-type #edit-field-type-und input {
+		 margin-left:60px;
+	}
+	#user-register-form #edit-field-type .form-item > label {
+		 float:left;
+		 width:150px;
+	}
+	#user-register-form #edit-field-type #edit-field-type-und .radio label {
+		padding-top:5px;
+		 float:left;
+		 width:auto;
+		 padding-left: 0px;
+	}
+	#user-register-form #edit-field-type #edit-field-type-und .form-item:last-child {
+		 margin-left:50px;
+		 padding-top:5px;
+	}
+	#edit-field-upload-nic-photocopy-und-0-ajax-wrapper div div {
+		 clear:none;
+		}
+	#edit-field-upload-nic-photocopy-und-0-ajax-wrapper div .help-block	{
+		 margin-left:120px;
+		}
+
+	.view-id-supervision_licensees .views-row {
+		 display: table;
+		 margin-bottom: 0px;
+	     border-bottom:1px solid #ccc;
+		 width:100%;
+		 clear:both;
+		}
+     .view-id-supervision_licensees.view-display-id-page .views-row .col-sm-6 {
+       padding-top: 15px;
+       padding-bottom: 15px;
+       /*height: 320px;*/
+     }
+    .view-id-supervision_licensees.view-display-id-page .views-row.views-row-7 .col-sm-6 {
+       /*height: 370px;*/
+     }
+     .view-id-supervision_licensees.view-display-id-page .views-row .col-sm-6:nth-child(1) {
+        border-right: 1px solid #eee;
+     }
+
+    
+	 .view-id-legislations .views-row,
+	 .view-id-financial_stability .views-row,
+     .view-id-monetary_policy .views-row,
+	 .view-id-guideline_supervision .views-row,
+	 .view-id-markets .views-row,
+    .view-id-publications .views-row,
+    .view-id-statistics.view-display-id-page .views-row,
+	 .view-id-bom_bills .views-row,
+	 .view-id-government_of_mauritius_securities .views-row,
+	 .view-id-media .views-row  {
+		 display: table;
+		 margin-bottom: 10px;
+		 width:100%;
+		 clear:both;
+		}
+		
+		.view-id-dealth_rates table.table-amount-dealt td:last-child {
+			 width:182px;
+			}
+
+}
+
+#user-login #edit-submit,
+#user-pass #edit-submit,
+#user-register-form #edit-submit {
+	 background:#90aec8;
+	 border:0;
+	 border-radius:0;
+	 color:#fff;
+	 height: 25px;
+     padding: 2px 12px;
+	}
+		
+#user-login input,
+#user-pass input,
+#user-register-form input {
+	 background:#b3c8d9;
+	 border-radius:0;
+	 height: 25px;
+	}
+#user-register-form #edit-field-type input {
+	 background:#b3c8d9;
+	 border-radius:0;
+	 height: auto;
+	}
+		
+#user-login,
+#user-pass,
+#user-register-form {
+	 margin-top:10px;
+	}
+#edit-field-upload-nic-photocopy-und-0-ajax-wrapper .input-group-btn {
+	 height:25px;
+	 border-radius:0;
+	 float:left;
+	}
+input#edit-field-upload-nic-photocopy-und-0-upload {
+	 height:35px;
+     width: 300px;
+     margin-right: 5px;
+	}
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group > .btn, .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child), .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {	 border-radius:0;
+}
+
+#user-register-form #edit-submit {
+	margin-bottom:10px;
+}
+
+
+/*USER ACCOUNT ENDS*/
+	
+
+.view-id-dealth_rates .views-field {
+	 line-height:30px;
+	}
+
+#dealth_rate_hp {
+	position: inherit;
+	min-width: 242px;
+}
+
+#quicktabs-rodrigues_office .view-content li {
+	 margin-left:-20px;
+	}
+#quicktabs-rodrigues_office .view-content li a {
+	 text-decoration:none;
+	}
+	
+#block-quicktabs-exchange-rates ul.quicktabs-tabs li {
+    padding: 2px;
+}
+#block-quicktabs-exchange-rates ul.quicktabs-tabs li:first-child {
+    border-right: 0px solid #ccc;
+	padding-right:5px;
+}
+#block-quicktabs-exchange-rates ul.quicktabs-tabs.quicktabs-style-arrows li.active a, #block-quicktabs-exchange-rates ul.quicktabs-tabs.quicktabs-style-arrows li a:hover {
+    text-decoration: none;
+    background: none;
+}
+#block-quicktabs-exchange-rates ul.quicktabs-tabs.quicktabs-style-arrows {
+    font: bold 12px/170% Verdana;
+    border-bottom: 0px solid #ccc;
+    padding: 0 10px 0 0!important;
+    line-height: 22px;
+    margin: 0 0 10px 0;
+}
+#edit-field-upload-your-cv .help-block {
+ display:none;
+}
+#edit-field-upload-your-cv #edit-field-upload-your-cv-und-0-ajax-wrapper .form-managed-file {
+ margin-top:50px;
+}
+
+#job-application-entityform-edit-form #edit-field-certify {
+	 margin-top:20px;
+	}
+#job-application-entityform-edit-form #edit-field-certify label {
+	 width:100%;
+	}
+#job-application-entityform-edit-form #edit-field-certify label.control-label {
+	 background:#b3c8d9;
+	 color:#fff;
+	}
+#job-application-entityform-edit-form #edit-field-certify #edit-field-certify-und label.control-label {
+	 background:none;
+	 color:inherit;
+	}
+#block-menu-block-3 a {
+	 line-height:5px;
+	 padding-left:0;
+	}
+#block-menu-block-3 a:hover,
+#block-menu-block-3 a.active {
+	 background:none;
+	}
+
+.view-id-plibor .views-field-field-value-date {
+	 /*font-weight:bold;*/
+	 padding-bottom:20px;
+	}
+.view-id-plibor .views-field-nothing span.field-content {
+	 padding-left:100px;
+	}
+.view-id-plibor .views-field-nothing {
+	 font-weight:bold;
+	 height:25px;
+	 border-bottom:1px solid #eee;
+	 width:207px;
+	}	
+.view-id-plibor .views-field-field-fixings-0n,
+.view-id-plibor .views-field-field-fixings-1m,
+.view-id-plibor .views-field-field-fixings-1w,
+.view-id-plibor .views-field-field-fixings-3m	 {
+	 clear:left;
+	 height:25px;
+	 border-bottom:1px solid #eee;
+	 width:207px;
+	}
+.view-id-plibor .views-field-field-fixings-0n .field-content,
+.view-id-plibor .views-field-field-fixings-1m .field-content,
+.view-id-plibor .views-field-field-fixings-1w .field-content,
+.view-id-plibor .views-field-field-fixings-3m .field-content {
+	 float:left;
+    }
+.view-id-plibor .views-field-field-fixings-0n span,
+.view-id-plibor .views-field-field-fixings-1m span,
+.view-id-plibor .views-field-field-fixings-1w span,
+.view-id-plibor .views-field-field-fixings-3m span {
+	 float:left;
+	 width:142px;
+    }
+.view-id-plibor table td { 
+    border: 1px solid #eee;
+}
+
+.view-id-plibor table {
+    width:99%;
+}
+#act-charts-graphs-form {
+	 margin-top:50px;
+	}
+	
+.view-id-procurement ul {
+	 padding-left:0;
+	}
+.view-id-procurement li {
+	 list-style:none;
+	 margin-bottom:20px;
+	}
+
+.view-id-procurement .views-field-title,
+.view-id-download_tender .views-field-title {
+	 font-size:16px;
+	 font-weight:bold;
+	 color:#183b71;
+	}
+
+.view-id-procurement a {
+	 text-decoration:none;
+	 font-style:italic;
+	}
+.view-id-download_tender a {
+	 text-decoration:none;
+	}	
+.view-id-download_tender .views-row {
+	 margin-bottom:10px;
+	}
+.view-id-download_tender .download_tender {
+	 float:left;
+	 padding-right:10px;
+	}
+	
+#webform-client-form-156698 .btn-default {
+    color: #fff;
+    background-color: #90aec8;
+    border: 0;
+	height:25px;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+#webform-client-form-156698 .webform-component--tender-title,
+#webform-client-form-156698 .webform-component--content-nid {
+	 display:none;
+	}
+
+/*Currency timer*/
+
+.timelinr-dates li {
+    list-style: none;
+    float: left;
+    width: 150px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    /*background: url('../images/biggerdot.png') center bottom no-repeat;*/
+}
+
+
+.timelinr-issues li h1 {
+    color:#337ab7;
+    font-size: 35px;
+    margin: 20px 0 0 20px;
+    text-shadow: #000 0px 0px 0px;
+}
+.timelinr-content {
+	 margin-left:20px;
+	}
+.timelinr-issues li p {
+    font-size: 14px;
+    margin-right: 0px;
+    font-weight: normal;
+    line-height: 22px;
+    text-shadow: #000 0px 0px 0px;
+}
+
+.view-id-virtual_museum_view a {
+	 text-decoration:none;
+	}
+
+.timelinr-issues li img {
+    float: none;
+    margin: 10px 30px 10px 50px;
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+    zoom: 1;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    -ms-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+    -webkit-transform: scale(0.7,0.7);
+    -moz-transform: scale(0.7,0.7);
+    -o-transform: scale(0.7,0.7);
+    -ms-transform: scale(0.7,0.7);
+    transform: scale(0.7,0.7);
+}
+
+.timelinr-container {
+    width: 800px;
+    height: auto;
+    overflow: hidden;
+    margin: 50px auto;
+    position: relative;
+    /*background: url('../images/dot.gif') left 45px repeat-x;*/
+}
+
+.timelinr-issues li {
+    width: 800px;
+    height: auto;
+    list-style: none;
+    float: left;
+}
+
+.timelinr-dates {
+    width: 800px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.timelinr-issues {
+    width: 800px;
+    height: auto;
+    overflow: hidden;
+}
+
+/*Currency timer ends*/
+
+
+ #webform-client-form-156698 .form-actions {
+	  margin-top:20px;
+	}
+
+.vco-skinny.vco-notouch .vco-slider .nav-previous:hover, .vco-skinny.vco-notouch .vco-slider .nav-next:hover {
+    color: #333 !important;
+    /*background-color: #333;
+    background-color: rgba(0,0,0,0.65);*/
+    background-color:transparent !important;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.vco-timeline .vco-navigation .timenav-background {
+    position: absolute;
+    cursor: move;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background-color: #90aec8 !important;
+}
+
+#user-register-form #edit-field-type
+{
+	display:none;
+}
+
+@media only screen 
+and (max-width : 980px) {
+	.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11 {
+	  width:100%;
+	  clear: left;
+	}
+
+	#block-block-5 {
+		 text-align:left;
+		}
+	#block-block-6 {
+		 text-align:left;
+		}
+	#block-block-4 iframe {
+		 float:left;
+		 margin-top:20px;
+		}
+
+	#webform-client-form-43032 .btn, #email-alerts-node-form .btn, #job-application-entityform-edit-form .btn, .view-id-store .btn,
+	#views-form-commerce-cart-form-default .btn, #webform-client-form-156696 .btn, #webform-client-form-156698 .btn {
+		 margin-bottom:20px;
+		} 
+    
+    .view-id-supervision_licensees .views-row .col-sm-6 {
+		 display: table;
+		 margin-bottom: 20px;
+	     border-bottom:1px solid #ccc;
+		 width:100%;
+		 clear:both;
+		}
+    
+}	
+
+@media only screen 
+and (max-width : 468px) {
+	#act-charts-graphs-form #edit-submit--2 {
+		 margin-left:80px;
+		}
+	#act-charts-graphs-form .form-type-date-popup > label {
+		 float:left;
+		 padding-top:5px;
+		 width:80px;
+		}	
+	
+
+}	
+
+#views-exposed-form-supervision-licensees-page {
+	 margin-bottom:40px;
+	}
+
+
+.view-id-supervision_licensees .views-field-field-logo {
+     margin-bottom: 20px;
+	 margin-top:10px;
+	}
+.view-id-supervision_licensees .views-field-title {
+	 font-weight:bold;
+	 padding-bottom:10px;
+	 font-size:18px;
+    text-align: left;
+	}
+.view-id-supervision_licensees .views-field-field-website {
+	 padding-top:10px;
+	}
+
+.view-id-archives_nodes ul {
+	 padding-left:0;
+	 list-style:none;
+	}	
+.view-id-archives_nodes ul li {
+	 margin-bottom:20px;
+	}	
+
+.view-id-archives_nodes a {
+	 text-decoration:none;
+	}
+
+.view-id-archives_nodes ul li .views-field-nothing a::before {
+    content: '\00bb';
+    padding-right: 5px;
+	font-size:16px;
+}
+
+
+
+.view-id-monetary_policy .views-row,
+.view-id-supervision .views-row,
+.view-id-markets .views-row,
+.view-id-banks_and_notes .views-row,
+.view-id-media .views-row {
+	 margin-bottom:10px;
+	}
+.field {
+	 padding-bottom:5px;
+	}
+
+.field .field-label {
+    font-weight: bold;
+    float: left;
+    padding-right: 10px;
+}	
+
+.field-type-text-with-summary li {
+	 margin-bottom:15px;
+	}
+.mcib-login {
+	 padding-left:40px;
+	 font-weight:bold;
+	}
+
+
+/* VIRTUAL MUSEUM */
+#timelinejs-clone-of-virtual-museum-page .slider-item {
+	 overflow-x:hidden;
+	}
+#timelinejs-clone-of-virtual-museum-page h3 {
+	 color:#002b44;
+	}
+.vco-slider .slider-item .content .content-container .text .container h2.date {
+	padding-top:20px;
+    font-size: 30px !important;
+    line-height: 30px !important;
+    font-weight: normal !important;
+    color: #002b44 !important;
+}
+#storyjs-timeline .layout-text-media .container h3 {
+    font-size: 20px !important;
+    line-height: 20px !important;
+}
+#timelinejs-clone-of-virtual-museum-page .nav-next .nav-container,
+#timelinejs-clone-of-virtual-museum-page .nav-previous .nav-container {
+    top:70% !important;
+}
+
+#timelinejs-clone-of-virtual-museum-page li {
+	 padding-bottom:5px;
+	 line-height:20px;
+	 text-align:left;
+	}
+
+a.archieves {
+    background: #90aec8;
+    padding: 5px;
+    float: right;
+    color: #fff;
+	text-decoration:none;
+}
+
+ul.site-map-menu li {
+	 font-weight:bold;
+	 font-size:20px;
+	 margin:10px 0 10px 0;
+	}
+ul.site-map-menu li::before {
+	 content: "\00bb";
+	 padding:0 5px 0 0;
+	}
+ul.site-map-menu li ul.site-map-menu li {
+	 font-weight:bold;
+	 font-size:14px;
+	 margin:0;
+	}
+ul.site-map-menu li ul.site-map-menu li ul.site-map-menu li {
+	 font-weight:normal;
+	 font-size:14px;
+	 margin:0;
+	}	
+
+.page-node-156834 .field {
+    padding-bottom: 50%;
+}
+
+.view-id-mpc_composition .views-row {
+	 margin-bottom:15px;
+	 display:inline-block;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+	}
+.view-id-mpc_composition .views-row .views-field-title {
+	 padding-bottom:0px;
+	 display:inline-block;
+	 font-size:16px;
+	}
+.view-id-instructions_to_licensees .views-field-title {
+	 font-weight:bold;
+	}
+.view-id-instructions_to_licensees .views-field-field-file {
+	 margin-bottom:10px;
+	 padding-bottom:10px;
+	 border-bottom:1px solid #eee;
+	}
+.view-id-instructions_to_licensees h3 {
+	 margin:10px 0;
+	 padding:5px;
+	 background:#90aec8;
+	 color:#fff;
+	}	
+
+#block-block-19 p a {
+	 text-decoration:none;
+	 color:#677e8c;
+	 font-size:12px;
+	}	
+#block-block-19 p a:hover {
+	 text-decoration:underline;
+	}	
+
+.view-id-statistics .views-field-field-link,
+.view-id-financial_stability .views-field-field-link,
+.view-id-monetary_policy .views-field-field-link,
+.view-id-guideline_supervision .views-field-field-link,
+.view-id-markets .views-field-field-link,
+.view-id-bom_bills .views-field-field-link,
+.view-id-government_of_mauritius_securities .views-field-field-link,
+.view-id-publications .views-field-field-link,
+.view-id-banks_and_notes .views-field-field-link,
+.view-id-media .views-field-field-link {
+    float: left;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.view-id-statistics .views-field-view-node,
+.view-id-financial_stability .views-field-view-node,
+.view-id-monetary_policy .views-field-view-node,
+.view-id-guideline_supervision .views-field-view-node,
+.view-id-markets .views-field-view-node,
+.view-id-bom_bills .views-field-view-node,
+.view-id-government_of_mauritius_securities .views-field-view-node,
+.view-id-publications .views-field-view-node,
+.view-id-banks_and_notes .views-field-view-node,
+.view-id-media .views-field-view-node {
+    padding-top: 0px;
+}
+.view-id-statistics .views-field-created,
+.view-id-financial_stability .views-field-created,
+.view-id-monetary_policy .views-field-created,
+.view-id-guideline_supervision .views-field-created,
+.view-id-markets .views-field-created,
+.view-id-bom_bills .views-field-created,
+.view-id-government_of_mauritius_securities .views-field-created,
+.view-id-publications .views-field-created,
+.view-id-banks_and_notes .views-field-created,
+.view-id-media .views-field-created,
+.view-id-publications_and_statistics .views-field-created,
+.views-field-created {
+    font-size:11px;
+	font-style:italic;
+}
+/*.view-id-statistics .views-row,*/
+.view-id-financial_stability .views-row,
+.view-id-statistics.view-display-id-page .views-row,
+.view-id-legislations.view-display-id-page .views-row,
+.view-id-scam_alerts.view-display-id-page .views-row,
+.view-id-monetary_policy .views-row,
+.view-id-guideline_supervision .views-row,
+.view-id-markets .views-row,
+.view-id-scam_alerts_media .views-row,
+.view-id-bom_bills .views-row,
+.view-id-government_of_mauritius_securities .views-row,
+.view-id-publications .views-row,
+.view-id-publications_and_statistics .views-row,
+.view-id-banks_and_notes .views-row,
+.view-id-media .views-row,
+.view-id-clone_of_reports.view-display-id-page .views-row,
+.view-id-clone_of_reports.view-display-id-page_2 .views-row,
+.view-id-financial_stability_in_publication.view-display-id-page .views-row {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+	
+.view-id-monetary_policy .views-field-title,
+.view-id-clone_of_reports.view-display-id-page .views-field-title,
+.view-id-clone_of_reports.view-display-id-page_2 .views-field-title,
+.view-id-guideline_supervision .views-field-title,
+.view-id-bom_bills .views-field-title,
+.view-id-government_of_mauritius_securities .views-field-title,
+.view-id-statistics .views-field-title,
+.view-id-publications_and_statistics .views-field-title,
+.view-id-legislations .views-field-title,
+.view-id-scam_alerts .views-field-title,
+ .view-id-financial_stability.view-display-id-page .views-field-title,
+.view-id-clone_of_reports.view-display-id-page_2 .views-field-title,
+.view-id-financial_stability.view-display-id-page h4.views-field-title,
+.view-id-publications.view-display-id-page h4.views-field-title, 
+.view-id-financial_stability_in_publication.view-display-id-page h4.views-field-title,
+.view-id-scam_alerts_media.view-display-id-page .views-field-title {
+	 font-size:18px;
+	 padding-bottom:10px;
+    font-weight: bold;
+	}
+.view-id-scam_alerts ul,
+.view-id-scam_alerts_media ul {
+    padding-left: 0;
+    list-style: none;    
+}
+.view-id-scam_alerts .views-field-title a {
+    color: #677e8c;
+    text-decoration: none;
+}
+.view-id-scam_alerts .views-field-path {
+    margin-bottom: 20px;
+}
+.view-id-monetary_policy .views-field-title a,
+.view-id-clone_of_reports.view-display-id-page .views-field-title a,
+.view-id-store .views-field-title a,
+.view-id-clone_of_reports.view-display-id-page_2 .views-field-title a,
+.view-id-guideline_supervision .views-field-title a,
+.view-id-bom_bills .views-field-title a,
+.view-id-government_of_mauritius_securities .views-field-title a,
+.view-id-statistics .views-field-title a,
+.view-id-publications_and_statistics .views-field-title a,
+.view-id-media.view-display-id-page .views-field-title a,
+.view-id-bom_image_gallery_photo.view-display-id-page .views-field-name a,
+.view-id-board_of_directors.view-display-id-page .views-field-field-directors-name a {
+	color:#677e8c;
+	}
+.view-id-clone_of_reports .views-row {
+	 padding-bottom:20px;
+	}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 3px 8px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #edf2f6;
+    border: 1px solid #90aec8;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #90aec8;
+    border-color: #90aec8;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+    z-index: 3;
+    color: #fff;
+    background-color: #90aec8;
+    border-color: #90aec8;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    color: #337ab7;
+    cursor: not-allowed;
+    background-color: #edf2f6;
+    border-color: #90aec8;
+}
+
+
+.vco-storyjs h1.date, .vco-storyjs h2.date, .vco-storyjs h3.date, .vco-storyjs h4.date, .vco-storyjs h5.date, .vco-storyjs h6.date {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.vco-storyjs .vco-feature h1, .vco-storyjs .vco-feature h2, .vco-storyjs .vco-feature h3, .vco-storyjs .vco-feature h4, .vco-storyjs .vco-feature h5, .vco-storyjs .vco-feature h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+.vco-storyjs h1, .vco-storyjs h2, .vco-storyjs h3, .vco-storyjs h4, .vco-storyjs h5, .vco-storyjs h6, .vco-storyjs p, .vco-storyjs blockquote, .vco-storyjs pre, .vco-storyjs a, .vco-storyjs abbr, .vco-storyjs acronym, .vco-storyjs address, .vco-storyjs cite, .vco-storyjs code, .vco-storyjs del, .vco-storyjs dfn, .vco-storyjs em, .vco-storyjs img, .vco-storyjs q, .vco-storyjs s, .vco-storyjs samp, .vco-storyjs small, .vco-storyjs strike, .vco-storyjs strong, .vco-storyjs sub, .vco-storyjs sup, .vco-storyjs tt, .vco-storyjs var, .vco-storyjs dd, .vco-storyjs dl, .vco-storyjs dt, .vco-storyjs li, .vco-storyjs ol, .vco-storyjs ul, .vco-storyjs fieldset, .vco-storyjs form, .vco-storyjs label, .vco-storyjs legend, .vco-storyjs button, .vco-storyjs table, .vco-storyjs caption, .vco-storyjs tbody, .vco-storyjs tfoot, .vco-storyjs thead, .vco-storyjs tr, .vco-storyjs th, .vco-storyjs td, .vco-storyjs .vco-container, .vco-storyjs .content-container, .vco-storyjs .media, .vco-storyjs .text, .vco-storyjs .vco-slider, .vco-storyjs .slider, .vco-storyjs .date, .vco-storyjs .title, .vco-storyjs .messege, .vco-storyjs .map, .vco-storyjs .credit, .vco-storyjs .caption, .vco-storyjs .vco-feedback, .vco-storyjs .vco-feature, .vco-storyjs .toolbar, .vco-storyjs .marker, .vco-storyjs .dot, .vco-storyjs .line, .vco-storyjs .flag, .vco-storyjs .time, .vco-storyjs .era, .vco-storyjs .major, .vco-storyjs .minor, .vco-storyjs .vco-navigation, .vco-storyjs .start, .vco-storyjs .active {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	color:#677e8c;
+}
+	
+@media only screen 
+and (min-width : 800px) {
+	.vco-storyjs .text {
+		float: left !important;
+		}
+	
+	.vco-slider .slider-item .content .content-container .text {
+		max-width: 100% !important;
+		min-width: 100% !important;
+		}
+	#timelinejs-clone-of-virtual-museum-page .slider-item {
+		 height: 630px !important;
+		}
+	#timelinejs-clone-of-virtual-museum-page .slider-container-mask {
+		 height: 630px !important;
+		}
+	#timelinejs-clone-of-virtual-museum-page {
+		height: 830px !important;
+	}		
+}
+@media only screen 
+and (max-width : 768px) {
+	#timelinejs-clone-of-virtual-museum-page .text .container {
+		text-align: left !important;
+		width:92% !important;
+	   }
+}
+
+/* VIRTUAL MUSEUM ENDS */
+
+
+@media only screen 
+and (min-width : 990px)
+and (max-width : 1024px) {
+	.sf-menu.sf-style-coffee a,
+	.sf-menu.sf-style-coffee span.nolink {
+	  padding: 0.75em 0.7em;
+	  font-size:11px;
+	}	
+
+	.sf-menu.sf-style-coffee a.sf-with-ul,
+	.sf-menu.sf-style-coffee span.nolink.sf-with-ul {
+	  padding-right: 1em/*2.25em*/;
+	}
+
+    #block-block-4 iframe {
+		 width: 180px !important;
+         height: 100px !important;
+		}
+	
+}	
+
+
+section#block-views-repo-rate-block {
+}
+section#block-block-2 {
+    margin-bottom: 7px;
+}
+#block-views-repo-rate-block,
+#block-views-yield-on-91-day-gmtb-block {
+	 background:#9FE2BF;
+	 padding: 15px 10px 0px;
+	 border-bottom: 0px solid red;
+	}
+#block-views-yield-on-91-day-gmtb-block {
+	 border-bottom: 2px solid red;
+	 padding-top:0;
+     padding-bottom: 5px;
+	}
+#block-views-repo-rate-block p,
+#block-views-yield-on-91-day-gmtb-block p {
+	 text-align:center;
+	 margin:0;
+}
+
+#block-views-repo-rate-block .repo-rate-title {
+	 color:#2b75b6;
+	 font-size:15px;
+	 font-weight:bold;
+	}
+#block-views-repo-rate-block .repo-rate {
+	 color:#2d5265;
+	 font-size:25px;
+	 font-weight:bold;
+	 padding:5px 0 0;
+	}
+	
+#block-views-yield-on-91-day-gmtb-block .gmtb-title {
+	 color:#2b75b6;
+	 font-size:15px;
+	 font-weight:bold;
+	}
+#block-views-yield-on-91-day-gmtb-block .gmtb-rate {
+	 color:#2d5265;
+	 font-size:18px;
+	 font-weight:bold;
+	 padding:5px 0 0;
+	}
+#block-block-20 {
+	 /*margin-top:20px;*/
+	 background:green;
+	 border-bottom:2px solid red;
+	 padding-top:20px;
+	}
+#block-block-20 a,
+#block-views-upcoming-events-block a {
+    color: white;
+    font-size: 12px;
+    text-decoration: underline;	
+    }
+#block-block-20 p {
+	}	
+
+@media only screen 
+and (min-width : 990px) {
+
+        #block-block-21 {
+			 margin-top:58px;
+			}
+		
+		#block-views-latest-news-block .view-id-latest_news .view-content {
+			height: 376px /*200px 290px*/;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			width: 100%;
+		}
+}
+
+#block-block-9,
+#block-block-14,
+#block-block-21,
+#block-act-charts-graphs-inflation,
+#block-block-20 {
+	 padding-top:15px;
+	 padding-bottom:15px;
+	}	
+#block-block-9 p,
+#block-block-14 p,
+#block-block-21 p {
+	 margin-bottom:10px;
+	 font-size:12px;
+	}	
+#block-block-9 a,
+#block-block-14 a,
+#block-block-21 a {
+	 color:white;
+	 text-decoration:underline;
+	 line-height: 20px;
+	}	
+#block-block-21 {
+	 background:green;
+	 border-bottom:2px solid red;
+	}	
+#block-block-9 {
+	 background:green;
+	 border-bottom:2px solid red;
+	}
+#block-block-14,
+#block-act-charts-graphs-inflation {
+	 background:green;
+	 border-bottom:2px solid red;
+	}
+	
+@media (min-width: 990px) {
+	.region-bomfooter .col-sm-3 {
+		width: 23.025%;
+		margin-top:30px;
+		height:180px;
+		}
+	#block-block-9,
+	#block-block-14,
+    #block-act-charts-graphs-inflation {
+		 margin-left:30px;
+		}	
+}
+
+.view-id-latest_news .news .news-date,
+.view-id-upcoming_events .upcoming-date {
+    float: left;
+    width: 50px;
+    height: 35px;
+    font-size: 11px;
+	text-transform:uppercase;
+    background: red;
+    color: #fff;
+    padding-top: 10px;
+    text-align: center;
+    margin-right: 15px;
+}
+.view-id-latest_news .news .news-text,
+.view-id-upcoming_events .upcoming-text {
+	 font-size:12px;
+	 padding-top:2px;
+	 margin-left:65px;
+  }
+.view-id-latest_news .news .news-text a,
+.view-id-upcoming_events .upcoming-text a {
+	 color:green;
+	 text-decoration:underline;
+  }
+  
+.view-id-latest_news .views-row,
+.view-id-upcoming_events .views-row {
+	 margin-bottom:15px;
+	 display:table;
+	 table-layout:fixed;
+	 width:100%;
+	 margin-top:10px;
+	}
+#block-quicktabs-exchange-rates	 h2.block-title {
+	 margin-bottom:10px;
+	}
+
+.form-item.webform-component.webform-component-markup.webform-component--supervision.form-group,
+.form-item.webform-component.webform-component-markup.webform-component--contact-us.form-group {
+    border-top: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.row.scamalert h2,
+.row.subscription h2 {
+    border-top: 1px solid #eee;
+    padding-bottom: 0px;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+.col-sm-6.headoffice h2 {
+    margin-top: 0;
+}
+/*
+.form-item.webform-component.webform-component-markup.webform-component--supervision.form-group {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.form-item.webform-component.webform-component-markup.webform-component--contact-us.form-group {
+    clear: left;
+}
+*/
+
+.read-more {
+    color: #fff;
+    background-color: #90aec8;
+    /*width: 85px; */
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    display: table;
+}
+.read-more-expand .more-link, .read-less-expand .less-link
+{
+	font-style: italic;
+    font-weight: bold;
+}
+.download-file {
+    color: #fff;
+    background-color: #90aec8;
+    width: 95px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px 3px 0 3px;
+    display: table;
+}
+a.read-more,
+.download-file a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.region-sidebar-first .nav li a {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+	text-decoration:none;
+	font-size:11px;
+	color:#677e8c;
+}
+
+.region-sidebar-first .nav li a.active {
+	color:#183b71;
+    font-weight: bold;
+}    
+.region-sidebar-first .nav .sub-category {
+    padding-left: 15px;
+}
+.region-sidebar-first .nav .glyphicon {
+    padding-left: 3px;
+    font-size: 10px;
+}
+
+.region-sidebar-first .nav li a:hover {
+	color:#183b71;
+} 
+
+@media only screen 
+and (max-width : 980px) {
+	.region-sidebar-first {
+		display: none;
+	   }
+}
+
+#block-block-12 p {
+    margin: 0;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 12px;
+} 
+
+#act-charts-key-incators-form label {
+    float: left;
+    padding-right: 5px;
+}
+
+#block-act-charts-graphs-key-indicators h2.block-title {
+    margin-top: 50px;
+}
+.view-id-key_indicators {
+    font-size: 12px;
+}
+.view-id-key_indicators td,
+.view-id-key_indicators th {
+    padding: 5px;
+    border: 1px solid #fff;
+    background: #eee !important;
+    color: #677e8c !important;
+}
+
+#block-block-22 a {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+.view-id-indicative_exchange_rate table,
+.view-id-repo_rate.view-display-id-page_1 table,
+.view-id-test_taxo.view-display-id-page table {
+    background: #fcfcfa;
+    width: 99%;
+}
+.view-id-indicative_exchange_rate table td,
+.view-id-repo_rate.view-display-id-page_1 table td,
+.view-id-test_taxo.view-display-id-page table th,
+.view-id-test_taxo.view-display-id-page table td {
+    border: 1px solid #ccc; 
+}
+.view-id-indicative_exchange_rate .views-field-field-trans-date .views-label-field-trans-date {
+    float: left;
+    padding-right: 5px;
+}
+.view-id-indicative_exchange_rate .views-field-field-trans-date {
+    padding-bottom: 10px;
+}
+.view-id-indicative_exchange_rate .views-field-field-bank-logo {
+    padding-bottom: 10px;
+}
+.view-id-test_taxo.view-display-id-page table th {
+    text-align: center;
+}
+.view-id-plibor table thead,
+.view-id-key_indicators table thead td,
+.view-id-key_indicators table thead th {
+	 background:#90aec8 !important;
+	 color:#fff !important;
+	}
+table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 0px solid #ddd !important;
+}
+
+@media only screen 
+and (max-width : 650px) {
+    
+/* view-id-key_indicators */  
+    
+    .view-id-key_indicators {
+        font-size: 11px;
+    }
+  
+    /* Force table to not be like tables anymore */
+	.view-id-key_indicators table, 
+	.view-id-key_indicators thead, 
+	.view-id-key_indicators tbody, 
+	.view-id-key_indicators th, 
+	.view-id-key_indicators td, 
+	.view-id-key_indicators tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.view-id-key_indicators thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.view-id-key_indicators tr { border: 1px solid #ccc; }
+ 
+	.view-id-key_indicators td { 
+		/* Behave  like a "row" */
+		border: 1px solid #eee;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 235px; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	.view-id-key_indicators td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px;
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+  
+	/*
+	Label the data
+	*/
+	.view-id-key_indicators td:before { content: attr(data-title); }
+
+
+    /* Label the data for table one */
+        /* .view-id-key_indicators td:nth-of-type(1):before { content: "Year:";} */
+        .view-id-key_indicators td:nth-of-type(1):before { content: "Budget Balance as a % of GDP*:"; }	
+        .view-id-key_indicators td:nth-of-type(2):before { content: "Current Account Balance:"; }	
+        .view-id-key_indicators td:nth-of-type(3):before { content: "Current Account Balance as a % of GDP:"; }	
+        .view-id-key_indicators td:nth-of-type(4):before { content: "Gross Official International Reserves:"; }	
+        .view-id-key_indicators td:nth-of-type(5):before { content: "Headline Inflation Rate:"; }	
+        .view-id-key_indicators td:nth-of-type(6):before { content: "Overall Balance of Payments:"; }	
+        .view-id-key_indicators td:nth-of-type(7):before { content: "Real GDP Growth Rate:"; }
+        .view-id-key_indicators td:nth-of-type(8):before { content: "Unemployment Rate:"; }
+	
+	.view-id-key_indicators .table-responsive > .table > tbody > tr > td {
+		white-space: nowrap;
+		padding-left: 235px;
+	}
+    
+   #act-charts-key-incators-form label {
+    width:80px;
+   }
+    
+    #act-charts-key-incators-form .form-item.form-item-to-date.form-type-date-select.form-group {
+        margin:20px 0;
+    }
+    
+    #act-charts-key-incators-form button#edit-submit--2 {
+        margin-bottom: 20px;
+    }
+    
+
+    /* view-id-indicative_exchange_rate */  
+    
+    .view-id-indicative_exchange_rate {
+        font-size: 11px;
+    }
+  
+    /* Force table to not be like tables anymore */
+	.view-id-indicative_exchange_rate table, 
+	.view-id-indicative_exchange_rate thead, 
+	.view-id-indicative_exchange_rate tbody, 
+	.view-id-indicative_exchange_rate th, 
+	.view-id-indicative_exchange_rate td, 
+	.view-id-indicative_exchange_rate tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.view-id-indicative_exchange_rate thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.view-id-indicative_exchange_rate tr { border: 1px solid #ccc; }
+ 
+	.view-id-indicative_exchange_rate td { 
+		/* Behave  like a "row" */
+		border: 1px solid #eee;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 120px; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	.view-id-indicative_exchange_rate td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px;
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+  
+	/*
+	Label the data
+	*/
+	.view-id-indicative_exchange_rate td:before { content: attr(data-title); }
+
+
+    /* Label the data for table one */
+        .view-id-indicative_exchange_rate td:nth-of-type(1):before { content: "Country:"; }	
+        .view-id-indicative_exchange_rate td:nth-of-type(2):before { content: "TT Buying:"; }	
+        .view-id-indicative_exchange_rate td:nth-of-type(3):before { content: "TT/DD Buying:"; }	
+        .view-id-indicative_exchange_rate td:nth-of-type(4):before { content: "Notes Buying:"; }	
+        .view-id-indicative_exchange_rate td:nth-of-type(5):before { content: "TT/DD/TC Selling:"; }	
+        .view-id-indicative_exchange_rate td:nth-of-type(6):before { content: "Notes Selling:"; }
+	
+	.view-id-indicative_exchange_rate .table-responsive > .table > tbody > tr > td {
+		white-space: nowrap;
+		padding-left: 120px;
+	}
+    
+    .view-id-indicative_exchange_rate td.strong {
+        display: none;
+    }
+    
+    
+    
+    
+    
+    
+    /* view-id-plibor.view-display-id-page_1 */  
+    
+    .view-id-plibor.view-display-id-page_1 {
+        font-size: 11px;
+    }
+  
+    /* Force table to not be like tables anymore */
+	.view-id-plibor.view-display-id-page_1 table, 
+	.view-id-plibor.view-display-id-page_1 thead, 
+	.view-id-plibor.view-display-id-page_1 tbody, 
+	.view-id-plibor.view-display-id-page_1 th, 
+	.view-id-plibor.view-display-id-page_1 td, 
+	.view-id-plibor.view-display-id-page_1 tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.view-id-plibor.view-display-id-page_1 thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.view-id-plibor.view-display-id-page_1 tr { border: 1px solid #ccc; }
+ 
+	.view-id-plibor.view-display-id-page_1 td { 
+		/* Behave  like a "row" */
+		border: 1px solid #eee;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 150px; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	.view-id-plibor.view-display-id-page_1 td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px;
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+  
+	/*
+	Label the data
+	*/
+	.view-id-plibor.view-display-id-page_1 td:before { content: attr(data-title); }
+
+
+    /* Label the data for table one */
+        .view-id-plibor.view-display-id-page_1 td:nth-of-type(1):before { content: "Issue Date:"; }	
+        .view-id-plibor.view-display-id-page_1 td:nth-of-type(2):before { content: "Tenor:"; }	
+        .view-id-plibor.view-display-id-page_1 td:nth-of-type(3):before { content: "Weighted Yield (% p.a.):"; }
+	
+	.view-id-plibor.view-display-id-page_1 .table-responsive > .table > tbody > tr > td {
+		white-space: nowrap;
+		padding-left: 150px;
+	}
+    
+}
+
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 0px solid #ddd;
+  }
+}
+
+.repo-rate-title a,
+.gmtb-title a {
+    text-decoration: underline;
+}
+
+.view-id-upcoming_events.view-display-id-block a,
+.view-id-latest_news.view-display-id-block a,
+#block-block-21 a,
+#block-block-9 a,
+#block-block-14 a,
+#block-block-20 a {
+    text-decoration: none !important;
+}
+.view-id-upcoming_events.view-display-id-block a:hover,
+.view-id-latest_news.view-display-id-block a:hover,
+#block-block-21 a:hover,
+#block-block-9 a:hover,
+#block-block-14 a:hover,
+#block-block-20 a:hover {
+    text-decoration: underline !important;
+}
+
+.view-id-upcoming_events.view-display-id-block .view-footer a,
+.view-id-latest_news.view-display-id-block .view-footer a{
+    text-decoration: underline !important;
+}
+.view-id-upcoming_events.view-display-id-page_1 .views-field-title,
+.view-id-bank_rate_communiques.view-display-id-block .views-field-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #677e8c;
+}
+.view-id-upcoming_events.view-display-id-page_1 .views-field-title a,
+.view-id-bank_rate_communiques.view-display-id-block .views-field-title a{
+    color: #677e8c;
+}
+.view-id-upcoming_events.view-display-id-page_1 ul {
+    padding: 0;
+}
+
+.view-id-bank_rate_communiques.view-display-id-block .views-field-path {
+    margin-bottom: 10px;
+}
+
+.view-id-bank_rate.view-display-id-page table {
+    background: #9FE2BF;
+    width: 99%;
+}
+.view-id-bank_rate.view-display-id-page table td {
+    border:1px solid #fff;
+}
+
+#job-application-entityform-edit-form #edit-actions {
+    margin-top: 20px;
+}
+
+
+
+#block-menu-menu-useful-links .nav > li > a:hover, #block-menu-menu-useful-links .nav > li > a:focus {
+    text-decoration: none;
+    background-color:transparent;
+}
+
+.table-responsive {
+    overflow-x:hidden !important;
+}
+
+#block-quicktabs-exchange-rates	h2.block-title,
+#block-quicktabs-exchange-rates .quicktabs-tabs {
+    display:none;
+}
+section#block-quicktabs-exchange-rates {
+    padding-top: 0;
+}
+#block-block-24 p {
+    font-size: 11px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+#block-block-24 {
+    margin-top: 13px;
+}
+
+.view-id-scam_alerts.view-display-id-page .views-field-field-file-scam,
+.view-id-publications.view-display-id-page .views-field-field-link {
+    /*margin-bottom: 10px;*/
+}
+.view-id-publications.view-display-id-page .views-field-field-link {
+    padding-top: 0;
+}
+
+.view-id-media.view-display-id-page .views-field-body p {
+    text-align: left !important;
+}
+
+.view-id-scam_alerts .views-field-title,
+.view-id-scam_alerts_media .views-field-title,
+.view-id-monetary_policy .views-field-title,
+.view-id-clone_of_reports.view-display-id-page .views-field-title,
+.view-id-clone_of_reports.view-display-id-page_2 .views-field-title {
+    padding-top: 10px;
+}
+ 
+.view-id-governors.view-display-id-page .current-title,
+.view-id-governors.view-display-id-page .views-field-title {
+    font-weight: bold;
+    padding: 5px 0;
+}
+.view-id-governors.view-display-id-page .views-field-field-picture {
+    padding-top: 10px;
+}
+.view-id-governors.view-display-id-page .views-field-field-duration,
+.view-id-governors.view-display-id-page .current-duration {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.views-field-body {
+    padding-bottom: 10px;
+}
+.table-governors p {
+    text-align: left;
+}
+.table-governors td,
+.table-governors th {
+    padding: 5px;
+}
+.table-governors td {
+        border: 1px solid #ccc;
+}
+
+.region-content {
+	text-align:justify;
+ }
+.view-id-board_of_directors.view-display-id-page,
+.view-id-governors.view-display-id-page {
+	text-align:left;
+ }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    line-height: 1.3;
+}
+
+/*.breadcrumb li {
+    text-transform: lowercase;
+}
+.breadcrumb li:first-letter {
+    text-transform:uppercase;
+}*/
+
+p.pp_description {
+    font-size: 11px;
+}
+
+p.pp_description span {
+    font-weight: bold;
+}
+
+.view-calendar-row {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.date-calendar-left {
+     text-align: left;    
+}
+.title-calendar-right {
+     text-align: justify;    
+}
+.title-calendar-right a {
+    text-decoration: none;
+    color: #002b44;
+}
+.title-calendar-right a:hover {
+    text-decoration: underline;
+    color: #002b44;
+}
+table.tblDownloadFile td {
+    padding: 7px 7px 7px 0;
+}
+
+.view-calendar-header .view-header {
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 800px) {
+   .node-board-of-directors .field-name-field-directors-image {
+    float: left;
+    padding: 0 20px 10px 0;
+   }
+    
+}
+
+.node-board-of-directors .field-name-field-directors-name {
+    font-size: 18px;
+    color: #183b71;
+    padding-bottom: 10px;
+}
+
+.image-flip-front,
+.image-flip-back {
+    display: none;
+}
+
+span.flip-back-vr,
+span.flip-front-vr {
+  background: #90aec8;
+    color: #fff;
+    margin-right: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+span.flip-back-vr:hover,
+span.flip-front-vr:hover {
+  background: #1d4964;
+}
+
+#block-views-bank-rate-communiques-block h2.block-title {
+   font-size: 22px;
+    color: #183b71;
+    margin-bottom: 10px; 
+}
+
+.feed-icon {
+    padding: 5px 0;
+}
+.view-id-plibor table.header-tenor thead tr:nth-child(1) {
+    background: #fff !important;
+    color: #000 !important;
+}
+.view-id-plibor table.header-tenor thead tr:nth-child(1) th {
+    text-align: right;
+}
+
+
+.region-sidebar-first .nav li.menu-mlid-1612 a {
+    color: #183b71;
+    font-weight: bold;
+}
+
+.node-procurement .field-type-text-with-summary li {
+    margin-bottom: 5px;
+}
+
+.field-type-text-with-summary li {
+    margin-bottom: 0px;
+}
+
+.node-career-page  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#timelinejs-clone-of-virtual-museum-page .media {
+    display: none;
+}
+
+.vco-slider .slider-item .content {
+    display: table-cell;
+    vertical-align: top !important;
+}
+
+#vm-notes img {
+    margin-top: 30px;
+}
+
+#email-alerts-node-form #edit-field-subscribe-to {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100px;
+}
+#email-alerts-node-form #edit-submit {
+        margin-top: 20px;
+    }
+#email-alerts-node-form .captcha {
+    text-align: left;
+}
+
+.mpc-image.col-sm-3 {
+    padding-left: 0px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+
+.view-id-plibor th.rate-plibor {
+    text-align: right;
+}
+
+#block-menu-menu-useful-links li {
+    margin-bottom: 5px;
+}
+
+#block-block-6 p > a {
+    padding-right: 10px;
+}
+#block-block-6 em {
+    padding-left: 10px;
+}
+
+
+p.bomrodad {
+    padding: 0;
+    margin: 0;
+}
+
+
+.view-id-supervision_licensees.view-display-id-page .img-responsive {
+    height: 50px;
+    width: auto;
+}
+
+/*.field-name-field-pdf-link-education .field-items,
+.field-name-field-pdf-link .field-items {
+    color: #fff;
+    background-color: #90aec8; 
+    width: 95px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0px 3px 0 3px;
+    display: table;
+}
+.field-name-field-pdf-link-education .field-items a,
+.field-name-field-pdf-link .field-items a {
+    text-decoration: none;
+    color: #fff;
+}*/
+
+/* DISABLED */
+
+.page-user .tabs--primary {
+    display: none;
+}
+
+/* Ritasha */
+.view-id-vacancies .views-field-field-pdf-link img{
+	width: 25px;
+}
+#job-application-entityform-edit-form .tabledrag-toggle-weight-wrapper .tabledrag-toggle-weight{
+	display: none;
+}
+
+#webform-client-form-157037 .webform-component--town-or-village label
+{
+	visibility:hidden;
+}
+
+.view-header
+{
+	text-align:justify;
+}
+#block-views-legislations-block-1 h2
+{
+	 font-size: 22px;
+	color: #183b71;
+	margin-bottom: 10px;
+	padding-bottom: 9px;
+    	margin: 40px 0 20px;
+    	border-bottom: 1px solid #eee;
+}
+.search-results .search-info
+{
+	display:none;
+}
+
+@media screen and (max-width: 980px) {
+   .view-id-store .views-field-title {
+        padding-top: 10px;
+        height: auto;
+        padding-bottom:10px;
+               }
+   .view-id-store .views-field-field-store-products-img-rev, .view-id-store .views-field-field-store-products-img-obv {
+        height: auto;
+        margin-top: 20px;
+    }          
+    
+}
+.tblconso
+{
+    font-size:13px;
+}
+
+/*---- VIRTUAL MUSEUM NEW -----*/
+
+.tl-timenav {
+    width: 100%;
+    background-color: #90aec8 !important;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #e5e5e5;
+	margin-top: 20px;
+}
+
+
+#timelinejs-clone-of-virtual-museum-page .slider-item {
+	 overflow-x:hidden;
+	}
+#timelinejs-clone-of-virtual-museum-page h3 {
+	 color:#002b44;
+	}
+.tl-text .tl-headline-date, .tl-text h3.tl-headline-date, .view-clone-of-virtual-museum .views-field-field-year {
+	padding-top:0px;
+    font-size: 30px !important;
+    line-height: 30px !important;
+    font-weight: normal !important;
+    color: #002b44 !important;
+	width: 100% !important;
+    text-align: center !important;
+}
+.tl-skinny .tl-text h2.tl-headline , .view-clone-of-virtual-museum .views-field-title {
+    font-size: 20px !important;
+    line-height: 20px !important;
+	width: 100% !important;
+    text-align: center !important;
+}
+#timelinejs-clone-of-virtual-museum-page .nav-next .nav-container,
+#timelinejs-clone-of-virtual-museum-page .nav-previous .nav-container {
+    top:70% !important;
+}
+
+#timelinejs-clone-of-virtual-museum-page li {
+	 padding-bottom:5px;
+	 line-height:20px;
+	 text-align:left;
+	 color: #677e8c;
+	}
+.tl-skinny .tl-slide .tl-slide-content-container {
+    height: auto !important;
+}
+
+.tl-slide .tl-slide-scrollable-container {
+    overflow: hidden;
+}
+
+.tl-storyslider {
+	top:0 !important;
+}
+
+.tl-skinny .tl-slide .tl-slide-content-container .tl-slide-content {
+	padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 100% !important;
+}
+
+.tl-text-content , .view-clone-of-virtual-museum .views-field-field-description-vm {
+	text-align: center;
+}
+
+.view-clone-of-virtual-museum .views-field-field-description-vm ul
+{
+	text-align:left;
+}
+
+#timelinejs-clone-of-virtual-museum-page .tl-slidenav-next, 
+#timelinejs-clone-of-virtual-museum-page .tl-slidenav-previous {
+    top: 80% !important;
+}
+
+.tl-skinny .tl-slidenav-previous .tl-slidenav-title, .tl-skinny .tl-slidenav-next .tl-slidenav-title, .tl-skinny .tl-slidenav-previous .tl-slidenav-description, .tl-skinny .tl-slidenav-next .tl-slidenav-description {
+    display: block !important;
+}
+.tl-slidenav-next .tl-slidenav-title, .tl-slidenav-next .tl-slidenav-description {
+    margin-left: 0px !important;
+	text-align: left !important;
+}
+.tl-slidenav-previous .tl-slidenav-title, .tl-slidenav-next .tl-slidenav-title, .tl-slidenav-previous .tl-slidenav-description, .tl-slidenav-next .tl-slidenav-description {
+    width: auto !important;
+}
+
+
+.tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-icon, .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-icon, .tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-title, .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-title, .tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-description, .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-description {
+    text-shadow: 1px 1px 1px #fff !important;
+    color: #677e8c !important;
+    font-weight: bold !important;
+}
+
+.tl-slidenav-next,
+.tl-slidenav-previous {
+    filter: alpha(opacity=0.3) !important;
+    -khtml-opacity: 0.3 !important;
+    -moz-opacity: 0.3 !important;
+    opacity: 0.3 !important;
+}
+
+.tl-slidenav-next:hover,
+.tl-slidenav-previous:hover {
+    filter: alpha(opacity=10) !important;
+    -khtml-opacity: 10 !important;
+    -moz-opacity: 10 !important;
+    opacity: 10 !important;
+}
+
+#edit-field-post-applied-for-und-0-value
+{
+	pointer-events: none;
+	background-color: #e0dddd !important;
+}
+@media only screen and (min-width: 800px) {
+	#timelinejs-clone-of-virtual-museum-page {
+		height: 830px !important;
+	}
+}
+
+/*---- VIRTUAL MUSEUM NEW ENDS -----*/
+
+
+
+/*--- Oct2016 ---*/
+
+#job-application-entityform-edit-form #edit-field-upload-document-s-und .panel-heading {
+	color: #333;
+    background-color:transparent;
+    border-color:transparent;
+	padding-left: 0;
+}
+#job-application-entityform-edit-form #edit-field-upload-document-s-und .panel-heading .panel-title {
+	
+	font-size: 14px;
+}
+
+/* Added on 21/11/2016 from staging */
+
+.view-id-deputy_governors_of_the_bank_of_mauritius h3 {
+	padding-bottom: 10px;
+}
+.view-id-deputy_governors_of_the_bank_of_mauritius .views-column.col-sm-12 {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 20px;
+}
+.view-id-deputy_governors_of_the_bank_of_mauritius .views-column.col-sm-12 .col-sm-3 {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 5px;
+}
+.dposition {
+	/*font-weight: bold;*/
+	color: #183b71;
+	text-align: left;
+}
+.dtitle {
+	font-weight: bold;
+	padding: 5px 0;
+	text-align: left;
+}
+.dofficeterm {
+	font-style: italic;
+	text-align: left;
+}
+
+
+/*---- DISPLAY EQUAL COLUM HEIGHT ----*/
+.view-id-deputy_governors_of_the_bank_of_mauritius .views-row {
+	overflow: hidden;	
+    margin-bottom: 20px;
+}
+
+.view-id-deputy_governors_of_the_bank_of_mauritius .views-field-nothing {
+    padding: 0px;
+    background: transparent;
+	margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+/*---- DISPLAY EQUAL COLUM HEIGHT ENDS ----*/
+
+
+/*--- Oct2016 ---*/
+
+#job-application-entityform-edit-form #edit-field-upload-docs .panel-heading {
+	color: #333;
+    background-color:transparent;
+    border-color:transparent;
+	padding-left: 0;
+}
+#job-application-entityform-edit-form #edit-field-upload-docs .panel-heading .panel-title {
+	
+	font-size: 14px;
+}
+
+/*kris*/
+
+span.numberofimage, span.numberofalbums {
+    font-weight: bold;
+}
+
+/*--- 03/11/2016 ---*/
+
+.exportBtn {
+    background-color: #ff6600;
+    border-color: #ddd;
+    color: #fff;
+	margin-bottom: 20px;
+	border: 0;
+	font-size: 11px;
+}
+.exportBtn:hover {
+    background-color: #ff6600;
+    border-color: #ddd;
+    color: #fff;
+}
+#block-act-charts-graphs-key-indicators {
+    border-top: 1px solid #183b71;
+}
+#block-act-charts-graphs-key-indicators h2.block-title {
+    font-size: 18px;
+    color: #183b71;
+    text-transform: uppercase;
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 340px) {
+	#act-charts-graphs-form label {
+		width: 80px;
+	}
+}
+#act-charts-graphs-form .container-inline-date {
+    margin-bottom: 10px;
+}
+
+
+/*--- 08/11/2016 ---*/
+
+#colorbox h2 {
+	font-size: 22px;
+    color: #183b71;
+}
+
+
+/*--- at focus no blue color on href ---*/
+*:focus {
+    outline: none!important;
+}
+.test{
+  display: none;
+}
+
+.view-id-key_indicators td {
+	text-align:initial !important;
+}
+
+.view-clone-of-virtual-museum .owl-carousel .owl-wrapper-outer
+{
+	height:530px;
+}
+
+.view-display-id-attachment_1 
+{
+	display:none;
+}
+
+/* Updated 10/02/2017 */
+#block-commerce-cart-cart h2.block-title {
+	 font-size:15px;
+	 color:#183b71;
+	 margin-top:0;
+	 margin-bottom:8px;
+	 font-weight:bold;
+	 text-transform:uppercase;
+	 background: #fcfcfa;
+	 padding: 10px;
+	}	
+#block-commerce-cart-cart .cart-contents {
+	background: #fcfcfa;
+	padding: 10px;
+	font-size: 12px;
+	margin-top: -10px;
+    margin-bottom: 10px;
+}
+#block-commerce-cart-cart .cart-contents .line-item-summary .line-item-total-shipping.pull-left {
+	text-align: left;
+}
+#block-commerce-cart-cart .cart-contents a {
+	text-decoration: none;
+}
+
+#bootstrap-panel--7 .field-name-field-ref1-phone-no-, #bootstrap-panel--7 .field-name-field-fax-no- , #bootstrap-panel--8 .field-name-field-ref2-phone-no- , #bootstrap-panel--8 .field-name-field-ref2-fax-no-
+{
+	display:none;
+}
+
+.node-results li
+{
+	list-style-type: circle;
+}
