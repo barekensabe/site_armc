@@ -4,7 +4,7 @@ $this->load->view('_layout_top');
 $section_breaks = array(
     'articles' => array(
         'Publication et affichage' => array('type_article', 'statut', 'mis_en_avant', 'afficher_accueil', 'date_publication', 'tags'),
-        'SEO et médias' => array('image_principale', 'image_secondaire', 'meta_title', 'meta_description')
+        'SEO et médias' => array('slug', 'image_principale', 'image_secondaire', 'meta_title', 'meta_description')
     ),
     'pages' => array(
         'Publication' => array('statut', 'est_page_accueil', 'date_publication'),
@@ -152,6 +152,9 @@ function armc_input_col($name, $field)
                                     <input type="datetime-local" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= !empty($value) ? html_escape(date('Y-m-d\TH:i', strtotime($value))) : ''; ?>" class="form-control" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
                                 <?php elseif (in_array($field->type, array('int', 'bigint', 'decimal', 'year'), TRUE)): ?>
                                     <input type="number" step="<?= $field->type === 'decimal' ? '0.01' : '1'; ?>" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= html_escape($value); ?>" class="form-control" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
+                                <?php elseif ($name === 'slug'): ?>
+                                    <input type="text" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= html_escape($value); ?>" class="form-control" placeholder="ex: education-financiere" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
+                                    <small class="text-muted d-block mt-1">Laissez vide pour générer automatiquement le slug à partir du titre.</small>
                                 <?php elseif ($name === 'email'): ?>
                                     <input type="email" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= html_escape($value); ?>" class="form-control" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
                                 <?php elseif ($name === 'telephone'): ?>

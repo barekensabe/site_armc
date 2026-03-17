@@ -26,9 +26,12 @@ if (!function_exists('armc_icon')) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= html_escape($site_name); ?> - Autorité de Régulation du Marché des Capitaux du Burundi</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://www.openstreetmap.org">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="shortcut icon" href="<?= base_url('sites/default/files/favicon.ico'); ?>" type="image/vnd.microsoft.icon" />
     <link href="<?= base_url('assets/css/main.css'); ?>" rel="stylesheet">
 </head>
@@ -58,7 +61,7 @@ if (!function_exists('armc_icon')) {
     </div>
 
     <div class="logo-wrapper">
-        <img src="<?= preg_match('~^https?://~', $logo) ? $logo : base_url(ltrim($logo, '/')); ?>" alt="ARMC Logo" onerror="this.src='https://via.placeholder.com/130x130/eeeeee/006400?text=ARMC'">
+        <img src="<?= preg_match('~^https?://~', $logo) ? $logo : base_url(ltrim($logo, '/')); ?>" alt="ARMC Logo" width="130" height="130" decoding="async" fetchpriority="high" onerror="this.src='<?= base_url('upload/cms/logo.png'); ?>'">
     </div>
 
     <div class="main-header">

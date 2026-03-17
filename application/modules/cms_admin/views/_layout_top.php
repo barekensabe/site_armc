@@ -44,8 +44,8 @@
         </aside>
         <main class="col-md-9 col-lg-10 p-4">
             <?php if ($this->session->flashdata('success')): ?>
-                <div class="alert alert-success"><?= $this->session->flashdata('success'); ?></div>
+                <div class="alert alert-success armc-flash-alert" data-autohide="10000"><?= $this->session->flashdata('success'); ?></div>
             <?php endif; ?>
             <?php if ($this->session->flashdata('error')): ?>
-                <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
+                <div class="alert alert-danger armc-flash-alert" data-autohide="10000"><?= $this->session->flashdata('error'); ?></div>
             <?php endif; ?>

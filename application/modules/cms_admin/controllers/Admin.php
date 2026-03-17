@@ -34,6 +34,8 @@ class Admin extends CI_Controller
         $this->require_auth();
         $data['counts'] = $this->Cms_model->get_dashboard_counts();
         $data['managed_tables'] = $this->managed_tables;
+        $data['top_pages'] = $this->Cms_model->get_top_viewed_pages(10);
+        $data['recent_visitors'] = $this->Cms_model->get_recent_visitor_activity(15);
         $this->load->view('dashboard', $data);
     }
 
@@ -454,7 +456,7 @@ class Admin extends CI_Controller
     {
         $common = array('id', 'created_at', 'updated_at');
         $map = array(
-            'articles' => array('nombre_vues', 'date_validation', 'slug'),
+            'articles' => array('nombre_vues', 'date_validation'),
             'pages' => array('slug'),
             'documents' => array('slug', 'nom_fichier_original', 'extension', 'taille_fichier', 'nombre_telechargements'),
             'categories' => array('slug'),

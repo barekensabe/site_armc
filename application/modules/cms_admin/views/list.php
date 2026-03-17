@@ -20,14 +20,26 @@
             <?php foreach ($rows as $row): ?>
                 <tr>
                     <?php foreach ($fields as $field): ?>
-                        <?php $cell = isset($row[$field->name]) ? $row[$field->name] : ''; ?>
+                        <?php
+                            $cell = isset($row[$field->name]) ? $row[$field->name] : '';
+                            $display = isset($row[$field->name . '__display']) ? $row[$field->name . '__display'] : $cell;
+                            $is_file = (preg_match('/(image|photo|banniere|piece_jointe|fichier)$/i', $field->name) || in_array($field->name, array('image_url', 'fichier_url', 'photo_profil', 'image_principale', 'image_secondaire', 'image_banniere'), TRUE));
+                        ?>
                         <td>
-                            <?php if ((preg_match('/(image|photo|banniere|piece_jointe|fichier)$/i', $field->name) || in_array($field->name, array('image_url', 'fichier_url', 'photo_profil'), TRUE)) && !empty($cell)): ?>
-                                <a href="<?= base_url($cell); ?>" target="_blank">Voir le fichier</a>
+                            <?php if ($is_file && !empty($cell)): ?>
+                                <?php $file_url = base_url($cell); ?>
+                                <?php $is_image = preg_match('/(image|photo|banniere)/i', $field->name) || in_array(strtolower(pathinfo($cell, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'), TRUE); ?>
+                                <a href="<?= $file_url; ?>" target="_blank">
+                                    <?php if ($is_image): ?>
+                                        <img src="<?= $file_url; ?>" alt="<?= html_escape($field->name); ?>" style="width:60px;height:60px;object-fit:cover;border-radius:6px;border:1px solid #dee2e6;">
+                                    <?php else: ?>
+                                        <?= html_escape(basename($cell)); ?>
+                                    <?php endif; ?>
+                                </a>
                             <?php elseif (in_array($cell, array('1', 1, '0', 0), TRUE) && $field->type === 'tinyint'): ?>
                                 <span class="badge <?= (string) $cell === '1' ? 'text-bg-success' : 'text-bg-secondary'; ?>"><?= (string) $cell === '1' ? 'Oui' : 'Non'; ?></span>
                             <?php else: ?>
-                                <?= html_escape(mb_strimwidth((string) $cell, 0, 80, '...')); ?>
+                                <?= html_escape(mb_strimwidth((string) $display, 0, 80, '...')); ?>
                             <?php endif; ?>
                         </td>
                     <?php endforeach; ?>

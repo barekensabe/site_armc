@@ -30,7 +30,7 @@ class Cms_model extends CI_Model
     /** @var array<string, array<string, string>> */
     protected $label_maps = array(
         'categories' => array('value' => 'id', 'label' => 'nom'),
-        'users'      => array('value' => 'id', 'label' => 'email'),
+        'users'      => array('value' => 'id', 'label' => 'display_name'),
         'pages'      => array('value' => 'id', 'label' => 'titre'),
         'articles'   => array('value' => 'id', 'label' => 'titre'),
         'documents'  => array('value' => 'id', 'label' => 'titre'),
@@ -50,7 +50,8 @@ class Cms_model extends CI_Model
         'complaints' => array('agent_assigne_id' => 'users'),
         'alerts' => array('agent_assigne_id' => 'users'),
         'users' => array('role_id' => 'roles'),
-        'menus' => array('parent_id' => 'menus')
+        'menus' => array('parent_id' => 'menus'),
+        'categories' => array('parent_id' => 'categories')
     );
 
 
@@ -302,7 +303,9 @@ class Cms_model extends CI_Model
         if ($pk !== NULL) {
             $this->db->order_by($pk, 'DESC');
         }
-        return $this->db->get($table)->result_array();
+
+        $rows = $this->db->get($table)->result_array();
+        return $this->hydrate_list_rows($table, $rows);
     }
 
     public function get_row($table, $id)
@@ -468,6 +471,25 @@ class Cms_model extends CI_Model
             return array();
         }
 
+        if ($related_table === 'users') {
+            $this->db->select('id, nom, prenom, email');
+            $this->db->from('users');
+            if ($this->db->field_exists('statut', 'users')) {
+                $this->db->where('statut', 'actif');
+            }
+            $this->db->order_by('prenom', 'ASC');
+            $this->db->order_by('nom', 'ASC');
+
+            $rows = $this->db->get()->result_array();
+            $options = array();
+
+            foreach ($rows as $row) {
+                $options[$row['id']] = $this->build_user_display_name($row);
+            }
+
+            return $options;
+        }
+
         $mapping = isset($this->label_maps[$related_table]) ? $this->label_maps[$related_table] : array('value' => 'id', 'label' => 'id');
         $value_field = $mapping['value'];
         $label_field = $mapping['label'];
@@ -477,10 +499,8 @@ class Cms_model extends CI_Model
         if ($this->db->field_exists('actif', $related_table)) {
             $this->db->where('actif', 1);
         }
-        if ($this->db->field_exists('statut', $related_table) && in_array($related_table, array('users', 'articles', 'pages', 'documents', 'newsletters'), TRUE)) {
-            if ($related_table === 'users') {
-                $this->db->where('statut', 'actif');
-            }
+        if ($related_table === 'newsletters' && $this->db->field_exists('statut', $related_table)) {
+            $this->db->where('statut', 'actif');
         }
         $this->db->order_by($label_field, 'ASC');
 
@@ -539,7 +559,29 @@ class Cms_model extends CI_Model
 
     public function get_options_from_table($table, $label_field, $value_field = 'id')
     {
-        if (!$this->db->table_exists($table) || !$this->db->field_exists($label_field, $table)) {
+        if (!$this->db->table_exists($table)) {
+            return array();
+        }
+
+        if ($table === 'users') {
+            $this->db->select('id, nom, prenom, email');
+            $this->db->from('users');
+            if ($this->db->field_exists('statut', 'users')) {
+                $this->db->where('statut', 'actif');
+            }
+            $this->db->order_by('prenom', 'ASC');
+            $this->db->order_by('nom', 'ASC');
+
+            $rows = $this->db->get()->result_array();
+            $options = array();
+            foreach ($rows as $row) {
+                $options[$row['id']] = $this->build_user_display_name($row);
+            }
+
+            return $options;
+        }
+
+        if (!$this->db->field_exists($label_field, $table)) {
             return array();
         }
 
@@ -576,7 +618,7 @@ class Cms_model extends CI_Model
 
     public function get_dashboard_counts()
     {
-        return array(
+        $counts = array(
             'articles' => $this->db->count_all('articles'),
             'pages' => $this->db->count_all('pages'),
             'documents' => $this->db->count_all('documents'),
@@ -584,6 +626,114 @@ class Cms_model extends CI_Model
             'menus' => $this->db->count_all('menus'),
             'messages' => $this->db->count_all('contact_messages')
         );
+
+        if ($this->db->table_exists('logs')) {
+            $counts['visiteurs'] = $this->get_unique_visitors_count();
+            $counts['vues'] = $this->get_total_page_views_count();
+        }
+
+        return $counts;
+    }
+
+    public function get_unique_visitors_count()
+    {
+        if (!$this->db->table_exists('logs')) {
+            return 0;
+        }
+
+        $this->db->select('COUNT(DISTINCT ip_adresse) AS total', FALSE);
+        $row = $this->db->get('logs')->row_array();
+
+        return !empty($row['total']) ? (int) $row['total'] : 0;
+    }
+
+    public function get_total_page_views_count()
+    {
+        if (!$this->db->table_exists('logs')) {
+            return 0;
+        }
+
+        return (int) $this->db->count_all('logs');
+    }
+
+    public function get_recent_visitor_activity($limit = 20)
+    {
+        if (!$this->db->table_exists('logs')) {
+            return array();
+        }
+
+        $this->db->select('ip_adresse, username, logs, date_time');
+        $this->db->from('logs');
+        $this->db->order_by('date_time', 'DESC');
+        $this->db->limit((int) $limit);
+
+        $rows = $this->db->get()->result_array();
+
+        foreach ($rows as &$row) {
+            $row['page_label'] = $this->extract_page_label_from_log(isset($row['logs']) ? $row['logs'] : '');
+        }
+        unset($row);
+
+        return $rows;
+    }
+
+    public function get_top_viewed_pages($limit = 10)
+    {
+        if (!$this->db->table_exists('logs')) {
+            return array();
+        }
+
+        $rows = $this->db->select('logs')
+            ->from('logs')
+            ->order_by('date_time', 'DESC')
+            ->limit(5000)
+            ->get()
+            ->result_array();
+
+        $pages = array();
+        foreach ($rows as $row) {
+            $page = $this->extract_page_label_from_log(isset($row['logs']) ? $row['logs'] : '');
+            if ($page === '') {
+                continue;
+            }
+            if (!isset($pages[$page])) {
+                $pages[$page] = 0;
+            }
+            $pages[$page]++;
+        }
+
+        arsort($pages);
+        $results = array();
+        foreach (array_slice($pages, 0, (int) $limit, TRUE) as $page => $views) {
+            $results[] = array('page_label' => $page, 'views' => $views);
+        }
+
+        return $results;
+    }
+
+    protected function extract_page_label_from_log($logLine)
+    {
+        $logLine = trim((string) $logLine);
+        if ($logLine === '') {
+            return '';
+        }
+
+        $uri = '';
+        if (preg_match('/--([^\s]+)$/', $logLine, $matches)) {
+            $uri = trim($matches[1], '/');
+        } elseif (preg_match('~https?://[^\s]+/([^\s]+)~i', $logLine, $matches)) {
+            $uri = trim($matches[1], '/');
+        }
+
+        if ($uri === '') {
+            return 'Accueil';
+        }
+
+        if (strpos($uri, 'admin') === 0) {
+            return 'Administration';
+        }
+
+        return ucwords(str_replace(array('-', '_', '/'), ' ', $uri));
     }
 
     public function get_pk($table)
@@ -610,6 +760,17 @@ class Cms_model extends CI_Model
 
     protected function resolve_menu_url($menu)
     {
+        $menu_label = isset($menu['libelle']) ? trim((string) $menu['libelle']) : '';
+        $menu_label = function_exists('mb_strtolower') ? mb_strtolower($menu_label, 'UTF-8') : strtolower($menu_label);
+        $special_pages = array(
+            'education financiere' => site_url('education-financiere'),
+            'éducation financière' => site_url('education-financiere'),
+            'recherche & developpement' => site_url('recherche-developpement'),
+            'recherche & développement' => site_url('recherche-developpement'),
+            'recherche et developpement' => site_url('recherche-developpement'),
+            'recherche et développement' => site_url('recherche-developpement')
+        );
+
         switch ($menu['type_cible']) {
             case 'categorie':
                 return !empty($menu['category_slug']) ? site_url('categorie/' . $menu['category_slug']) : '#';
@@ -621,12 +782,38 @@ class Cms_model extends CI_Model
                 return !empty($menu['document_slug']) ? site_url('documents/' . $menu['document_slug']) : '#';
             case 'url':
             default:
+                if ((!isset($menu['url']) || trim((string) $menu['url']) === '' || trim((string) $menu['url']) === '#') && isset($special_pages[$menu_label])) {
+                    return $special_pages[$menu_label];
+                }
+
                 if (empty($menu['url'])) {
-                    return '#';
+                    return isset($special_pages[$menu_label]) ? $special_pages[$menu_label] : '#';
                 }
 
                 return preg_match('~^https?://~i', $menu['url']) ? $menu['url'] : site_url(ltrim($menu['url'], '/'));
         }
+    }
+
+    public function get_public_page_by_candidate_slugs(array $slugs)
+    {
+        foreach ($slugs as $slug) {
+            $page = $this->get_page_by_slug($slug);
+            if (!empty($page)) {
+                return array('type' => 'page', 'data' => $page);
+            }
+
+            $category = $this->get_category_by_slug($slug);
+            if (!empty($category)) {
+                return array(
+                    'type' => 'category',
+                    'data' => $category,
+                    'articles' => $this->get_category_articles($category['id']),
+                    'documents' => $this->get_category_documents($category['id'])
+                );
+            }
+        }
+
+        return NULL;
     }
 
 
@@ -634,6 +821,10 @@ class Cms_model extends CI_Model
     {
         if (!$this->db->table_exists($table)) {
             return NULL;
+        }
+
+        if ($table === 'users') {
+            return $this->get_user_display_name($id);
         }
 
         $mapping = isset($this->label_maps[$table]) ? $this->label_maps[$table] : array('value' => 'id', 'label' => 'id');
@@ -646,8 +837,71 @@ class Cms_model extends CI_Model
             ->get()
             ->row_array();
 
+        if ($label_field === 'display_name') {
+            return $this->get_user_display_name($id);
+        }
+
         return empty($row[$label_field]) ? NULL : $row[$label_field];
     }
+
+    protected function hydrate_list_rows($table, array $rows)
+    {
+        if (empty($rows)) {
+            return $rows;
+        }
+
+        $labels = isset($this->detail_label_maps[$table]) ? $this->detail_label_maps[$table] : array();
+
+        foreach ($rows as &$row) {
+            foreach ($labels as $field => $related_table) {
+                if (!array_key_exists($field, $row) || $row[$field] === NULL || $row[$field] === '') {
+                    continue;
+                }
+
+                $display_value = $this->lookup_related_label($related_table, $row[$field]);
+                if ($display_value !== NULL) {
+                    $row[$field . '__display'] = $display_value;
+                }
+            }
+        }
+        unset($row);
+
+        return $rows;
+    }
+
+    protected function get_user_display_name($id)
+    {
+        $row = $this->db->select('nom, prenom, email')
+            ->from('users')
+            ->where('id', $id)
+            ->get()
+            ->row_array();
+
+        if (empty($row)) {
+            return NULL;
+        }
+
+        return $this->build_user_display_name($row);
+    }
+
+    protected function build_user_display_name(array $row)
+    {
+        $prenom = isset($row['prenom']) ? trim((string) $row['prenom']) : '';
+        $nom = isset($row['nom']) ? trim((string) $row['nom']) : '';
+        $email = isset($row['email']) ? trim((string) $row['email']) : '';
+
+        $full_name = trim($prenom . ' ' . $nom);
+        if ($full_name !== '') {
+            return $full_name;
+        }
+
+        if ($nom !== '') {
+            return $nom;
+        }
+
+        return $email !== '' ? $email : 'Utilisateur #' . (isset($row['id']) ? $row['id'] : '');
+    }
+
 
     protected function format_detail_value($field, $value)
     {

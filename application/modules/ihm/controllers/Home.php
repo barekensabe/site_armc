@@ -137,18 +137,37 @@ class Home extends CI_Controller
 
     public function save_contact()
     {
+        $redirect_url = $this->input->post('redirect_url', TRUE);
+        $redirect_url = !empty($redirect_url) ? $redirect_url : site_url('contact');
+
         $payload = array(
-            'nom_complet' => $this->input->post('nom_complet', TRUE),
-            'email'       => $this->input->post('email', TRUE),
-            'telephone'   => $this->input->post('telephone', TRUE),
-            'sujet'       => $this->input->post('sujet', TRUE),
-            'message'     => $this->input->post('message', TRUE),
+            'nom_complet' => trim((string) $this->input->post('nom_complet', TRUE)),
+            'email'       => trim((string) $this->input->post('email', TRUE)),
+            'telephone'   => trim((string) $this->input->post('telephone', TRUE)),
+            'sujet'       => trim((string) $this->input->post('sujet', TRUE)),
+            'message'     => trim((string) $this->input->post('message', TRUE)),
             'statut'      => 'non_lu'
         );
 
-        $this->Cms_model->save_contact_message($payload);
-        $this->session->set_flashdata('success', 'Votre message a été envoyé avec succès.');
-        redirect('contact');
+        if ($payload['nom_complet'] === '' || $payload['email'] === '' || $payload['sujet'] === '' || $payload['message'] === '') {
+            $this->session->set_flashdata('error', 'Merci de renseigner tous les champs obligatoires du formulaire de contact.');
+            redirect($redirect_url);
+            return;
+        }
+
+        if (!filter_var($payload['email'], FILTER_VALIDATE_EMAIL)) {
+            $this->session->set_flashdata('error', 'Veuillez saisir une adresse email valide.');
+            redirect($redirect_url);
+            return;
+        }
+
+        if ($this->Cms_model->save_contact_message($payload)) {
+            $this->session->set_flashdata('success', 'Votre message a été envoyé avec succès.');
+        } else {
+            $this->session->set_flashdata('error', 'Une erreur est survenue lors de l\'envoi de votre message.');
+        }
+
+        redirect($redirect_url);
     }
 
     public function nous_alerter()
@@ -202,6 +221,53 @@ class Home extends CI_Controller
         $this->Cms_model->save_complaint($payload);
         $this->session->set_flashdata('success', 'Votre plainte a été transmise.');
         redirect('plaintes');
+    }
+
+    public function education_financiere()
+    {
+        $this->render_thematic_page(
+            'Éducation financière',
+            "Retrouvez les contenus pédagogiques, documents et publications liés à l'éducation financière.",
+            array('education-financiere', 'education_financiere')
+        );
+    }
+
+    public function recherche_developpement()
+    {
+        $this->render_thematic_page(
+            'Recherche & Développement',
+            'Consultez les travaux, publications et ressources liés à la recherche et au développement.',
+            array('recherche-developpement', 'recherche_et_developpement', 'recherche-developpements')
+        );
+    }
+
+    protected function render_thematic_page($title, $fallback_description, array $candidate_slugs)
+    {
+        $data = $this->build_public_data();
+        $match = $this->Cms_model->get_public_page_by_candidate_slugs($candidate_slugs);
+
+        if (!empty($match) && $match['type'] === 'page') {
+            $data['page_data'] = $match['data'];
+            $this->load->view('page_detail', $data);
+            return;
+        }
+
+        if (!empty($match) && $match['type'] === 'category') {
+            $data['category'] = $match['data'];
+            $data['articles'] = $match['articles'];
+            $data['documents'] = $match['documents'];
+            $this->load->view('category_detail', $data);
+            return;
+        }
+
+        $data['theme_page'] = array(
+            'titre' => $title,
+            'description' => $fallback_description,
+            'articles' => array(),
+            'documents' => array()
+        );
+
+        $this->load->view('thematic_page', $data);
     }
 
     public function newsletter()
