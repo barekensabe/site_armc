@@ -33,6 +33,16 @@
 
         var targetType = $('#type_cible');
         var targetId = $('#cible_id');
+        $('.armc-flash-alert[data-autohide]').each(function () {
+            var $alert = $(this);
+            var delay = parseInt($alert.data('autohide'), 10) || 10000;
+            setTimeout(function () {
+                $alert.fadeOut(400, function () {
+                    $(this).remove();
+                });
+            }, delay);
+        });
+
         if (targetType.length && targetId.length) {
             var menuTargets = window.armcMenuTargets || {};
             function refreshMenuTargets() {

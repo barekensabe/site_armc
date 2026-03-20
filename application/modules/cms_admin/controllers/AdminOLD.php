@@ -108,7 +108,7 @@ class Admin extends CI_Controller
 
         if ($this->input->method() === 'post') {
             if (!$this->validate_form($table, array())) {
-                $this->render_form($table, $this->input->post(NULL, FALSE) ?: array());
+                $this->render_form($table, $this->input->post(NULL, TRUE) ?: array());
                 return;
             }
 
@@ -120,7 +120,7 @@ class Admin extends CI_Controller
             }
 
             $this->session->set_flashdata('error', $this->get_db_error_message('Impossible de créer cet enregistrement.'));
-            $this->render_form($table, array_merge($this->input->post(NULL, FALSE) ?: array(), $data));
+            $this->render_form($table, array_merge($this->input->post(NULL, TRUE) ?: array(), $data));
             return;
         }
 
@@ -139,7 +139,7 @@ class Admin extends CI_Controller
 
         if ($this->input->method() === 'post') {
             if (!$this->validate_form($table, $row)) {
-                $row = array_merge($row, $this->input->post(NULL, FALSE) ?: array());
+                $row = array_merge($row, $this->input->post(NULL, TRUE) ?: array());
                 $this->render_form($table, $row);
                 return;
             }
@@ -152,7 +152,7 @@ class Admin extends CI_Controller
             }
 
             $this->session->set_flashdata('error', $this->get_db_error_message('La mise à jour a échoué.'));
-            $row = array_merge($row, $this->input->post(NULL, FALSE) ?: array(), $data);
+            $row = array_merge($row, $this->input->post(NULL, TRUE) ?: array(), $data);
             $this->render_form($table, $row);
             return;
         }
@@ -278,11 +278,7 @@ class Admin extends CI_Controller
                 continue;
             }
 
-            $value = $this->input->post($name, $this->is_rich_text_field($name) ? FALSE : TRUE);
-
-            if (is_string($value) && !$this->is_rich_text_field($name)) {
-                $value = trim($value);
-            }
+            $value = $this->input->post($name, TRUE);
 
             if ($field->type === 'tinyint') {
                 $row[$name] = empty($value) ? 0 : 1;
@@ -307,13 +303,9 @@ class Admin extends CI_Controller
         $this->apply_computed_fields($table, $row, $uploaded_files, !$is_update, $existing_row);
 
         $now = date('Y-m-d H:i:s');
-        if (array_key_exists('slug', $row)) {
-            $row['slug'] = $this->normalize_slug($row['slug']);
-        }
-
         if (in_array($table, array('articles', 'pages', 'documents'), TRUE)) {
             if (empty($row['slug']) && !empty($row['titre'])) {
-                $row['slug'] = $this->normalize_slug($row['titre']);
+                $row['slug'] = url_title(convert_accented_characters($row['titre']), 'dash', TRUE);
             }
             if (empty($row['date_publication']) && !empty($row['statut']) && $row['statut'] === 'publie') {
                 $row['date_publication'] = $now;
@@ -321,7 +313,7 @@ class Admin extends CI_Controller
         }
 
         if ($table === 'categories' && empty($row['slug']) && !empty($row['nom'])) {
-            $row['slug'] = $this->normalize_slug($row['nom']);
+            $row['slug'] = url_title(convert_accented_characters($row['nom']), 'dash', TRUE);
         }
 
         if ($table === 'alerts' && empty($row['reference_alerte'])) {
@@ -333,22 +325,6 @@ class Admin extends CI_Controller
         }
 
         return $row;
-    }
-
-    protected function is_rich_text_field($field_name)
-    {
-        return in_array($field_name, array('contenu', 'description', 'message', 'commentaire_interne'), TRUE);
-    }
-
-    protected function normalize_slug($value)
-    {
-        $value = is_string($value) ? trim($value) : '';
-        if ($value === '') {
-            return NULL;
-        }
-
-        $normalized = url_title(convert_accented_characters($value), 'dash', TRUE);
-        return $normalized !== '' ? $normalized : NULL;
     }
 
     protected function handle_file_upload($field_name)
