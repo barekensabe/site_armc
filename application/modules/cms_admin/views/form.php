@@ -113,13 +113,8 @@ function armc_input_col($name, $field)
                                 </label>
 
                                 <?php if (in_array($name, array('contenu', 'resume', 'description', 'message', 'commentaire_interne', 'meta_description'), TRUE)): ?>
-                                    <?php $is_rich_editor = in_array($name, array('contenu', 'description', 'message', 'commentaire_interne'), TRUE); ?>
-                                    <textarea name="<?= $name; ?>" id="<?= $name; ?>" class="form-control <?= $is_rich_editor ? 'armc-wysiwyg' : ''; ?>" rows="<?= $name === 'contenu' ? '10' : '4'; ?>" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>><?= html_escape($value); ?></textarea>
-                                    <?php if ($name === 'meta_description'): ?>
-                                        <small class="text-muted d-block mt-1">Ce champ reste en texte simple pour préserver le SEO.</small>
-                                    <?php elseif ($is_rich_editor): ?>
-                                        <small class="text-muted d-block mt-1">Éditeur enrichi activé pour une saisie CMS plus professionnelle.</small>
-                                    <?php endif; ?>
+                                    <?php $is_rich_editor = in_array($name, array('contenu', 'description', 'resume'), TRUE); ?>
+                                    <textarea name="<?= $name; ?>" id="<?= $name; ?>" class="form-control <?= $is_rich_editor ? 'armc-rich-editor' : ''; ?>" rows="<?= $name === 'contenu' ? '10' : '4'; ?>" <?= (!$is_rich_editor && in_array($name, $required_fields, TRUE)) ? 'required' : ''; ?> data-editor-required="<?= ($is_rich_editor && in_array($name, $required_fields, TRUE)) ? '1' : '0'; ?>"><?= html_escape($value); ?></textarea>
                                 <?php elseif ($meta['type'] === 'file'): ?>
                                     <input type="file" name="<?= $name; ?>" id="<?= $name; ?>" class="form-control" accept="<?= html_escape($meta['accept']); ?>" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
                                     <?php if (!empty($meta['help'])): ?>
@@ -159,10 +154,8 @@ function armc_input_col($name, $field)
                                 <?php elseif (in_array($field->type, array('int', 'bigint', 'decimal', 'year'), TRUE)): ?>
                                     <input type="number" step="<?= $field->type === 'decimal' ? '0.01' : '1'; ?>" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= html_escape($value); ?>" class="form-control" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
                                 <?php elseif ($name === 'slug'): ?>
-                                    <input type="text" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= html_escape($value); ?>" class="form-control armc-slug-field" placeholder="ex: education-financiere" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
-                                    <small class="text-muted d-block mt-1">Le slug est automatiquement normalisé : suppression des accents, caractères spéciaux et espaces.</small>
-                                <?php elseif (in_array($name, array('titre', 'nom', 'libelle'), TRUE)): ?>
-                                    <input type="text" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= html_escape($value); ?>" class="form-control armc-slug-source" data-slug-target="slug" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
+                                    <input type="text" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= html_escape($value); ?>" class="form-control" placeholder="ex: education-financiere" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
+                                    <small class="text-muted d-block mt-1">Laissez vide pour générer automatiquement le slug à partir du titre.</small>
                                 <?php elseif ($name === 'email'): ?>
                                     <input type="email" name="<?= $name; ?>" id="<?= $name; ?>" value="<?= html_escape($value); ?>" class="form-control" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
                                 <?php elseif ($name === 'telephone'): ?>

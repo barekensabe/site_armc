@@ -288,8 +288,85 @@ $map_src             = 'https://www.google.com/maps?q=' . rawurlencode($map_lati
 
 <div class="armc-prefooter-wrap">
     <div class="armc-prefooter-box">
-        <!-- Section contact préfooter retirée sur demande -->
+        <section id="contact">
+            <div class="armc-prefooter-panel">
+                <div class="armc-prefooter-grid">
+                    <div class="armc-prefooter-formcol">
+                        <p class="armc-prefooter-kicker"><?= html_escape($contact_small_title); ?></p>
+                        <h2 class="armc-prefooter-title"><?= html_escape($contact_title); ?></h2>
+                        <p class="armc-prefooter-text"><?= html_escape($contact_description); ?></p>
 
+                        <?php if ($this->session->flashdata('success')): ?>
+                            <div class="armc-prefooter-alert armc-prefooter-alert-success"><?= html_escape($this->session->flashdata('success')); ?></div>
+                        <?php endif; ?>
+
+                        <?php if ($this->session->flashdata('error')): ?>
+                            <div class="armc-prefooter-alert armc-prefooter-alert-error"><?= html_escape($this->session->flashdata('error')); ?></div>
+                        <?php endif; ?>
+
+                        <form method="post" action="<?= site_url('contact/envoyer'); ?>">
+                            <div class="armc-prefooter-row">
+                                <div class="armc-prefooter-group">
+                                    <label class="armc-prefooter-label" for="pc_nom_complet">Votre nom <span class="required">*</span></label>
+                                    <input id="pc_nom_complet" type="text" name="nom_complet" class="armc-prefooter-input" placeholder="Votre nom" value="<?= html_escape(set_value('nom_complet')); ?>" required>
+                                </div>
+                                <div class="armc-prefooter-group">
+                                    <label class="armc-prefooter-label" for="pc_email">Votre email <span class="required">*</span></label>
+                                    <input id="pc_email" type="email" name="email" class="armc-prefooter-input" placeholder="Votre email" value="<?= html_escape(set_value('email')); ?>" required>
+                                </div>
+                            </div>
+                            <div class="armc-prefooter-row">
+                                <div class="armc-prefooter-group">
+                                    <label class="armc-prefooter-label" for="pc_telephone">Téléphone</label>
+                                    <input id="pc_telephone" type="text" name="telephone" class="armc-prefooter-input" placeholder="Votre téléphone" value="<?= html_escape(set_value('telephone')); ?>">
+                                </div>
+                                <div class="armc-prefooter-group">
+                                    <label class="armc-prefooter-label" for="pc_sujet">Sujet</label>
+                                    <input id="pc_sujet" type="text" name="sujet" class="armc-prefooter-input" placeholder="Objet de votre message" value="<?= html_escape(set_value('sujet')); ?>">
+                                </div>
+                            </div>
+                            <div class="armc-prefooter-group" style="margin-bottom:18px;">
+                                <label class="armc-prefooter-label" for="pc_message">Votre message <span class="required">*</span></label>
+                                <textarea id="pc_message" name="message" class="armc-prefooter-textarea" placeholder="Votre message" required><?= html_escape(set_value('message')); ?></textarea>
+                            </div>
+                            <button type="submit" class="armc-prefooter-submit">
+                                <span>Envoyer</span>
+                                <span aria-hidden="true">➜</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="armc-prefooter-mapcol">
+                        <iframe
+                            class="armc-prefooter-frame"
+                            src="<?= html_escape($map_src); ?>"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localisation <?= html_escape($map_label); ?>"></iframe>
+
+                        <div class="armc-prefooter-infos">
+                            <div class="armc-prefooter-info">
+                                <h3 class="armc-prefooter-info-title">Adresse</h3>
+                                <p class="armc-prefooter-info-text"><?= html_escape($site_address); ?></p>
+                            </div>
+                            <div class="armc-prefooter-info">
+                                <h3 class="armc-prefooter-info-title">Téléphone</h3>
+                                <p class="armc-prefooter-info-text"><a href="tel:<?= html_escape($site_phone); ?>"><?= html_escape($site_phone); ?></a></p>
+                            </div>
+                            <div class="armc-prefooter-info">
+                                <h3 class="armc-prefooter-info-title">Email</h3>
+                                <p class="armc-prefooter-info-text"><a href="mailto:<?= html_escape($site_email); ?>"><?= html_escape($site_email); ?></a></p>
+                            </div>
+                            <div class="armc-prefooter-info">
+                                <h3 class="armc-prefooter-info-title">Horaires</h3>
+                                <p class="armc-prefooter-info-text"><?= html_escape($site_hours); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 
@@ -297,17 +374,18 @@ $map_src             = 'https://www.google.com/maps?q=' . rawurlencode($map_lati
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h3>Localisation ARMC</h3>
-                <div class="footer-map-card">
-                    <iframe src="<?= html_escape($map_src); ?>" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation <?= html_escape($map_label); ?>"></iframe>
-                </div>
-                <div class="map-coordinates"><?= html_escape($site_address); ?></div>
-                <div class="mt-2">
-                    <a href="<?= html_escape($facebook_url); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="<?= html_escape($twitter_url); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="<?= html_escape($linkedin_url); ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="<?= html_escape($youtube_url); ?>" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
+                <h3>À propos de l'ARMC</h3>
+                <ul>
+                    <span>
+                        <p><?= html_escape($footer_about); ?></p>
+                    </span>
+                    <li>
+                        <a href="<?= html_escape($facebook_url); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="<?= html_escape($twitter_url); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="<?= html_escape($linkedin_url); ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="<?= html_escape($youtube_url); ?>" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
             </div>
 
             <div class="footer-col">
@@ -341,7 +419,6 @@ $map_src             = 'https://www.google.com/maps?q=' . rawurlencode($map_lati
                     <li><i class="fas fa-clock"></i><span><?= html_escape($site_hours); ?></span></li>
                 </ul>
                 <form method="post" action="<?= site_url('newsletter/abonnement'); ?>" class="mt-3">
-                    <input type="text" name="nom_complet" class="form-control mb-2" placeholder="Votre nom complet" required>
                     <input type="email" name="email" class="form-control mb-2" placeholder="Votre email" required>
                     <button type="submit" class="btn btn-success btn-sm">S'abonner</button>
                 </form>
@@ -358,24 +435,6 @@ $map_src             = 'https://www.google.com/maps?q=' . rawurlencode($map_lati
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.armc-prefooter-alert,.alert,.armc-flash-alert').forEach(function(el){setTimeout(function(){if(window.jQuery){$(el).fadeOut(300,function(){$(this).remove();});}else{el.remove();}},8000);});
-    const navToggle = document.getElementById('navToggle');
-    const navContainer = document.querySelector('.nav-container');
-    if (navToggle && navContainer) {
-        navToggle.addEventListener('click', function() {
-            navContainer.classList.toggle('is-open');
-            document.body.classList.toggle('nav-open', navContainer.classList.contains('is-open'));
-        });
-        document.querySelectorAll('.dropdown > a').forEach(function(link){
-            link.addEventListener('click', function(e){
-                if (window.innerWidth <= 992) {
-                    var parent = this.parentElement;
-                    parent.classList.toggle('open');
-                    e.preventDefault();
-                }
-            });
-        });
-    }
     const mainSwiper = document.querySelector('.swiper');
     if (mainSwiper && typeof Swiper !== 'undefined') {
         new Swiper('.swiper', {

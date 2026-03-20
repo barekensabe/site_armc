@@ -7494,9 +7494,3 @@ img[loading="lazy"] {
 .public-contact-map{display:block;flex:1 1 auto;width:100% !important;min-width:100%;min-height:520px;height:100%;}
 @media (max-width:991.98px){.public-contact-shell{margin-left:0;width:100%;padding:18px 14px 26px;}.public-contact-grid{flex-direction:column;}.public-contact-content,.public-contact-map-wrap{flex:0 0 100%;max-width:100%;}.public-contact-map{min-height:360px;}}
 @media (max-width:575.98px){.public-contact-map{min-height:300px;}}
-
-/* === ARMC enhancements 2026-03-20 === */
-.public-input,.public-contact-form select{width:100%;border:1px solid #ececf1;background:#f0f0f3;border-radius:12px;padding:16px 18px;font-size:1rem;color:#333;outline:none;transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;}
-.public-input:focus,.public-contact-form select:focus{border-color:#f47d20;box-shadow:0 0 0 4px rgba(244,125,32,.12);background:#fff;}
-.public-textarea{min-height:136px;resize:vertical;}
-@media (max-width: 992px){.nav-container{display:none;width:100%;}.nav-container.is-open{display:block;}.dropdown .dropdown-content{display:none !important;}.dropdown.open .dropdown-content{display:block !important;}.main-header{flex-wrap:wrap;}.quick-access-sidebar{margin-bottom:18px;}}

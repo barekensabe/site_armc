@@ -10,7 +10,12 @@
                 <div class="publications-content">
                     <span class="date">Catégorie : <?= html_escape($article['categorie_nom']); ?> | <?= !empty($article['date_publication']) ? date('d/m/Y', strtotime($article['date_publication'])) : ''; ?></span>
                     <p><?= nl2br(html_escape($article['resume'])); ?></p>
-                    <div><?= $article['contenu']; ?></div>
+                    <?php if (!empty($article['video_url'])): ?>
+                <div class="ratio ratio-16x9 my-4">
+                    <iframe src="<?= html_escape($article['video_url']); ?>" title="Vidéo" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <?php endif; ?>
+                <div><?= $article['contenu']; ?></div>
                 </div>
             </div>
         </div>

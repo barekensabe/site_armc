@@ -21,9 +21,6 @@
         .sidebar a { color:#fff; text-decoration:none; display:flex; align-items:center; gap:.7rem; padding:10px 14px; border-radius:10px; margin-bottom:6px; font-weight:500; }
         .sidebar a:hover, .sidebar a.active { background: rgba(255,255,255,.14); }
         .sidebar a i { font-size:1rem; width:18px; text-align:center; }
-        .mobile-sidebar { background: linear-gradient(180deg, var(--armc-green) 0%, var(--armc-green-2) 100%); }
-        .mobile-sidebar .offcanvas-header { border-bottom:1px solid rgba(255,255,255,.12); }
-        .mobile-sidebar .btn-close { filter:invert(1); }
         .main-shell { min-height:100vh; }
         .topbar { position:sticky; top:0; z-index:1030; background:rgba(246,248,251,.95); backdrop-filter: blur(8px); border-bottom:1px solid var(--armc-border); margin:-1.5rem -1.5rem 1.5rem; padding:1rem 1.5rem; }
         .topbar-grid { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:1rem; }
@@ -31,7 +28,6 @@
         .topbar-brand img { width:42px; height:42px; object-fit:contain; }
         .live-clock { text-align:center; font-weight:700; color:#155724; letter-spacing:.02em; white-space:nowrap; display:flex; align-items:center; justify-content:center; gap:.55rem; }
         .topbar-user { display:flex; align-items:center; justify-content:flex-end; gap:.75rem; }
-        .topbar-mobile-toggle { display:none; }
         .avatar-badge, .avatar-photo { width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid #dff3e5; background:#dff3e5; }
         .avatar-badge { color:var(--armc-green); display:flex; align-items:center; justify-content:center; font-weight:700; }
         .card-kpi, .content-card { border:0; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,.08); background:#fff; }
@@ -50,21 +46,16 @@
         .detail-value { color:#102a43; word-break:break-word; }
         .badge-soft { background:#e9f7ef; color:#146c43; }
         .dataTables_wrapper .dataTables_filter input { margin-left:.5rem; }
-        .dt-buttons .btn { margin-right:.35rem; border:0; }
-        .dt-button-xls { background:#198754 !important; color:#fff !important; }
-        .dt-button-pdf { background:#dc3545 !important; color:#fff !important; }
+        .dt-buttons .btn { margin-right:.35rem; }
         .armc-flash-alert { position:relative; overflow:hidden; }
-        .armc-flash-alert::after { content:""; position:absolute; left:0; bottom:0; height:3px; width:100%; background:rgba(255,255,255,.55); animation:armcFlashCountdown linear forwards; animation-duration:var(--flash-duration, 5s); }
+        .armc-flash-alert::after { content:""; position:absolute; left:0; bottom:0; height:3px; width:100%; background:rgba(255,255,255,.55); animation:armcFlashCountdown linear forwards; animation-duration:var(--flash-duration, 8s); }
         .armc-editor-wrap .sun-editor { border-radius:12px; border-color:#ced4da; }
         .armc-editor-wrap .sun-editor .se-wrapper-inner { min-height:320px; }
         @keyframes armcFlashCountdown { from { width:100%; } to { width:0%; } }
         @media (max-width: 991.98px) {
-            .sidebar-desktop { display:none; }
-            .topbar { margin:-1rem -0.75rem 1rem; padding:1rem .9rem; }
+            .sidebar { min-height:auto; max-height:none; position:relative; }
             .topbar-grid { grid-template-columns:1fr; }
             .topbar-brand, .live-clock, .topbar-user { justify-content:center; text-align:center; }
-            .topbar-mobile-toggle { display:inline-flex; }
-            .main-shell { padding:1rem .75rem !important; }
         }
     </style>
 </head>
@@ -97,46 +88,24 @@ $menu_icons = array(
     'contact_messages' => 'bi-chat-dots', 'complaints' => 'bi-shield-exclamation', 'alerts' => 'bi-bell',
     'site' => 'bi-globe2', 'password' => 'bi-key', 'logout' => 'bi-box-arrow-right'
 );
-$admin_nav_tables = array('articles','pages','documents','categories','menus','sliders','quick_links','statistics_data','settings','users','newsletters','contact_messages','complaints','alerts');
-$armc_flash = $this->session->flashdata('armc_flash');
 ?>
-<?php $render_sidebar_links = function() use ($current_uri, $menu_icons, $admin_nav_tables) { ?>
-    <a class="<?= $current_uri === 'admin' ? 'active' : ''; ?>" href="<?= site_url('admin'); ?>"><i class="<?= $menu_icons['admin']; ?>"></i><span>Dashboard</span></a>
-    <?php foreach ($admin_nav_tables as $nav_table): ?>
-        <a class="<?= strpos($current_uri, 'admin/list/' . $nav_table) !== FALSE ? 'active' : ''; ?>" href="<?= site_url('admin/list/' . $nav_table); ?>"><i class="<?= isset($menu_icons[$nav_table]) ? $menu_icons[$nav_table] : 'bi-circle'; ?>"></i><span><?= ucfirst(str_replace('_', ' ', $nav_table)); ?></span></a>
-    <?php endforeach; ?>
-    <a class="<?= strpos($current_uri, 'admin/change_password') !== FALSE ? 'active' : ''; ?>" href="<?= site_url('admin/change_password'); ?>"><i class="<?= $menu_icons['password']; ?>"></i><span>Modifier mot de passe</span></a>
-    <a href="<?= site_url(); ?>" target="_blank"><i class="<?= $menu_icons['site']; ?>"></i><span>Voir le site</span></a>
-    <a href="<?= site_url('admin/logout'); ?>"><i class="<?= $menu_icons['logout']; ?>"></i><span>Déconnexion</span></a>
-<?php }; ?>
-
-<div class="offcanvas offcanvas-start text-white mobile-sidebar" tabindex="-1" id="armcAdminSidebar" aria-labelledby="armcAdminSidebarLabel">
-    <div class="offcanvas-header">
-        <div class="sidebar-brand mb-0">
-            <?php if ($logo_url !== ''): ?><img src="<?= $logo_url; ?>" alt="ARMC"><?php endif; ?>
-            <div class="sidebar-brand-text" id="armcAdminSidebarLabel">ARMC<br><small class="fw-normal opacity-75">Administration</small></div>
-        </div>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
-    </div>
-    <div class="offcanvas-body sidebar p-3 mobile-sidebar">
-        <?php $render_sidebar_links(); ?>
-    </div>
-</div>
-
 <div class="container-fluid">
-    <div class="row">
-        <aside class="col-lg-2 col-md-3 sidebar p-3 sidebar-desktop">
+    <div class="row flex-nowrap">
+        <aside class="col-lg-2 col-md-3 sidebar p-3">
             <div class="sidebar-brand">
                 <?php if ($logo_url !== ''): ?><img src="<?= $logo_url; ?>" alt="ARMC"><?php endif; ?>
                 <div class="sidebar-brand-text">ARMC<br><small class="fw-normal opacity-75">Administration</small></div>
             </div>
-            <?php $render_sidebar_links(); ?>
+            <a class="<?= $current_uri === 'admin' ? 'active' : ''; ?>" href="<?= site_url('admin'); ?>"><i class="<?= $menu_icons['admin']; ?>"></i><span>Dashboard</span></a>
+            <?php foreach (array('articles','pages','documents','categories','menus','sliders','quick_links','statistics_data','settings','users','newsletters','contact_messages','complaints','alerts') as $nav_table): ?>
+                <a class="<?= strpos($current_uri, 'admin/list/' . $nav_table) !== FALSE ? 'active' : ''; ?>" href="<?= site_url('admin/list/' . $nav_table); ?>"><i class="<?= isset($menu_icons[$nav_table]) ? $menu_icons[$nav_table] : 'bi-circle'; ?>"></i><span><?= ucfirst(str_replace('_', ' ', $nav_table)); ?></span></a>
+            <?php endforeach; ?>
+            <a class="<?= strpos($current_uri, 'admin/change_password') !== FALSE ? 'active' : ''; ?>" href="<?= site_url('admin/change_password'); ?>"><i class="<?= $menu_icons['password']; ?>"></i><span>Modifier mot de passe</span></a>
+            <a href="<?= site_url(); ?>" target="_blank"><i class="<?= $menu_icons['site']; ?>"></i><span>Voir le site</span></a>
+            <a href="<?= site_url('admin/logout'); ?>"><i class="<?= $menu_icons['logout']; ?>"></i><span>Déconnexion</span></a>
         </aside>
         <main class="col-lg-10 col-md-9 p-4 main-shell">
             <div class="topbar">
-                <div class="d-flex d-lg-none justify-content-start mb-2">
-                    <button class="btn btn-success topbar-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#armcAdminSidebar" aria-controls="armcAdminSidebar"><i class="bi bi-list"></i>&nbsp;Menu</button>
-                </div>
                 <div class="topbar-grid">
                     <div class="topbar-brand"><?php if ($logo_url !== ''): ?><img src="<?= $logo_url; ?>" alt="ARMC"><?php endif; ?><div><div class="fw-semibold">ARMC</div><div class="small text-muted">Espace administration</div></div></div>
                     <div class="live-clock" id="armc-live-clock"><i class="bi bi-calendar3"></i><span>--/--/---- --:--:--</span></div>
@@ -146,7 +115,5 @@ $armc_flash = $this->session->flashdata('armc_flash');
                     </div>
                 </div>
             </div>
-            <?php if (!empty($armc_flash['message'])): ?>
-                <?php $flash_type = (($armc_flash['type'] ?? 'error') === 'success') ? 'success' : 'danger'; ?>
-                <div class="alert alert-<?= $flash_type; ?> armc-flash-alert" data-autohide="5000" data-flash-id="<?= html_escape($armc_flash['id'] ?? uniqid('armc_flash_', TRUE)); ?>" data-flash-key="<?= html_escape($armc_flash['key'] ?? md5((string) ($armc_flash['message'] ?? ''))); ?>"><?= $armc_flash['message']; ?></div>
-            <?php endif; ?>
+            <?php if ($this->session->flashdata('success')): ?><div class="alert alert-success armc-flash-alert" data-autohide="8000"><?= $this->session->flashdata('success'); ?></div><?php endif; ?>
+            <?php if ($this->session->flashdata('error')): ?><div class="alert alert-danger armc-flash-alert" data-autohide="8000"><?= $this->session->flashdata('error'); ?></div><?php endif; ?>

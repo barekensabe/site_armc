@@ -20,7 +20,7 @@
                     </div>
                     <?php if (!empty($armc_flash['message'])): ?>
                         <?php $flash_type = (($armc_flash['type'] ?? 'error') === 'success') ? 'success' : 'danger'; ?>
-                        <div class="alert alert-<?= $flash_type; ?> armc-flash-alert" data-autohide="5000" data-flash-id="<?= html_escape($armc_flash['id'] ?? uniqid('armc_flash_', TRUE)); ?>" data-flash-key="<?= html_escape($armc_flash['key'] ?? md5((string) ($armc_flash['message'] ?? ''))); ?>"><?= html_escape($armc_flash['message']); ?></div>
+                        <div class="alert alert-<?= $flash_type; ?> armc-flash-alert" data-autohide="5000" data-flash-id="<?= html_escape($armc_flash['id'] ?? uniqid('armc_flash_', TRUE)); ?>"><?= html_escape($armc_flash['message']); ?></div>
                     <?php endif; ?>
                     <form method="post" action="<?= site_url('admin/login'); ?>" novalidate>
                         <div class="mb-3">
@@ -38,6 +38,6 @@
         </div>
     </div>
 </div>
-<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.armc-flash-alert').forEach(function(el){var key=el.getAttribute('data-flash-key')||el.getAttribute('data-flash-id');if(key&&sessionStorage.getItem('armc_dismissed_'+key)==='1'){el.remove();return;}setTimeout(function(){if(key){sessionStorage.setItem('armc_dismissed_'+key,'1');}el.remove();},5000);});window.addEventListener('pageshow',function(){document.querySelectorAll('.armc-flash-alert').forEach(function(el){var key=el.getAttribute('data-flash-key')||el.getAttribute('data-flash-id');if(key&&sessionStorage.getItem('armc_dismissed_'+key)==='1'){el.remove();}});});});</script>
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.armc-flash-alert').forEach(function(el){var id=el.getAttribute('data-flash-id');if(id&&sessionStorage.getItem('armc_dismissed_flash_'+id)==='1'){el.remove();return;}setTimeout(function(){if(id){sessionStorage.setItem('armc_dismissed_flash_'+id,'1');}el.remove();},5000);});window.addEventListener('pageshow',function(){document.querySelectorAll('.armc-flash-alert').forEach(function(el){var id=el.getAttribute('data-flash-id');if(id&&sessionStorage.getItem('armc_dismissed_flash_'+id)==='1'){el.remove();}});});});</script>
 </body>
 </html>

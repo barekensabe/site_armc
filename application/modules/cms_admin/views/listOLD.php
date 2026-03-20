@@ -4,7 +4,7 @@
         <h2 class="mb-1 text-capitalize"><?= str_replace('_', ' ', $table); ?></h2>
         <p class="text-muted mb-0">Liste administrable avec recherche, tri, pagination et accès au détail.</p>
     </div>
-    <a class="btn btn-success" href="<?= site_url('admin/create/' . $table); ?>"><i class="bi bi-plus-circle me-1"></i>Ajouter</a>
+    <a class="btn btn-success" href="<?= site_url('admin/create/' . $table); ?>">Ajouter</a>
 </div>
 <div class="table-responsive">
     <table class="table table-striped table-hover align-middle datatable w-100">

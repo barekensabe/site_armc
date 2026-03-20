@@ -13,7 +13,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Cms_model');
-        $this->load->library('pagination');
+        $this->load->library(array('pagination', 'notifications'));
     }
 
     public function index()
@@ -162,6 +162,7 @@ class Home extends CI_Controller
         }
 
         if ($this->Cms_model->save_contact_message($payload)) {
+            $this->notify_site_email('Nouveau message de contact', $this->build_contact_notification_message($payload));
             $this->session->set_flashdata('success', 'Votre message a été envoyé avec succès.');
         } else {
             $this->session->set_flashdata('error', 'Une erreur est survenue lors de l\'envoi de votre message.');
@@ -219,6 +220,7 @@ class Home extends CI_Controller
         );
 
         $this->Cms_model->save_complaint($payload);
+        $this->notify_site_email('Nouvelle plainte enregistrée', $this->build_complaint_notification_message($payload));
         $this->session->set_flashdata('success', 'Votre plainte a été transmise.');
         redirect('plaintes');
     }
@@ -239,6 +241,43 @@ class Home extends CI_Controller
             'Consultez les travaux, publications et ressources liés à la recherche et au développement.',
             array('recherche-developpement', 'recherche_et_developpement', 'recherche-developpements')
         );
+    }
+
+    protected function notify_site_email($subject, $message)
+    {
+        $settings = $this->Cms_model->get_settings_map();
+        $site_email = isset($settings['site_email']) ? trim((string) $settings['site_email']) : '';
+        if ($site_email === '' || !filter_var($site_email, FILTER_VALIDATE_EMAIL)) {
+            return;
+        }
+
+        try {
+            $this->notifications->send_mail($site_email, $subject . ' - ARMC', array(), $message, array());
+        } catch (Exception $e) {
+            log_message('error', 'Notification email ARMC impossible: ' . $e->getMessage());
+        }
+    }
+
+    protected function build_contact_notification_message(array $payload)
+    {
+        return '<h3>Nouveau message de contact</h3>'
+            . '<p><strong>Nom complet :</strong> ' . html_escape($payload['nom_complet']) . '</p>'
+            . '<p><strong>Email :</strong> ' . html_escape($payload['email']) . '</p>'
+            . '<p><strong>Téléphone :</strong> ' . html_escape($payload['telephone']) . '</p>'
+            . '<p><strong>Sujet :</strong> ' . html_escape($payload['sujet']) . '</p>'
+            . '<p><strong>Message :</strong><br>' . nl2br(html_escape($payload['message'])) . '</p>';
+    }
+
+    protected function build_complaint_notification_message(array $payload)
+    {
+        return '<h3>Nouvelle plainte enregistrée</h3>'
+            . '<p><strong>Numéro :</strong> ' . html_escape($payload['numero_plainte']) . '</p>'
+            . '<p><strong>Nom complet :</strong> ' . html_escape($payload['nom_complet']) . '</p>'
+            . '<p><strong>Email :</strong> ' . html_escape($payload['email']) . '</p>'
+            . '<p><strong>Téléphone :</strong> ' . html_escape($payload['telephone']) . '</p>'
+            . '<p><strong>Institution concernée :</strong> ' . html_escape($payload['institution_concernee']) . '</p>'
+            . '<p><strong>Sujet :</strong> ' . html_escape($payload['sujet']) . '</p>'
+            . '<p><strong>Description :</strong><br>' . nl2br(html_escape($payload['description'])) . '</p>';
     }
 
     protected function render_thematic_page($title, $fallback_description, array $candidate_slugs)

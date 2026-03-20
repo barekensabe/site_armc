@@ -291,7 +291,6 @@ class Cms_model extends CI_Model
 
         return $this->db->insert('newsletters', array(
             'email' => $email,
-            'nom_complet' => NULL,
             'statut' => 'actif',
             'date_abonnement' => date('Y-m-d H:i:s')
         ));
@@ -625,11 +624,7 @@ class Cms_model extends CI_Model
             'documents' => $this->db->count_all('documents'),
             'categories' => $this->db->count_all('categories'),
             'menus' => $this->db->count_all('menus'),
-            'utilisateurs' => $this->db->count_all('users'),
-            'messages' => $this->db->count_all('contact_messages'),
-            'plaintes' => $this->db->count_all('complaints'),
-            'alertes' => $this->db->count_all('alerts'),
-            'newsletters' => $this->db->count_all('newsletters')
+            'messages' => $this->db->count_all('contact_messages')
         );
 
         if ($this->db->table_exists('logs')) {
@@ -667,7 +662,7 @@ class Cms_model extends CI_Model
             return array();
         }
 
-        $this->db->select('ip_adresse, username, logs, date_time, operating_system, browser_used');
+        $this->db->select('ip_adresse, username, logs, date_time');
         $this->db->from('logs');
         $this->db->order_by('date_time', 'DESC');
         $this->db->limit((int) $limit);
@@ -739,44 +734,6 @@ class Cms_model extends CI_Model
         }
 
         return ucwords(str_replace(array('-', '_', '/'), ' ', $uri));
-    }
-
-
-
-    public function slug_exists($table, $slug, $exclude_id = NULL)
-    {
-        if (!$this->db->table_exists($table) || !$this->db->field_exists('slug', $table)) {
-            return FALSE;
-        }
-
-        $pk = $this->get_pk($table);
-        $this->db->from($table);
-        $this->db->where('slug', $slug);
-        if ($exclude_id !== NULL && $pk !== NULL) {
-            $this->db->where($pk . ' !=', (int) $exclude_id);
-        }
-
-        return $this->db->count_all_results() > 0;
-    }
-
-    public function generate_unique_slug($table, $slug, $exclude_id = NULL)
-    {
-        $slug = strtolower((string) $slug);
-        $slug = preg_replace('/[^a-z0-9]+/i', '', $slug);
-        $slug = trim($slug);
-
-        if ($slug === '') {
-            $slug = 'contenu';
-        }
-
-        $candidate = $slug;
-        $suffix = 2;
-        while ($this->slug_exists($table, $candidate, $exclude_id)) {
-            $candidate = $slug . $suffix;
-            $suffix++;
-        }
-
-        return $candidate;
     }
 
     public function get_pk($table)

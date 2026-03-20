@@ -113,7 +113,8 @@ function armc_input_col($name, $field)
                                 </label>
 
                                 <?php if (in_array($name, array('contenu', 'resume', 'description', 'message', 'commentaire_interne', 'meta_description'), TRUE)): ?>
-                                    <textarea name="<?= $name; ?>" id="<?= $name; ?>" class="form-control" rows="<?= $name === 'contenu' ? '10' : '4'; ?>" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>><?= html_escape($value); ?></textarea>
+                                    <?php $is_rich_editor = in_array($name, array('contenu', 'description'), TRUE); ?>
+                                    <textarea name="<?= $name; ?>" id="<?= $name; ?>" class="form-control <?= $is_rich_editor ? 'armc-rich-editor' : ''; ?>" rows="<?= $name === 'contenu' ? '10' : '4'; ?>" <?= (!$is_rich_editor && in_array($name, $required_fields, TRUE)) ? 'required' : ''; ?> data-editor-required="<?= ($is_rich_editor && in_array($name, $required_fields, TRUE)) ? '1' : '0'; ?>"><?= html_escape($value); ?></textarea>
                                 <?php elseif ($meta['type'] === 'file'): ?>
                                     <input type="file" name="<?= $name; ?>" id="<?= $name; ?>" class="form-control" accept="<?= html_escape($meta['accept']); ?>" <?= in_array($name, $required_fields, TRUE) ? 'required' : ''; ?>>
                                     <?php if (!empty($meta['help'])): ?>

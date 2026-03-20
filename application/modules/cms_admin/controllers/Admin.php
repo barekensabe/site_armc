@@ -51,13 +51,14 @@ class Admin extends CI_Controller
                     'id' => $user['id'],
                     'nom' => $user['nom'],
                     'prenom' => $user['prenom'],
-                    'email' => $user['email']
+                    'email' => $user['email'],
+                    'photo_profil' => isset($user['photo_profil']) ? $user['photo_profil'] : ''
                 ));
                 redirect('admin');
                 return;
             }
 
-            $this->session->set_flashdata('error', 'Identifiants invalides.');
+    $this->set_admin_flash('error', 'Identifiants invalides.');
             redirect('admin/login');
             return;
         }
@@ -114,12 +115,12 @@ class Admin extends CI_Controller
 
             $data = $this->collect_post_data($table);
             if ($this->Cms_model->insert_row($table, $data)) {
-                $this->session->set_flashdata('success', 'Enregistrement créé avec succès.');
+                $this->set_admin_flash('success', 'Enregistrement créé avec succès.');
                 redirect('admin/list/' . $table);
                 return;
             }
 
-            $this->session->set_flashdata('error', $this->get_db_error_message('Impossible de créer cet enregistrement.'));
+            $this->set_admin_flash('error', $this->get_db_error_message('Impossible de créer cet enregistrement.'));
             $this->render_form($table, array_merge($this->input->post(NULL, FALSE) ?: array(), $data));
             return;
         }
@@ -146,12 +147,12 @@ class Admin extends CI_Controller
 
             $data = $this->collect_post_data($table, $row);
             if ($this->Cms_model->update_row($table, $id, $data)) {
-                $this->session->set_flashdata('success', 'Enregistrement mis à jour.');
+                $this->set_admin_flash('success', 'Enregistrement mis à jour.');
                 redirect('admin/list/' . $table);
                 return;
             }
 
-            $this->session->set_flashdata('error', $this->get_db_error_message('La mise à jour a échoué.'));
+            $this->set_admin_flash('error', $this->get_db_error_message('La mise à jour a échoué.'));
             $row = array_merge($row, $this->input->post(NULL, FALSE) ?: array(), $data);
             $this->render_form($table, $row);
             return;
@@ -165,7 +166,7 @@ class Admin extends CI_Controller
         $this->require_auth();
         $this->validate_table($table);
         $this->Cms_model->delete_row($table, $id);
-        $this->session->set_flashdata('success', 'Enregistrement supprimé.');
+        $this->set_admin_flash('success', 'Enregistrement supprimé.');
         redirect('admin/list/' . $table);
     }
 
@@ -180,7 +181,7 @@ class Admin extends CI_Controller
 
         $field = $this->resolve_toggle_field($table, $row);
         if ($field === NULL) {
-            $this->session->set_flashdata('error', 'Aucun champ de publication/désactivation sur cette table.');
+            $this->set_admin_flash('error', 'Aucun champ de publication/désactivation sur cette table.');
             redirect('admin/list/' . $table);
             return;
         }
@@ -189,8 +190,18 @@ class Admin extends CI_Controller
         $payload = array($field => $new_value);
         $payload = array_merge($payload, $this->get_audit_data($table, FALSE));
         $this->Cms_model->update_row($table, $id, $payload);
-        $this->session->set_flashdata('success', 'Statut modifié avec succès.');
+        $this->set_admin_flash('success', 'Statut modifié avec succès.');
         redirect('admin/list/' . $table);
+    }
+
+    protected function set_admin_flash($type, $message)
+    {
+        $this->session->set_flashdata('armc_flash', array(
+            'type' => $type,
+            'message' => $message,
+            'id' => uniqid('armc_flash_' . $type . '_', TRUE),
+            'key' => 'armc_flash_' . $type . '_' . md5((string) $message . microtime(TRUE))
+        ));
     }
 
     protected function render_form($table, $row)
@@ -217,6 +228,46 @@ class Admin extends CI_Controller
     }
 
 
+    protected function is_rich_editor_field($field_name)
+    {
+        return in_array($field_name, array('contenu', 'description', 'resume'), TRUE);
+    }
+
+    protected function rich_content_has_meaningful_value($value)
+    {
+        if (!is_string($value)) {
+            return FALSE;
+        }
+
+        $normalized = preg_replace('/&(nbsp|#160);/i', ' ', $value);
+        $normalized = preg_replace('/\s+/u', ' ', (string) $normalized);
+        $text = trim(strip_tags($normalized));
+
+        if ($text !== '') {
+            return TRUE;
+        }
+
+        return (bool) preg_match('/<(img|iframe|video|audio|embed|object|table|svg|canvas)\b/i', $value);
+    }
+
+    public function validate_rich_content($value, $field_name)
+    {
+        $raw_value = $this->input->post($field_name, FALSE);
+        if ($this->rich_content_has_meaningful_value($raw_value)) {
+            return TRUE;
+        }
+
+        $label_map = array(
+            'contenu' => 'contenu',
+            'description' => 'description',
+            'resume' => 'résumé'
+        );
+        $label = isset($label_map[$field_name]) ? $label_map[$field_name] : ucfirst(str_replace('_', ' ', $field_name));
+        $this->form_validation->set_message('validate_rich_content', 'Le champ ' . $label . ' est obligatoire.');
+        return FALSE;
+    }
+
+
     protected function validate_form($table, array $existing_row = array())
     {
         $this->form_validation->reset_validation();
@@ -236,7 +287,11 @@ class Admin extends CI_Controller
 
         foreach ($required_fields as $field_name) {
             $label = isset($label_map[$field_name]) ? $label_map[$field_name] : ucfirst(str_replace('_', ' ', $field_name));
-            $this->form_validation->set_rules($field_name, $label, 'trim|required');
+            if ($this->is_rich_editor_field($field_name)) {
+                $this->form_validation->set_rules($field_name, $label, 'callback_validate_rich_content[' . $field_name . ']');
+            } else {
+                $this->form_validation->set_rules($field_name, $label, 'trim|required');
+            }
         }
 
         $this->form_validation->set_message('required', 'Le champ %s est obligatoire.');
@@ -337,7 +392,7 @@ class Admin extends CI_Controller
 
     protected function is_rich_text_field($field_name)
     {
-        return in_array($field_name, array('contenu', 'description', 'message', 'commentaire_interne'), TRUE);
+        return in_array($field_name, array('contenu', 'description', 'resume', 'message', 'commentaire_interne'), TRUE);
     }
 
     protected function normalize_slug($value)
@@ -373,7 +428,7 @@ class Admin extends CI_Controller
         $this->upload->initialize($config);
 
         if (!$this->upload->do_upload($field_name)) {
-            $this->session->set_flashdata('error', $this->upload->display_errors('', ''));
+            $this->set_admin_flash('error', $this->upload->display_errors('', ''));
             redirect($this->agent->referrer() ?: 'admin');
             exit;
         }
@@ -578,6 +633,91 @@ class Admin extends CI_Controller
         if (!in_array($table, $this->managed_tables, TRUE)) {
             show_404();
         }
+    }
+
+    public function change_password()
+    {
+        $this->require_auth();
+        $cms_admin = $this->session->userdata('cms_admin');
+        $user_id = isset($cms_admin['id']) ? (int) $cms_admin['id'] : 0;
+        if ($user_id <= 0) {
+            redirect('admin/login');
+            return;
+        }
+
+        if ($this->input->method() === 'post') {
+            $current_password = (string) $this->input->post('current_password', TRUE);
+            $new_password = (string) $this->input->post('new_password', TRUE);
+            $confirm_password = (string) $this->input->post('confirm_password', TRUE);
+
+            $user = $this->Cms_model->get_row('users', $user_id);
+            if (empty($user) || empty($user['password_hash']) || !password_verify($current_password, $user['password_hash'])) {
+                $this->set_admin_flash('error', 'Le mot de passe actuel est incorrect.');
+                redirect('admin/change_password');
+                return;
+            }
+
+            if (strlen($new_password) < 8) {
+                $this->set_admin_flash('error', 'Le nouveau mot de passe doit contenir au moins 8 caractères.');
+                redirect('admin/change_password');
+                return;
+            }
+
+            if ($new_password !== $confirm_password) {
+                $this->set_admin_flash('error', 'La confirmation du nouveau mot de passe ne correspond pas.');
+                redirect('admin/change_password');
+                return;
+            }
+
+            $payload = array(
+                'password_hash' => password_hash($new_password, PASSWORD_DEFAULT),
+                'updated_at' => date('Y-m-d H:i:s')
+            );
+            $this->Cms_model->update_row('users', $user_id, $payload);
+            $this->set_admin_flash('success', 'Mot de passe modifié avec succès.');
+            redirect('admin/change_password');
+            return;
+        }
+
+        $this->load->view('change_password');
+    }
+
+    public function upload_editor_image()
+    {
+        $this->require_auth();
+
+        if (empty($_FILES['image'])) {
+            return $this->json_response(array('errorMessage' => 'Aucune image reçue.'), 400);
+        }
+
+        $upload_path = FCPATH . 'upload/cms/editor/';
+        if (!is_dir($upload_path)) {
+            @mkdir($upload_path, 0775, TRUE);
+        }
+
+        $config = array(
+            'upload_path' => $upload_path,
+            'allowed_types' => 'jpg|jpeg|png|gif|webp|svg',
+            'max_size' => 5120,
+            'encrypt_name' => TRUE
+        );
+
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload('image')) {
+            return $this->json_response(array('errorMessage' => strip_tags($this->upload->display_errors('', ''))), 400);
+        }
+
+        $file = $this->upload->data();
+        return $this->json_response(array('result' => array(array('url' => base_url('upload/cms/editor/' . $file['file_name']), 'name' => $file['file_name']))));
+    }
+
+    protected function json_response($payload, $status = 200)
+    {
+        $this->output
+            ->set_status_header($status)
+            ->set_content_type('application/json', 'utf-8')
+            ->set_output(json_encode($payload));
+        return;
     }
 
     protected function require_auth()

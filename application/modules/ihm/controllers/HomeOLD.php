@@ -13,7 +13,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Cms_model');
-        $this->load->library('pagination');
+        $this->load->library(array('pagination', 'notifications'));
     }
 
     public function index()
@@ -218,9 +218,80 @@ class Home extends CI_Controller
             'date_soumission'       => date('Y-m-d H:i:s')
         );
 
-        $this->Cms_model->save_complaint($payload);
-        $this->session->set_flashdata('success', 'Votre plainte a été transmise.');
+        if ($this->Cms_model->save_complaint($payload)) {
+            $this->notify_site_email('Nouvelle plainte soumise', '<h3>Nouvelle plainte soumise</h3>'
+                . '<p><strong>Numéro :</strong> ' . html_escape($payload['numero_plainte']) . '</p>'
+                . '<p><strong>Nom complet :</strong> ' . html_escape($payload['nom_complet']) . '</p>'
+                . '<p><strong>Email :</strong> ' . html_escape($payload['email']) . '</p>'
+                . '<p><strong>Téléphone :</strong> ' . html_escape($payload['telephone']) . '</p>'
+                . '<p><strong>Institution concernée :</strong> ' . html_escape($payload['institution_concernee']) . '</p>'
+                . '<p><strong>Sujet :</strong> ' . html_escape($payload['sujet']) . '</p>'
+                . '<p><strong>Description :</strong><br>' . nl2br(html_escape($payload['description'])) . '</p>');
+            $this->session->set_flashdata('success', 'Votre plainte a été transmise.');
+        } else {
+            $this->session->set_flashdata('error', 'Une erreur est survenue lors de la soumission de votre plainte.');
+        }
         redirect('plaintes');
+    }
+
+    public function education_financiere()
+    {
+        $this->render_thematic_page(
+            'Éducation financière',
+            "Retrouvez les contenus pédagogiques, documents et publications liés à l'éducation financière.",
+            array('education-financiere', 'education_financiere')
+        );
+    }
+
+    public function recherche_developpement()
+    {
+        $this->render_thematic_page(
+            'Recherche & Développement',
+            'Consultez les travaux, publications et ressources liés à la recherche et au développement.',
+            array('recherche-developpement', 'recherche_et_developpement', 'recherche-developpements')
+        );
+    }
+
+
+
+    protected function notify_site_email($subject, $message)
+    {
+        $settings = $this->Cms_model->get_settings_map();
+        $site_email = isset($settings['site_email']) ? trim((string) $settings['site_email']) : '';
+        if ($site_email === '' || !filter_var($site_email, FILTER_VALIDATE_EMAIL)) {
+            return FALSE;
+        }
+
+        return (bool) $this->notifications->send_mail($site_email, $subject, array(), $message, array());
+    }
+
+    protected function render_thematic_page($title, $fallback_description, array $candidate_slugs)
+    {
+        $data = $this->build_public_data();
+        $match = $this->Cms_model->get_public_page_by_candidate_slugs($candidate_slugs);
+
+        if (!empty($match) && $match['type'] === 'page') {
+            $data['page_data'] = $match['data'];
+            $this->load->view('page_detail', $data);
+            return;
+        }
+
+        if (!empty($match) && $match['type'] === 'category') {
+            $data['category'] = $match['data'];
+            $data['articles'] = $match['articles'];
+            $data['documents'] = $match['documents'];
+            $this->load->view('category_detail', $data);
+            return;
+        }
+
+        $data['theme_page'] = array(
+            'titre' => $title,
+            'description' => $fallback_description,
+            'articles' => array(),
+            'documents' => array()
+        );
+
+        $this->load->view('thematic_page', $data);
     }
 
     public function newsletter()
