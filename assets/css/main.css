@@ -7067,6 +7067,7 @@
     .logo-wrapper {
         left: 12px;
         top: 8px;
+        margin-left: 0px !important;
     }
     .logo-wrapper img {
         width: 90px;
@@ -7161,6 +7162,7 @@
     .logo-wrapper img {
         width: 72px;
         height: 72px;
+        margin-left: 0px !important;
     }
     .banner-fixed {
         padding-left: 76px;
